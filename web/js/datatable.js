@@ -116,25 +116,29 @@ YUI().use(   "datatable", function (Y) {
         });
     });
 
+    var Z = require('yui/io-base');
+    Z.io('http://akovac.akovac.lan/uvm/api.php?command=getListPfsMereUvm',{
+    	on : {
+    		complete : function(id,result) {
+    			var json = Y.JSON.parse(result.responseText);
+    			console.log(json);
+    		}
+    	}
+   	});
+        
+     var data_entete = [
+        {  title: 'Nombre de PFS mere',  value: 45 },
+        {  title: 'Nombre de PFS fille',  value: 101 },
+        {  title: 'Nombre de Serveur Xen',  value: 53 },
+        {  title: 'Nombre de VM',  value: 319 },
+        {  title: 'Nombre total de uVM',  value: 3116 }
 
-
-
-    // A table from data with keys that work fine as column names
-    var simple = new Y.DataTable({
-        columns: ["id", "name", "price"],
-        data   : [
-            { id: "ga_3475", name: "gadget",   price: "$6.99" },
-            { id: "sp_9980", name: "sprocket", price: "$3.75" },
-            { id: "wi_0650", name: "widget",   price: "$4.25" }
-        ],
-        summary: "Price sheet for inventory parts",
-        caption: "test"
-    });
-    
-    simple.render("#simple");
-
-
-
+    ];
+ 
+     var entete = new Y.DataTable({
+        data : data_entete,
+        width: 400
+    }).render("#simple");
 
 
 
