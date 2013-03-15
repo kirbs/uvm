@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <title>Super-Simple DHTML Tree</title>
+    
+    <style type="text/css">
+      body {
+        font-size: 12px;
+        font-family: verdana;
+        background-color: white;
+      }
+      
+      .root {
+      padding: 0px 0px 2px 0px
+      }
+      
+      .root div {
+      padding: 0px 0px 0px 0px;
+      display: none;
+      margin-left: 3em;
+      }
+    </style>
+
+<link rel="stylesheet" href="jquery/css/ui-lightness/jquery-ui-1.9.0.custom.css" />
+<link rel="stylesheet" href="jquery/css/ui-lightness/jquery-ui-timepicker-addon.css" />
+<link rel="stylesheet" href="jquery/base/style.css" />
+
+<script src="jquery/js/jquery-1.8.2.js"></script>
+<script src="jquery/js/jquery-ui-1.9.0.custom.js"></script>
+<script src="jquery/js/jquery-ui-timepicker-addon.js"></script>
+<script src="yui/build/yui/yui-min.js"></script>
+
+<script src="js/datatable.js"></script>
+<script src="js/calendar.js"></script>
+
+
+
+<script>
+
+$(function() {
+//});
+
+    var chart;
+    $(document).ready(function() {
+
+		//<!-- GRAPH PIE CHART -->
+	
+	    var output = new Array();
+	    $.getJSON('api.php?command=getListPfsMereUvm', function(data) {
+	        output = data;
+	    //});
+	        
+		//alert(output);
+	
+		chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'container',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: 'Pourcentage d\'uVM par PFS'
+	            },
+	            tooltip: {
+	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	                percentageDecimals: 2
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+    	                    formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.point.y +' uVM';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: 'Browser share',
+	                data: output
+	            }]
+		});
+	});
+
+
+
+
+	});
+    
+});
+</script>
+
+    
+    <script type="text/javascript">	
+    
+      function toggleNode(node) 
+      {
+        var nodeArray = node.childNodes;
+        for(i=0; i < nodeArray.length; i++)
+        {
+          node = nodeArray[i];
+          if (node.tagName && node.tagName.toLowerCase() == 'div')
+            node.style.display = (node.style.display == 'block') ? 'none' : 'block';
+        }
+      }
+      
+      function openNode(node)
+      {
+        var nodeArray = node.childNodes;
+        for(i=0; i < nodeArray.length; i++)
+        {
+          node = nodeArray[i];
+          if (node.tagName && node.tagName.toLowerCase() == 'div')
+            node.style.display = 'block';
+        }
+      }
+
+      function closeNode(node)
+      {
+        var nodeArray = node.childNodes;
+        for(i=0; i < nodeArray.length; i++)
+        {
+          node = nodeArray[i];
+          if (node.tagName && node.tagName.toLowerCase() == 'div')
+            node.style.display = 'none';
+        }
+      }
+
+      function showNode(node)
+      {
+        if (!node) return;
+        if (!node.parentNode) return;
+        node = node.parentNode;
+        while (node.tagName.toLowerCase() == 'div')
+        {
+          openNode(node);
+          node = node.parentNode;
+        }
+      }
+    </script>
+  </head>
+
+<body>
+<script src="charts/js/highcharts.js"></script>
+<script src="charts/js/modules/exporting.js"></script>
+
