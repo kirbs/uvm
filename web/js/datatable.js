@@ -126,6 +126,7 @@ YUI().use(   "datatable", function (Y) {
     //	}
    	//});
         
+        
      var data_entete = [
         {  title: 'Nombre de PFS mere',  value: 45 },
         {  title: 'Nombre de PFS fille',  value: 101 },
