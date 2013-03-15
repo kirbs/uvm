@@ -116,15 +116,15 @@ YUI().use(   "datatable", function (Y) {
         });
     });
 
-    var Z = require('yui/io-base');
-    Z.io('http://akovac.akovac.lan/uvm/api.php?command=getListPfsMereUvm',{
-    	on : {
-    		complete : function(id,result) {
-    			var json = Y.JSON.parse(result.responseText);
-    			console.log(json);
-    		}
-    	}
-   	});
+    //var Z = require('yui/io-base');
+    //Z.io('http://akovac.akovac.lan/uvm/api.php?command=getListPfsMereUvm',{
+    //	on : {
+    //		complete : function(id,result) {
+    //			var json = Y.JSON.parse(result.responseText);
+    //			console.log(json);
+    //		}
+    //	}
+   	//});
         
      var data_entete = [
         {  title: 'Nombre de PFS mere',  value: 45 },
