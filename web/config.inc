@@ -2,8 +2,8 @@
 
 $SRV_MYSQL = "localhost";
 $USER_MYSQL = "root";
-$PASSWORD_MYSQL = "sdfsdf";
-$BASE_MYSQL = "uvm";
+$PASSWORD_MYSQL = "rootroot";
+$BASE_MYSQL = "uvm2";
 
 
 
