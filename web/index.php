@@ -9,7 +9,7 @@ $today = $lastDate;
 
 function formulaire($today)
 {
-	echo "<div  class='yui3-skin-sam' id='simple'></div><table width='100%' ><tr><td width='30%'><table>
+	echo "<div  class='yui3-skin-sam dt-example' id='simple'></div><table width='100%' ><tr><td width='30%'><table>
 		<tr><td>Nombre de PFS mere : </td><td>". nombre_element("pfs_mere", $today) ." </td></tr>
 		<tr><td>Nombre de PFS fille : </td><td>". nombre_element("pfs_fille", $today) ." </td></tr>
 		<tr><td>Nombre de Serveur Xen : </td><td>". nombre_element("srv_xen", $today) ." </td></tr>
