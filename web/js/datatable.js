@@ -128,7 +128,7 @@ YUI().use(   "datatable", function (Y) {
             { id: "wi_0650", name: "widget",   price: "$4.25" }
         ],
         summary: "Price sheet for inventory parts",
-        caption: "Example table with simple columns"
+        caption: "test"
     });
     
     simple.render("#simple");
