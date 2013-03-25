@@ -6,6 +6,7 @@ include("config.inc");
 
 $today = $lastDate;
 
+
 function formulaire($today)
 {
 	echo "<div class='yui3-skin-sam dt-example' id='simple'></div><table width='100%' ><tr><td width='30%'><table>
