@@ -40,6 +40,9 @@
 
 $(function() {
     var chart;
+    var chartb;
+    var charts;
+    var chartm;
     $(document).ready(function() {
 
 		//<!-- GRAPH PIE CHART ALL SITE -->
@@ -92,8 +95,8 @@ $(function() {
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=Immeuble Gambetta', function(data) {
 	        output = data;
 			
-			chart = new Highcharts.Chart({
-	            chart: {
+			chartb = new Highcharts.Chart({
+	            chartb: {
 	                renderTo: 'graphUvmBySiteBagnolet',
 	                plotBackgroundColor: null,
 	                plotBorderWidth: null,
@@ -137,8 +140,8 @@ $(function() {
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=HT2', function(data) {
 	        output = data;
 			
-			chart = new Highcharts.Chart({
-	            chart: {
+			charts = new Highcharts.Chart({
+	            charts: {
 	                renderTo: 'graphUvmBySiteSophia',
 	                plotBackgroundColor: null,
 	                plotBorderWidth: null,
@@ -181,8 +184,8 @@ $(function() {
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=Montsouris', function(data) {
 	        output = data;
 			
-			chart = new Highcharts.Chart({
-	            chart: {
+			chartm = new Highcharts.Chart({
+	            chartm: {
 	                renderTo: 'graphUvmBySiteMontsouris',
 	                plotBackgroundColor: null,
 	                plotBorderWidth: null,
