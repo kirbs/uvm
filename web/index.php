@@ -9,17 +9,31 @@ $today = $lastDate;
 
 function formulaire($today)
 {
-	echo "<div class='yui3-skin-sam' id='simple'></div><table width='100%' ><tr><td width='30%'><table>
+	echo "
+	<table>
+		<tr>
+			<td span='3'><div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
+		</tr>
+		<tr>
+			<td width='33%'><div id='graphUvmBySiteBagnolet' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
+			<td width='33%'><div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
+			<td width='33%'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
+		</tr>
+	</table>
+	
+
+	
+	<div class='yui3-skin-sam' id='simple'></div><table width='100%' ><tr><td width='30%'><table>
 		<tr><td>Nombre de PFS mere : </td><td>". nombre_element("pfs_mere", $today) ." </td></tr>
 		<tr><td>Nombre de PFS fille : </td><td>". nombre_element("pfs_fille", $today) ." </td></tr>
 		<tr><td>Nombre de Serveur Xen : </td><td>". nombre_element("srv_xen", $today) ." </td></tr>
 		<tr><td>Nombre de VM : </td><td>". nombre_element("vm_name", $today) ." </td></tr>
 		<tr><td>Nombre total de uVM : </td><td>". nombre_total_uvm($today) ." </td></tr>
 		</table></td><td>
-		<div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
-		<div id='graphUvmBySiteBagnolet' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
-		<div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
-		<div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
+		
+		
+		
+		
 		</td></tr></table>
 <br><br>";
 
