@@ -30,7 +30,8 @@ function getListPfsMereUvm($lastDate)
 			$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
 		}
 
-        $json[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
+		if ( $total_uvm_by_pfsmere != 0)
+        	$json[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
     }
         echo json_encode($json);
 }
@@ -48,8 +49,8 @@ function getListPfsMereUvmBySite($lastDate,$site)
 		{
 			$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
 		}
-
-        $json[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
+		if ( $total_uvm_by_pfsmere != 0)
+        	$json[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
     }
         echo json_encode($json);
 }
