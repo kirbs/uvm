@@ -10,7 +10,7 @@ $today = $lastDate;
 function formulaire($today)
 {
 	echo "
-	<table>
+	<table width='100%'>
 		<tr>
 			<td span='3'><div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
 		</tr>
