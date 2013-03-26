@@ -1,9 +1,9 @@
 <?php
 
 $SRV_MYSQL = "localhost";
-$USER_MYSQL = "root";
-$PASSWORD_MYSQL = "rootroot";
-$BASE_MYSQL = "uvm2";
+$USER_MYSQL = "uvm";
+$PASSWORD_MYSQL = "x_MZNl6YTq";
+$BASE_MYSQL = "uvm"; 
 
 
 
