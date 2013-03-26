@@ -3,7 +3,7 @@
 $SRV_MYSQL = "localhost";
 $USER_MYSQL = "uvm";
 $PASSWORD_MYSQL = "x_MZNl6YTq";
-$BASE_MYSQL = "uvm"; 
+$BASE_MYSQL = "uvm";
 
 
 
