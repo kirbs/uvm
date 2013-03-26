@@ -19,7 +19,7 @@ function formulaire($today)
 		<div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 		<div id='graphUvmBSiteBagnolet' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 		<div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
-		<div id='graphUvmBySiteMontsuris' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
+		<div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 		</td></tr></table>
 <br><br>";
 
