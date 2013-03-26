@@ -17,7 +17,7 @@ function formulaire($today)
 		<tr><td>Nombre total de uVM : </td><td>". nombre_total_uvm($today) ." </td></tr>
 		</table></td><td>
 		<div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
-		<div id='graphUvmBSiteBagnolet' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
+		<div id='graphUvmBySiteBagnolet' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 		<div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 		<div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0 auto'></div>
 		</td></tr></table>
