@@ -90,7 +90,7 @@ $(function() {
 		//<!-- GRAPH PIE CHART BAGNOLET -->
 	
 	    var outputb = new Array();
-	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=\"Immeuble Gambetta\"', function(data) {
+	    $.getJSON("api.php?command=getListPfsMereUvmBySite&site='Immeuble Gambetta'", function(data) {
 	        outputb = data;
 			
 			chart = new Highcharts.Chart({
