@@ -35,7 +35,24 @@ function getListPfsMereUvm($lastDate)
         echo json_encode($json);
 }
 
+function getListPfsMereUvmBySite($lastDate,$site)
+{
 
+    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM WHERE site = '$site'");
+    $json = array();
+    while ($array  = mysql_fetch_array($ReqListPfsMere))
+    {
+		$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$site'");
+		$total_uvm_by_pfsmere = 0;
+        while ($array2  = mysql_fetch_array($ReqListPfsFille))
+		{
+			$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
+		}
+
+        $json[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
+    }
+        echo json_encode($json);
+}
 
 function return_variable($variable)
 {
@@ -56,6 +73,10 @@ switch ($command)
 
 	case "getListPfsMereUvm" :
 				getListPfsMereUvm($lastDate);
+				break;
+				
+	case "getListPfsMereUvmBySite" :
+				getListPfsMereUvm($lastDate,$site);
 				break;
 
     default : 
