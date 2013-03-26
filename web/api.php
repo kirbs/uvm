@@ -64,6 +64,7 @@ function return_variable($variable)
 }
 
 $command = return_variable($_GET['command']);
+$site = return_variable($_GET['site']);
 
 switch ($command)
 {
