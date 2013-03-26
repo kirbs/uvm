@@ -38,7 +38,7 @@ function getListPfsMereUvm($lastDate)
 function getListPfsMereUvmBySite($lastDate,$site)
 {
 
-    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM WHERE site = '$site'");
+    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM WHERE");
     $json = array();
     while ($array  = mysql_fetch_array($ReqListPfsMere))
     {
