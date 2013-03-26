@@ -76,7 +76,7 @@ switch ($command)
 				break;
 				
 	case "getListPfsMereUvmBySite" :
-				getListPfsMereUvm($lastDate,$site);
+				getListPfsMereUvmBySite($lastDate,$site);
 				break;
 
     default : 
