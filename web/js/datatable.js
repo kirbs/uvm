@@ -127,11 +127,15 @@ YUI().use(   "datatable", "io", function (Y) {
     ];
 
     //var Z = require('yui/io-base');
-    Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal',{
+    Y.io('api.php?command=getListGlobal',{
     	on : {
     		success : function(tx,r) {
     			var json = Y.JSON.parse(r.responseText);
     			console.log(json);
+    					var entete = new Y.DataTable({
+			data : json,
+			width: 400
+    	}).render("#simple");
     		}
     	}
    	});
@@ -145,14 +149,14 @@ YUI().use(   "datatable", "io", function (Y) {
 		var entete = new Y.DataTable({
 			data : listglobal,
 			width: 400
-    	}).render("#simple");
+    	}).render("#simple2");
     });	
 	        ;
         
-	var entete = new Y.DataTable({
-		data : data_entete,
-		width: 400
-	}).render("#simple");
+	//var entete = new Y.DataTable({
+	//	data : data_entete,
+	//	width: 400
+	//}).render("#simple");
  
 
 
