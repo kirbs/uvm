@@ -1,4 +1,4 @@
-YUI().use(   "datatable", function (Y) {
+YUI().use(   "datatable", "io", function (Y) {
 
     var animal_data = [
         {  aname: 'Lions',  chars:[ 'Leo', 'Simba', 'Elsa', 'Cowardly Lion' ] },
@@ -117,14 +117,15 @@ YUI().use(   "datatable", function (Y) {
     });
 
     //var Z = require('yui/io-base');
-    //Z.io('http://akovac.akovac.lan/uvm/api.php?command=getListPfsMereUvm',{
-    //	on : {
-    //		complete : function(id,result) {
-    //			var json = Y.JSON.parse(result.responseText);
-    //			console.log(json);
-    //		}
-    //	}
-   	//});
+    Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListPfsMereUvm',{
+    	on : {
+    		complete : function(id,result) {
+    			var json = Y.JSON.parse(result.responseText);
+    			alert(json);
+    			console.log(json);
+    		}
+    	}
+   	});
         
         
      var data_entete = [
