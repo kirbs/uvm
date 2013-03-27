@@ -128,6 +128,7 @@ YUI().use(   "datatable", "io", function (Y) {
     var listglobal = new Array();
 	$.getJSON('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal', function(data) {
 		listglobal = data;
+		alert("et");
 		
 		var entete = new Y.DataTable({
 			data : listglobal,
