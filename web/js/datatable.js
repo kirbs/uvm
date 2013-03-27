@@ -147,7 +147,10 @@ YUI().use(   "datatable", function (Y) {
     });	
 	        ;
         
-
+	var entete = new Y.DataTable({
+		data : data_entete,
+		width: 400
+	}).render("#simple");
  
 
 
