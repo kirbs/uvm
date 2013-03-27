@@ -132,32 +132,15 @@ YUI().use(   "datatable", "io", function (Y) {
     		success : function(tx,r) {
     			var json = Y.JSON.parse(r.responseText);
     			console.log(json);
-    					var entete = new Y.DataTable({
-			data : json,
-			width: 400
-    	}).render("#simple");
+    			
+    			var entete = new Y.DataTable({
+					data : json,
+					width: 800
+    			}).render("#simple");
     		}
     	}
    	});
-        
-    var listglobal = new Array();
-	$.getJSON('api.php?command=getListGlobal', function(data) {
-		listglobal = data;
-		console.log(listglobal);
 
-		
-		var entete = new Y.DataTable({
-			data : listglobal,
-			width: 400
-    	}).render("#simple2");
-    });	
-	        ;
-        
-	//var entete = new Y.DataTable({
-	//	data : data_entete,
-	//	width: 400
-	//}).render("#simple");
- 
 
 
 
