@@ -127,22 +127,23 @@ YUI().use(   "datatable", function (Y) {
     ];
 
     //var Z = require('yui/io-base');
-    //Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal',{
-    //	on : {
-    //		success : function(tx,r) {
-    //			var json = Y.JSON.parse(r.responseText);
-    //		}
-    //	}
-   	//});
+    Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal',{
+    	on : {
+    		success : function(tx,r) {
+    			var json = Y.JSON.parse(r.responseText);
+    			console.log(json);
+    		}
+    	}
+   	});
         
     var listglobal = new Array();
-	$.getJSON('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal', function(data) {
+	$.getJSON('api.php?command=getListGlobal', function(data) {
 		listglobal = data;
 		console.log(listglobal);
 
 		
 		var entete = new Y.DataTable({
-			data : data_entete,
+			data : listglobal,
 			width: 400
     	}).render("#simple");
     });	
