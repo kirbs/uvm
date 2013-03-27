@@ -4,7 +4,7 @@ include("header.html");
 ?>
 
 
-
+<div class='yui3-skin-sam' id='simple' style='display:none;'></div>
 <table width='100%'>
 	<tr>
 		<td span='3' align='center' ><div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
