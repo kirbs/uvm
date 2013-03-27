@@ -4,6 +4,16 @@
 include "config.inc";
 
 
+function getListGlobal()
+{
+	$json = array();
+	
+	
+	echo json_encode($json);
+	
+}
+
+
 function getListPfsMere()
 {
 	$ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
@@ -54,6 +64,27 @@ function getListPfsMereUvmBySite($lastDate,$site)
     }
         echo json_encode($json);
 }
+
+
+function nombre_element($critere, $today)
+{
+	
+	$req_nombre_elements = mysql_query("SELECT distinct($critere) FROM uVM WHERE date_uvm = '$today'");
+	$nombre = mysql_num_rows($req_nombre_elements);
+        return $nombre;
+}
+function nombre_total_uvm($today)
+{
+	$req_nombre_elements = mysql_query("SELECT uvm_total FROM uVM WHERE date_uvm = '$today'");
+        $cpt = 0;
+	while($row = mysql_fetch_array($req_nombre_elements))
+	{
+		$cpt = $cpt + $row["uvm_total"];
+	}
+        return $cpt;
+}
+
+
 
 function return_variable($variable)
 {
