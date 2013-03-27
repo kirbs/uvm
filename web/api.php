@@ -4,13 +4,17 @@
 include "config.inc";
 
 
-function getListGlobal()
+function getListGlobal($lastDate)
 {
 	$json = array();
 	
+	$json[] = array("title" => "Nombre de PFS mére", "value" => nombre_element("pfs_mere", $lastDate));
+	$json[] = array("title" => "Nombre de PFS fille", "value" => nombre_element("pfs_fille", $lastDate));
+	$json[] = array("title" => "Nombre de serveurs Xen", "value" => nombre_element("srv_xen", $lastDate));
+	$json[] = array("title" => "Nombre de VM", "value" => nombre_element("vm_name", $lastDate));
+	$json[] = array("title" => "Nombre total d'uVM", "value" => nombre_total_uvm($lastDate));
 	
 	echo json_encode($json);
-	
 }
 
 
@@ -110,6 +114,10 @@ switch ($command)
 				
 	case "getListPfsMereUvmBySite" :
 				getListPfsMereUvmBySite($lastDate,$site);
+				break;
+				
+	case "getListGlobal":
+				getListGlobal($lastDate);
 				break;
 
     default : 
