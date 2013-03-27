@@ -1,4 +1,4 @@
-YUI().use(   "datatable", "io", function (Y) {
+YUI().use(   "datatable", function (Y) {
 
     var animal_data = [
         {  aname: 'Lions',  chars:[ 'Leo', 'Simba', 'Elsa', 'Cowardly Lion' ] },
@@ -116,6 +116,16 @@ YUI().use(   "datatable", "io", function (Y) {
         });
     });
 
+
+     var data_entete = [
+        {  title: 'Nombre de PFS mere',  value: 45 },
+        {  title: 'Nombre de PFS fille',  value: 101 },
+        {  title: 'Nombre de Serveur Xen',  value: 53 },
+        {  title: 'Nombre de VM',  value: 319 },
+        {  title: 'Nombre total de uVM',  value: 3116 }
+
+    ];
+
     //var Z = require('yui/io-base');
     //Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal',{
     //	on : {
@@ -131,20 +141,13 @@ YUI().use(   "datatable", "io", function (Y) {
 		alert("et");
 		
 		var entete = new Y.DataTable({
-			data : listglobal,
+			data : data_entete,
 			width: 400
     	}).render("#simple");
     });	
 	        ;
         
-     var data_entete = [
-        {  title: 'Nombre de PFS mere',  value: 45 },
-        {  title: 'Nombre de PFS fille',  value: 101 },
-        {  title: 'Nombre de Serveur Xen',  value: 53 },
-        {  title: 'Nombre de VM',  value: 319 },
-        {  title: 'Nombre total de uVM',  value: 3116 }
 
-    ];
  
 
 
