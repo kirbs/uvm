@@ -117,16 +117,9 @@ YUI().use(   "datatable", "io", function (Y) {
     });
 
 
-     var data_entete = [
-        {  title: 'Nombre de PFS mere',  value: 45 },
-        {  title: 'Nombre de PFS fille',  value: 101 },
-        {  title: 'Nombre de Serveur Xen',  value: 53 },
-        {  title: 'Nombre de VM',  value: 319 },
-        {  title: 'Nombre total de uVM',  value: 3116 }
 
-    ];
-
-    //var Z = require('yui/io-base');
+	// AFFICHE TABLEAU GLOBAL
+	
     Y.io('api.php?command=getListGlobal',{
     	on : {
     		success : function(tx,r) {
