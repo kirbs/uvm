@@ -1,4 +1,4 @@
-YUI().use(   "datatable", function (Y) {
+YUI().use(   "datatable", "io", function (Y) {
 
     var animal_data = [
         {  aname: 'Lions',  chars:[ 'Leo', 'Simba', 'Elsa', 'Cowardly Lion' ] },
