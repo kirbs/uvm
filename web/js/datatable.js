@@ -117,14 +117,24 @@ YUI().use(   "datatable", "io", function (Y) {
     });
 
     //var Z = require('yui/io-base');
-    Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal',{
-    	on : {
-    		success : function(tx,r) {
-    			var json = Y.JSON.parse(r.responseText);
-    		}
-    	}
-   	});
+    //Y.io('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal',{
+    //	on : {
+    //		success : function(tx,r) {
+    //			var json = Y.JSON.parse(r.responseText);
+    //		}
+    //	}
+   	//});
         
+    var listglobal = new Array();
+	$.getJSON('http://akovac.akovac.lan/uvm/api.php?command=getListGlobal', function(data) {
+		listglobal = data;
+		
+		var entete = new Y.DataTable({
+			data : listglobal,
+			width: 400
+    	}).render("#simple");
+    });	
+	        ;
         
      var data_entete = [
         {  title: 'Nombre de PFS mere',  value: 45 },
@@ -135,10 +145,7 @@ YUI().use(   "datatable", "io", function (Y) {
 
     ];
  
-    var entete = new Y.DataTable({
-        data : json,
-        width: 400
-    }).render("#simple");
+
 
 
 });
