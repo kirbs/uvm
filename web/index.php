@@ -16,10 +16,10 @@ function formulaire($today)
 	
 	<table width='100%'>
 		<tr>
-			<td span='3' align='center' ><div id='graphUvmByAllSite' style='min-width: 5214px; height: 400px; margin: 0 auto'></div></td>
+			<td span='3' align='center' ><div id='graphUvmByAllSite' style='min-width: 521px; height: 400px; margin: 0 auto'></div></td>
 		</tr>
 		<tr>
-			<td width='33%' align='center'><div id='graphUvmBySiteBagnolet' style='min-width: 100px; height: 521px; margin: 0; display: none'></div></td>
+			<td width='33%' align='center'><div id='graphUvmBySiteBagnolet' style='min-width: 400px; height: 521px; margin: 0; display: none'></div></td>
 			<td width='33%' align='center'><div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
 			<td width='33%' align='center'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
 		</tr>
