@@ -10,38 +10,24 @@ $today = $lastDate;
 function formulaire($today)
 {
 	echo "
-	<table width='100%'>
-		<tr>
-			<td span='3' align='center' ><div id='graphUvmByAllSite' style='min-width: 400px; height: 400px; margin: 0 auto'></div></td>
-		</tr>
-		<tr>
-			<td width='33%' align='center'><div id='graphUvmBySiteBagnolet' style='min-width: 100px; height: 400px; margin: 0; display: none'></div></td>
-			<td width='33%' align='center'><div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
-			<td width='33%' align='center'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
-		</tr>
-	</table>
-	
-
-	
 	<div class='yui3-skin-sam' id='simple'></div>
 	
 	
 	
-	<table width='100%' ><tr><td width='30%'><table>
-		<tr><td>Nombre de PFS mere : </td><td>". nombre_element("pfs_mere", $today) ." </td></tr>
-		<tr><td>Nombre de PFS fille : </td><td>". nombre_element("pfs_fille", $today) ." </td></tr>
-		<tr><td>Nombre de Serveur Xen : </td><td>". nombre_element("srv_xen", $today) ." </td></tr>
-		<tr><td>Nombre de VM : </td><td>". nombre_element("vm_name", $today) ." </td></tr>
-		<tr><td>Nombre total de uVM : </td><td>". nombre_total_uvm($today) ." </td></tr>
-		</table></td><td>
-		
-		
-		
-		
-		</td></tr></table>
-<br><br>";
+	<table width='100%'>
+		<tr>
+			<td span='3' align='center' ><div id='graphUvmByAllSite' style='min-width: 5214px; height: 400px; margin: 0 auto'></div></td>
+		</tr>
+		<tr>
+			<td width='33%' align='center'><div id='graphUvmBySiteBagnolet' style='min-width: 100px; height: 521px; margin: 0; display: none'></div></td>
+			<td width='33%' align='center'><div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
+			<td width='33%' align='center'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
+		</tr>
+	</table>
 
-	echo "<form method='post' action='index.php'>
+<br><br>
+
+	<form method='post' action='index.php'>
         <div id='choice_date_click' ></div>
 <div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
     <div class='yui3-u-1-3' id='mtable'></div>
