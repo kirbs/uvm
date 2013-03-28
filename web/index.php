@@ -27,8 +27,8 @@ function formulaire($today)
 
 <br><br>
 
-	<form method='post' action='index.php'>";
-/*        <div id='choice_date_click' ></div>
+	<form method='post' action='index.php'>
+       <div id='choice_date_click' ></div>
 <div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
     <div class='yui3-u-1-3' id='mtable'></div>
 
@@ -38,9 +38,7 @@ function formulaire($today)
         <div id='dtable'></div>
     </div>
 </div>
- * 
- */
-        echo "<input type=hidden name='date' id='choice_date_click_field'>
+        <input type=hidden name='date' id='choice_date_click_field'>
 		<table><tr><td>Vue des uvms par : 
 		<select name=choix>
 			<option value='vide'>---</option>
