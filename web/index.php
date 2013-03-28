@@ -105,14 +105,14 @@ function liste_uvm_by_pfs_mere($pfs, $date)
     echo "date : $date";
 	echo "<table width=50% border=\"0\">";
 	if ($pfs == "all")
-		$CONDITION = "WHERE 1 AND date_uvm = '$date'";
+		$CONDITION = "WHERE 1 AND date_uvm = '$date' ORDER BY uvm_total DESC";
 	else
-		$CONDITION = "WHERE pfs_mere = '$pfs' AND date_uvm = '$date'";
+		$CONDITION = "WHERE pfs_mere = '$pfs' AND date_uvm = '$date' ORDER BY uvm_total DESC";
 
 	$req_liste_pfs_mere = mysql_query("SELECT distinct(pfs_mere) FROM uVM $CONDITION");
 	while($PFSmere = mysql_fetch_array($req_liste_pfs_mere))
 	{
-		$req_UvmByPFSmere = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
+		$req_UvmByPFSmere = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date'");
 		$cpt = 0;
 		while ($UvmByPFSmere = mysql_fetch_array($req_UvmByPFSmere))
 		{
