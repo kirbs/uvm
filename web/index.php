@@ -112,7 +112,7 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 	$req_liste_pfs_mere = mysql_query("SELECT distinct(pfs_mere) FROM uVM $CONDITION");
 	while($PFSmere = mysql_fetch_array($req_liste_pfs_mere))
 	{
-		$req_UvmByPFSmere = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date'");
+		$req_UvmByPFSmere = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
 		$cpt = 0;
 		while ($UvmByPFSmere = mysql_fetch_array($req_UvmByPFSmere))
 		{
