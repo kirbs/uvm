@@ -220,7 +220,7 @@ $(function() {
                 	align: 'left',
                 	verticalAlign: 'top',
                 	x: 100,
-                	y: 70,
+                	y: 12
                 	floating: true,
                 	backgroundColor: '#FFFFFF',
                 	borderWidth: 1
@@ -246,7 +246,7 @@ $(function() {
                 	}
             	},
             	series: [{
-                	name: 'Female',
+                	name: 'All Sites
                 	color: 'rgba(223, 83, 83, .5)',
                 	data: output_population
             	}]
