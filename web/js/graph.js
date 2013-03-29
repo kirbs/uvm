@@ -198,7 +198,7 @@ $(function() {
             	xAxis: {
                 	title: {
                     	enabled: true,
-                    	text: 'uCPU'
+                    	text: 'uMEM'
                 	},
                 	startOnTick: true,
                 	endOnTick: true,
@@ -206,13 +206,13 @@ $(function() {
             	},
             	yAxis: {
                 	title: {
-                    	text: 'uMEM'
+                    	text: 'uCPU'
                 	}
             	},
             	tooltip: {
                 	formatter: function() {
                     	    return ''+
-                        	this.x +' uCPU, '+ this.y +' uMEM';
+                        	this.x +' uMEM, '+ this.y +' uCPU';
                 	}
             	},            	
             	legend: {
