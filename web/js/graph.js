@@ -333,10 +333,7 @@ $(function() {
 			
 			series : [{
 				name : 'uvm',
-				data : data,
-				tooltip: {
-					valueDecimals: 2
-				}
+				data : data
 			}]
 		});
 	});
