@@ -300,7 +300,7 @@ $(function() {
             	series: [{
                 	name: 'All Sites',
                 	color: 'rgba(223, 83, 83, .5)',
-                	data: output_population[0]
+                	data: output_population['HT2']
             	}]
         	});
     	});
