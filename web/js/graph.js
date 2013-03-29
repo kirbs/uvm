@@ -302,7 +302,7 @@ $(function() {
                 	color: 'rgba(223, 83, 83, .5)',
                 	data: output_population['HT2']
             	},{
-                	name: 'MTSs',
+                	name: 'MTS',
                 	color: 'rgba(119, 83, 83, .5)',
                 	data: output_population['Montsouris']
             	}]
