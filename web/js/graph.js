@@ -272,7 +272,7 @@ $(function() {
                 	layout: 'vertical',
                 	align: 'left',
                 	verticalAlign: 'top',
-                	x: 30,
+                	x: 60,
                 	y: 10,
                 	floating: true,
                 	backgroundColor: '#FFFFFF',
