@@ -92,7 +92,7 @@ function getPopulation($lastDate)
 		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
 		$array[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
 	}
-	$json[] = array("HT2", $array[]);
+	$json[] = array("HT2", $array);
 	echo json_encode($json);
 }
 
