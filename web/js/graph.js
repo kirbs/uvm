@@ -235,7 +235,7 @@ $(function() {
 	    var output_population = new Array();
 	    $.getJSON('api.php?command=getPopulation', function(data) {
 	        output_population = data;	
-	        console.log(output_population['HT2']);	
+	        console.log(output_population);	
 		    chart = new Highcharts.Chart({
             	chart: {
                 renderTo: 'population',
