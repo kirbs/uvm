@@ -41,7 +41,13 @@ $(function() {
 	                type: 'pie',
 	                name: 'Browser share',
 	                data: output
-	            }]
+	            },
+	            {
+	                type: 'pie',
+	                name: 'Browser share',
+	                data: output
+	            }
+	            ]
 			});
 		});
 		// <!-- Fin Graph -->
