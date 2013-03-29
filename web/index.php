@@ -16,7 +16,7 @@ function formulaire($today)
 	
 	<table width='100%' border=1>
 		<tr>
-			<td rowspan='2' align='center'><div id='population' style='align: center'></div></td>
+			<td colspan='2' align='center'><div id='population' style='align: center'></div></td>
 		</tr>
 		<tr>
 			<td width='33%' align='center' ><div id='graphUvmByAllSite' style='min-width: 650px; height: 400px; margin: 0 auto'></div></td>
