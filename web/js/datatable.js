@@ -135,14 +135,14 @@ YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
    	});
 
 
-	var calendar = new Y.Calendar({
-		contentBox: "#mycalendar",
-		width: '340px',
-		showPrevMonth: true,
-		showNextMonth: true,
-		selectDates: "03/12/2013",
-		date: new Date()
-	}).render();
+//	var calendar = new Y.Calendar({
+//		contentBox: "#mycalendar",
+//		width: '340px',
+//		showPrevMonth: true,
+//		showNextMonth: true,
+//		selectDates: "03/12/2013",
+//		date: new Date()
+//	}).render();
 	
 
 
