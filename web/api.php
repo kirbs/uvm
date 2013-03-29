@@ -93,6 +93,16 @@ function getPopulation($lastDate)
 		$arraya[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
 	}
 	$json[] = array("HT2", $arraya);
+	
+	$arrayb = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' AND site = 'Montsouris' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arrayb[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+	}
+	$json[] = array("Montsouris", $arrayb);
+	
 	echo json_encode($json);
 }
 
