@@ -209,6 +209,12 @@ $(function() {
                     	text: 'uMEM'
                 	}
             	},
+            	tooltip: {
+                	formatter: function() {
+                    	    return ''+
+                        	this.x +' uCPU, '+ this.y +' uMEM';
+                	}
+            	},            	
             	legend: {
                 	layout: 'vertical',
                 	align: 'left',
