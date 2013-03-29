@@ -10,7 +10,7 @@ $today = $lastDate;
 function formulaire($today)
 {
 	echo "
-	<div id='mycalendar'></di>
+	<div id='mycalendar'></div>
 	
 	<div class='yui3-skin-sam' id='simple'></div>
 	
