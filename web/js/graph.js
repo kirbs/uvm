@@ -209,12 +209,6 @@ $(function() {
                     	text: 'uMEM'
                 	}
             	},
-            	tooltip: {
-                	formatter: function() {
-                    	    return ''+
-                        	this.x +' cm, '+ this.y +' kg';
-                	}
-            	},
             	legend: {
                 	layout: 'vertical',
                 	align: 'left',
