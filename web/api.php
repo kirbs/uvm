@@ -74,7 +74,7 @@ function getPopulation($lastDate)
 	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' ");
 	while ($array = mysql_fetch_array($ReqPopulation))
 	{
-		$json[] = array($array['uvm_memory'],$array['uvm_cpu']);
+		$json[] = array(int($array['uvm_memory']),int($array['uvm_cpu']));
 	}	
 	echo json_encode($json);
 }
