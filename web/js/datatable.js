@@ -135,7 +135,7 @@ YUI().use(  "calendar", "datatable", "io", function (Y) {
    	});
 
 
-	var calendar = new Y.Calendar()({
+	var calendar = new Y.Calendar({
 		contentBox: "#mycalendar",
 		width: '340px',
 		showPrevMonth: true,
