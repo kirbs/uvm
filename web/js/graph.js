@@ -301,11 +301,11 @@ $(function() {
             	series: [{
                 	name: 'All Sites',
                 	color: 'rgba(223, 83, 83, .5)',
-                	data: output_population['HT2']
+                	data: output_population[0][1]
             	},{
                 	name: 'MTS',
                 	color: 'rgba(119, 83, 83, .5)',
-                	data: output_population['Montsouris']
+                	data: output_population[1][1]
             	}]
         	});
     	});
