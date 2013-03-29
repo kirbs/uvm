@@ -220,7 +220,7 @@ $(function() {
                 	align: 'left',
                 	verticalAlign: 'top',
                 	x: 100,
-                	y: 12
+                	y: 12,
                 	floating: true,
                 	backgroundColor: '#FFFFFF',
                 	borderWidth: 1
