@@ -141,7 +141,7 @@ YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
 		showPrevMonth: true,
 		showNextMonth: true,
 		date: new Date()
-	}).render("#mycalendar");
+	}).render();
 
 
 
