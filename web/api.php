@@ -49,6 +49,20 @@ function getListPfsMereUvm($lastDate)
         echo json_encode($json);
 }
 
+function getListPfsMereVM($lastDate)
+{
+
+    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+    $json = array();
+    while ($array  = mysql_fetch_array($ReqListPfsMere))
+    {
+		$ReqListVMByPFS = mysql_query("SELECT vm_name FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate'");
+		$nbVMByPFS = mysql_num_rows($ReqListVMByPFS);
+        $json[] = array($array['pfs_mere'],$nbVMByPFS);
+    }
+        echo json_encode($json);
+}
+
 function getListPfsMereUvmBySite($lastDate,$site)
 {
 
@@ -71,11 +85,24 @@ function getListPfsMereUvmBySite($lastDate,$site)
 function getPopulation($lastDate)
 {
 	$json = Array();
-	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' ");
+	$arraya = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' AND site = 'HT2' ");
 	while ($array = mysql_fetch_array($ReqPopulation))
 	{
-		$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
-	}	
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arraya[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+	}
+	$json[] = array("HT2", $arraya);
+	
+	$arrayb = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' AND site = 'Montsouris' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arrayb[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+	}
+	$json[] = array("Montsouris", $arrayb);
+	
 	echo json_encode($json);
 }
 
@@ -124,6 +151,10 @@ switch ($command)
 				
 	case "getListPfsMereUvmBySite" :
 				getListPfsMereUvmBySite($lastDate,$site);
+				break;
+				
+	case "getListPfsMereVM" :
+				getListPfsMereVM($lastDate);
 				break;
 				
 	case "getListGlobal":

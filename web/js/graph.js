@@ -3,7 +3,7 @@ $(function() {
 
     $(document).ready(function() {
 
-		//<!-- GRAPH PIE CHART ALL SITE -->
+		//<!-- GRAPH uVM ALL SITE -->
 	
 	    var output = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvm', function(data) {
@@ -44,10 +44,57 @@ $(function() {
 	            }]
 			});
 		});
-		// <!-- Fin Graph -->
+		// <!-- Fin GRAPH uVM ALL SITE -->
+		
+
+		//<!-- GRAPH VM ALL SITE -->
+	
+	    var datalistvm = new Array();
+	    $.getJSON('api.php?command=getListPfsMereVM', function(data) {
+	        datalistvm = data;
+			
+			chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'graphVMByAllSite',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: 'Pourcentage de VM par PFS tout sites'
+	            },
+	            tooltip: {
+	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	                percentageDecimals: 2
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+    	                    formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.point.y +' VM';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: 'VM',
+	                data: datalistvm
+	            }]
+			});
+		});
+		// <!-- Fin GRAPH VM ALL SITE -->
 		
 		
-		//<!-- GRAPH PIE CHART BAGNOLET -->
+		
+		
+		
+		//<!-- GRAPH uVM ALL SITE By Site Bagnolet -->
 	
 	    var outputb = new Array();
 	    $.getJSON("api.php?command=getListPfsMereUvmBySite&site=Immeuble Gambetta", function(data) {
@@ -88,11 +135,11 @@ $(function() {
 	            }]
 			});
 		});
-		// <!-- Fin Graph -->
+		// <!-- Fin GRAPH uVM ALL SITE By Site Bagnolet -->
 		
 		
 		
-		//<!-- GRAPH PIE CHART SOPHIA -->
+		//<!-- GRAPH uVM ALL SITE By Site SOPHIA -->
 	
 	    var outputs = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=HT2', function(data) {
@@ -133,10 +180,11 @@ $(function() {
 	            }]
 			});
 		});
-		// <!-- Fin Graph -->
+		// <!-- Fin GRAPH uVM ALL SITE By Site SOPHIA -->
 		
 		
-		//<!-- GRAPH PIE CHART MontSouris -->
+		
+		//<!-- GRAPH uVM ALL SITE By Site MontSouris -->
 	
 	    var outputm = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=Montsouris', function(data) {
@@ -177,8 +225,12 @@ $(function() {
 	            }]
 			});
 		});
-		// <!-- Fin Graph -->
+		// <!-- Fin GRAPH uVM ALL SITE By Site Montsouris -->
 		
+		
+		
+		
+		//<!-- GRAPH de Poupulation d' uVM ALL SITE and Site Bagnolet, SOPHIA et MontSouris -->
 		
 	    var output_population = new Array();
 	    $.getJSON('api.php?command=getPopulation', function(data) {
@@ -248,10 +300,15 @@ $(function() {
             	series: [{
                 	name: 'All Sites',
                 	color: 'rgba(223, 83, 83, .5)',
-                	data: output_population
+                	data: output_population['HT2']
+            	},{
+                	name: 'MTS',
+                	color: 'rgba(119, 83, 83, .5)',
+                	data: output_population['Montsouris']
             	}]
         	});
     	});
+    	//<!-- Fin GRAPH de Poupulation d' uVM ALL SITE and Site Bagnolet, SOPHIA et MontSouris -->
 		
 	});
 });
