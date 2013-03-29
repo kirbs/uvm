@@ -85,11 +85,14 @@ function getListPfsMereUvmBySite($lastDate,$site)
 function getPopulation($lastDate)
 {
 	$json = Array();
-	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' ");
+	$array = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_cpu FROM uVM WHERE date_uvm = '$lastDate' AND site = 'HT2' ");
 	while ($array = mysql_fetch_array($ReqPopulation))
 	{
-		$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
-	}	
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$array[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+	}
+	$json[] = array("HT2", $array[]);
 	echo json_encode($json);
 }
 
