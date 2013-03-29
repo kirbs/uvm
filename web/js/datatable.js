@@ -1,4 +1,4 @@
-YUI().use(  "calendar", "datatable", "io", function (Y) {
+YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
 
     var animal_data = [
         {  aname: 'Lions',  chars:[ 'Leo', 'Simba', 'Elsa', 'Cowardly Lion' ] },
@@ -141,7 +141,7 @@ YUI().use(  "calendar", "datatable", "io", function (Y) {
 		showPrevMonth: true,
 		showNextMonth: true,
 		date: new Date()
-	}).render();
+	}).render("#mycalendar");
 
 
 
