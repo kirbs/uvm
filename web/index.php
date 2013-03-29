@@ -25,7 +25,7 @@ function formulaire($today)
 		<tr>
 			<td width='33%' align='center'><div id='graphUvmBySiteBagnolet' style='min-width: 400px; height: 521px; margin: 0; display: none'></div></td>
 			<td width='33%' align='center'><div id='graphUvmBySiteSophia' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
-			<td width='33%' align='center'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>
+			<!--<td width='33%' align='center'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>-->
 		</tr>
 	</table>
 
