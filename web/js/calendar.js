@@ -5,7 +5,7 @@ $(function() {
     $(document).ready(function() {
 		
 		
-		var daysToDisable = ["04-01-2013", "03-30-2013"];
+		var daysToDisable = ["03-27-2013", "03-28-2013"];
 		
 		function disableSpecificDates(date) {
 			var month = date.getMonth();
