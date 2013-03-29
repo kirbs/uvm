@@ -140,6 +140,7 @@ YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
 		width: '340px',
 		showPrevMonth: true,
 		showNextMonth: true,
+		selectedDates: ["2013/03/12"],
 		date: new Date()
 	}).render();
 
