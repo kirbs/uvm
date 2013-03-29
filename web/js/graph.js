@@ -246,7 +246,7 @@ $(function() {
                 	}
             	},
             	series: [{
-                	name: 'All Sites
+                	name: 'All Sites',
                 	color: 'rgba(223, 83, 83, .5)',
                 	data: output_population
             	}]
