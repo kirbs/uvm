@@ -140,7 +140,7 @@ YUI().use(  "calendar", "datatable", "io", function (Y) {
 		width: '340px',
 		showPrevMonth: true,
 		showNextMonth: true,
-		date: new date()
+		date: new Date()
 	}).render();
 
 
