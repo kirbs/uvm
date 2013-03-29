@@ -143,6 +143,7 @@ YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
 		selectDates: "03/12/2013",
 		date: new Date()
 	}).render();
+	
 
 
 
