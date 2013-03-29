@@ -301,10 +301,6 @@ $(function() {
                 	name: 'All Sites',
                 	color: 'rgba(223, 83, 83, .5)',
                 	data: output_population[0]
-            	},{
-                	name: 'All Sites1',
-                	color: 'rgba(119, 83, 83, .5)',
-                	data: output_population[1]
             	}]
         	});
     	});
