@@ -46,6 +46,53 @@ $(function() {
 		});
 		// <!-- Fin Graph -->
 		
+
+		//<!-- GRAPH PIE CHART ALL SITE By VM -->
+	
+	    var datalistvm = new Array();
+	    $.getJSON('api.php?command=getListPfsMereVM', function(data) {
+	        datalistvm = data;
+			
+			chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'graphVMByAllSite',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: 'Pourcentage de VM par PFS tout sites'
+	            },
+	            tooltip: {
+	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	                percentageDecimals: 2
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+    	                    formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.point.y +' uVM';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: 'VM',
+	                data: datalistvm
+	            }]
+			});
+		});
+		// <!-- Fin Graph -->
+		
+		
+		
+		
 		
 		//<!-- GRAPH PIE CHART BAGNOLET -->
 	
