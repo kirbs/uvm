@@ -13,7 +13,7 @@ function getListGlobal($lastDate)
 	$json[] = array("title" => "Nombre de serveurs Xen", "value" => nombre_element("srv_xen", $lastDate));
 	$json[] = array("title" => "Nombre de VM", "value" => nombre_element("vm_name", $lastDate));
 	$json[] = array("title" => "Nombre total d'uVM", "value" => nombre_total_uvm($lastDate));
-	print $lastDate;
+	print "lastDate : $lastDate";
 	echo json_encode($json);
 }
 
