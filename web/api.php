@@ -57,8 +57,7 @@ function getListPfsMereVM($lastDate)
     while ($array  = mysql_fetch_array($ReqListPfsMere))
     {
 		$ReqListVMByPFS = mysql_query("SELECT vm_name FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate'");
-        $array2  = mysql_fetch_array($ReqListVMByPFS);
-		$nbVMByPFS = mysql_num_rows($array2);
+		$nbVMByPFS = mysql_num_rows(ReqListVMByPFS);
         $json[] = array($array['pfs_mere'],$nbVMByPFS);
     }
         echo json_encode($json);
