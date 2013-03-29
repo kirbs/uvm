@@ -234,7 +234,8 @@ $(function() {
 		
 	    var output_population = new Array();
 	    $.getJSON('api.php?command=getPopulation', function(data) {
-	        output_population = data;		
+	        output_population = data;	
+	        console.log(output_population);	
 		    chart = new Highcharts.Chart({
             	chart: {
                 renderTo: 'population',
@@ -271,7 +272,7 @@ $(function() {
                 	layout: 'vertical',
                 	align: 'left',
                 	verticalAlign: 'top',
-                	x: 12,
+                	x: 60,
                 	y: 10,
                 	floating: true,
                 	backgroundColor: '#FFFFFF',
@@ -298,13 +299,17 @@ $(function() {
                 	}
             	},
             	series: [{
-                	name: 'All Sites',
+                	name: 'Sophia',
                 	color: 'rgba(223, 83, 83, .5)',
                 	data: output_population[0][1]
             	},{
-                	name: 'MTS',
+                	name: 'Montsouris',
                 	color: 'rgba(119, 83, 83, .5)',
-                	data: output_population['Montsouris']
+                	data: output_population[1][1]
+            	},{
+                	name: 'Bagnolet',
+                	color: 'rgba(19, 83, 83, .5)',
+                	data: output_population[2][1]
             	}]
         	});
     	});
