@@ -19,8 +19,8 @@ function formulaire($today)
 			<td colspan='2' align='center'><div id='population' style='align: center'></div></td>
 		</tr>
 		<tr>
-			<td width='50%' align='center' ><div id='graphUvmByAllSite' style='min-width: 500px; height: 300px; margin: 0 auto'></div></td>
-			<td width='50%' align='center' ><div id='graphVMByAllSite' style='min-width: 500px; height: 300px; margin: 0 auto'></div></td>
+			<td width='50%' align='center' ><div id='graphUvmByAllSite' style='min-width: 400px; height: 300px; margin: 0 auto'></div></td>
+			<td width='50%' align='center' ><div id='graphVMByAllSite' style='min-width: 400px; height: 300px; margin: 0 auto'></div></td>
 		</tr>
 		<tr>
 			<td width='33%' align='center'><div id='graphUvmBySiteBagnolet' style='min-width: 400px; height: 521px; margin: 0; display: none'></div></td>
