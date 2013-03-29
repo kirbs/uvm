@@ -219,8 +219,8 @@ $(function() {
                 	layout: 'vertical',
                 	align: 'left',
                 	verticalAlign: 'top',
-                	x: 100,
-                	y: 12,
+                	x: 12,
+                	y: 10,
                 	floating: true,
                 	backgroundColor: '#FFFFFF',
                 	borderWidth: 1
