@@ -5,7 +5,7 @@ $(function() {
     $(document).ready(function() {
 		
 		
-		var daysToDisable = ["2013-03-27", "2013-03-28"];
+		var daysToDisable = ["3-27-2013", "3-28-2013"];
 		
 		function disableSpecificDates(date) {
 			var month = date.getMonth();
@@ -24,7 +24,8 @@ $(function() {
         $( "#datepicker" ).datetimepicker({ dateFormat: "yy-mm-dd", timeFormat: "hh:mm:ss", hourGrid: 4, minuteGrid: 10, });
         $( "#duration" ).timepicker({ timeFormat: "hh:mm:ss", hourGrid: 4, minuteGrid: 10  });
         $( "#choice_date" ).datepicker({ dateFormat: "yy-mm-dd" });
-        $( "#choice_date_click" ).datepicker({  dateFormat: "yy-mm-dd" ,beforeShowDay: disableSpecificDates ,altField: "#choice_date_click_field"});
+        //$( "#choice_date_click" ).datepicker({  dateFormat: "yy-mm-dd" ,beforeShowDay: disableSpecificDates ,altField: "#choice_date_click_field"});
+        $( "#choice_date_click" ).datepicker({  beforeShowDay: disableSpecificDates , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field"});
         $( "#choice_date_to" ).datepicker({ dateFormat: "yy-mm-dd" });
 
 	});
