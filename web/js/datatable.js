@@ -22,7 +22,7 @@ YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
 	
 	var $select = $('#datas');
 	$.each(data, function(i,val){
-		$select.append($('option />', 
+		$select.append($('<option />', 
 		{value : (i+1), text : val[i+1]
 	}));
 	});
