@@ -11,7 +11,10 @@ function formulaire($today)
 {
 	echo "
 	<div class='yui3-skin-sam' id='simple'></div>
-	<select id='datas'> </select>
+	<select id='datas'>
+		<option value='--'>-- Choix de la PFS --</option>
+		<option value='0'>- ALL -</option>
+	</select>
 <br><br>
 
 	<form method='post' action='index.php'>
