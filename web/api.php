@@ -19,7 +19,7 @@ function getListGlobal($lastDate)
 
 function getListPfsMere()
 {
-	$ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+	$ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM ORDER BY pfs_mere ASC");
 	$json = array();
 	while ($array  = mysql_fetch_array($ReqListPfsMere))
 	{
