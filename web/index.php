@@ -10,7 +10,13 @@ $today = $lastDate;
 function formulaire($today)
 {
 	echo "
-	<table><tr>
+	<script src='js/datatable.js'></script>
+	<script src='js/calendar.js'></script>
+
+	<script src='js/menu.js'></script>
+	<script src='js/panel.js'></script>
+	
+	<!--<table><tr>
 			<td><div class='yui3-skin-sam' id='simple'></div></td>
 			<td><button class='yui3-button' id='openButton'>Pourcentage uVM</button></td>
 			</tr>
@@ -25,7 +31,7 @@ function formulaire($today)
 			<div id='graphUvmByAllSite' class='yui3-widget-bd' ></div>
 			<div id='graphVMByAllSite' class='yui3-widget-bd'></div>
     	</div>
-	</div>
+	</div>-->
 	
 	
 <br><br>
@@ -39,11 +45,6 @@ function formulaire($today)
        		<td width='70%' align='left'>
 		        <input type=hidden name='date' id='choice_date_click_field'>
 				<table><tr><td>Vue des uvms par : 
-					<!-- <select name=choix>
-						<option value='vide'>---</option>
-						<option value='pfs'>PFS</option>
-						<option value='xen'>Serveur Xen</option>
-					</select> -->
 					<select id='datas' name=pfs>
 						<option value='--'>-- Choix de la PFS --</option>
 						<option value='all'>- ALL -</option>
