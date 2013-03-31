@@ -212,7 +212,7 @@ function getListPfsMereUvmBySite2($lastDate,$site)
         echo json_encode($json);
 }
 
-function getListPfsMereUvmBySite1($lastDate,$site)
+function getListPfsMereUvmBySite($lastDate,$site)
 {
 
 	$json_site = array();
@@ -236,7 +236,7 @@ function getListPfsMereUvmBySite1($lastDate,$site)
 		}
 		$json_site[$array_site['site']] = $json2;
 	}
-	$json = array(array($lastDate), $json_site);
+	$json = array($lastDate, $json_site);
     echo json_encode($json);
 }
 
