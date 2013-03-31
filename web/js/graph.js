@@ -131,7 +131,7 @@ $(function() {
 		
 		
 		//<!-- GRAPH uVM ALL SITE By Site SOPHIA -->
-	
+	/*
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=HT2', function(data) {
 			chart = new Highcharts.Chart({
 	            chart: {
@@ -297,7 +297,7 @@ $(function() {
     	});
     	//<!-- Fin GRAPH de Poupulation d' uVM ALL SITE and Site Bagnolet, SOPHIA et MontSouris -->
 		
-		
+		*/
 		
 		//$.getJSON('api.php?command=getNbUvmByDate', function(data) {
 		// // Create the chart
@@ -509,16 +509,16 @@ $(function() {
 	    	$.each(data[2], function(i,val){
 	    		console.log(i);
 	    		console.log(val);
-				/*
+				
 				 chart = new Highcharts.Chart({
 		            chart: {
-		                renderTo: 'graphUvmBySiteMontsouris',
+		                renderTo: 'graphUvmBySite'+ i',
 		                plotBackgroundColor: null,
 		                plotBorderWidth: null,
 		                plotShadow: false
 		            },
 		            title: {
-		                text: 'Pourcentage d\'uVM par PFS (Montsouris)'
+		                text: 'Pourcentage d\'uVM par PFS ' + i + '(' + data[0] + ')'
 		            },
 		            tooltip: {
 		                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
@@ -541,7 +541,7 @@ $(function() {
 		            series: [{
 		                type: 'pie',
 		                name: 'uVM',
-		                data: data
+		                data: val
 		            }]
 				}); */
 			});

@@ -20,4 +20,4 @@ include("header.html");
 			<td width='33%' align='center'><div id='graphUvmBySiteMontsouris' style='min-width: 400px; height: 400px; margin: 0; display: none'></div></td>-->
 		</tr>
 	</table>
-	<div id='graphUvmBySiteMont souris' style='height: 500px; min-width: 500px'></div>
+	<div id='graphUvmBySiteHT2' style='height: 500px; min-width: 500px'></div>
