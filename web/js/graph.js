@@ -177,7 +177,7 @@ $(function() {
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=Montsouris', function(data) {
 			chart = new Highcharts.Chart({
 	            chart: {
-	                renderTo: 'graphUvmBySiteMontsouris',
+	                renderTo: 'graphUvmBySiteMont souris',
 	                plotBackgroundColor: null,
 	                plotBorderWidth: null,
 	                plotShadow: false
