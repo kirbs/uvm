@@ -237,8 +237,9 @@ function getListPfsMereUvmBySiteBack($lastDate)
 			}
 			$json_site[$array_site['site']] = $json2;
 		}
+		$t = "titre";
 	}
-	$json = array($lastDate, $json_site);
+	$json = array(array($lastDate),array($t), $json_site);
     echo json_encode($json);
 }
 
