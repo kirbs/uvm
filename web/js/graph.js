@@ -508,7 +508,7 @@ $(function() {
 	    $.getJSON('api.php?command=getListPfsMereUvmBySiteBack', function(data) {
 	    	$.each(data[2], function(i,val){
 	    		console.log(i);
-	    		console.log(val);
+	    		console.log(val[0]);
 				
 				 chart = new Highcharts.Chart({
 		            chart: {
