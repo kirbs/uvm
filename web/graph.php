@@ -1,7 +1,7 @@
 <?php
 include("header.html");
 ?>
-
+	<script src="js/graph.js"></script>
 	<table width='100%' border=0>
 		<tr>
 			<!--<td colspan='2' align='center'><div id='population' style='align: center'></div></td>-->
