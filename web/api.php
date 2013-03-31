@@ -192,7 +192,7 @@ function getNbUvmBySite($lastDate)
 }
 
 
-function getListPfsMereUvmBySite2($lastDate,$site)
+function getListPfsMereUvmBySite($lastDate,$site)
 {
 
     $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
@@ -212,7 +212,7 @@ function getListPfsMereUvmBySite2($lastDate,$site)
         echo json_encode($json);
 }
 
-function getListPfsMereUvmBySite($lastDate,$site)
+function getListPfsMereUvmBySiteBack($lastDate)
 {
 
 	$json_site = array();
@@ -235,8 +235,6 @@ function getListPfsMereUvmBySite($lastDate,$site)
 				if ( $total_uvm_by_pfsmere != 0)
 		        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
 			}
-			
-		
 			$json_site[$array_site['site']] = $json2;
 		}
 	}
@@ -323,6 +321,10 @@ switch ($command)
 				
 	case "getListPfsMereUvmBySite" :
 				getListPfsMereUvmBySite($lastDate,$site);
+				break;
+				
+	case "getListPfsMereUvmBySiteBack" :
+				getListPfsMereUvmBySiteBack($lastDate);
 				break;
 				
 	case "getListPfsMereVM" :
