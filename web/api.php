@@ -192,7 +192,7 @@ function getNbUvmBySite($lastDate)
 }
 
 
-function getListPfsMereUvmBySite($lastDate,$site)
+function getListPfsMereUvmBySite2($lastDate,$site)
 {
 
     $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
@@ -212,25 +212,32 @@ function getListPfsMereUvmBySite($lastDate,$site)
         echo json_encode($json);
 }
 
-function getListPfsMereUvmBySite2($lastDate,$site)
+function getListPfsMereUvmBySite1($lastDate,$site)
 {
 
-    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
-    $json2 = array();
-    while ($array  = mysql_fetch_array($ReqListPfsMere))
+	$json_site = array();
+	
+	$ReqListSite = mysql_query("SELECT distinct(site) FROM uVM");
+    while ($array_site  = mysql_fetch_array($ReqListSite))
     {
-		$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$site'");
-		$total_uvm_by_pfsmere = 0;
-        while ($array2  = mysql_fetch_array($ReqListPfsFille))
-		{
-			$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
+    	$json2 = array();	
+	    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+	    while ($array  = mysql_fetch_array($ReqListPfsMere))
+	    {
+			$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$array_site[site]'");
+			$total_uvm_by_pfsmere = 0;
+	        while ($array2  = mysql_fetch_array($ReqListPfsFille))
+			{
+				$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
+			}
+			if ( $total_uvm_by_pfsmere != 0)
+	        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
+			
 		}
-		if ( $total_uvm_by_pfsmere != 0)
-        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
-		
+		$json_site[$array_site['site']] = $json2;
 	}
-		$json = array(array($lastDate), $array_Commentaire, array($json2));
-        echo json_encode($json);
+	$json = array(array($lastDate), $json_site);
+    echo json_encode($json);
 }
 
 
