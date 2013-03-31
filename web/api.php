@@ -220,18 +220,21 @@ function getListPfsMereUvmBySite($lastDate,$site)
 	$ReqListSite = mysql_query("SELECT distinct(site) FROM uVM");
     while ($array_site  = mysql_fetch_array($ReqListSite))
     {
-    	$json2 = array();	
-	    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
-	    while ($array  = mysql_fetch_array($ReqListPfsMere))
-	    {
-			$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$array_site[site]'");
-			$total_uvm_by_pfsmere = 0;
-	        while ($array2  = mysql_fetch_array($ReqListPfsFille))
-			{
-				$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
+    	if ($arrayf['site'] != "")
+		{
+	    	$json2 = array();	
+		    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+		    while ($array  = mysql_fetch_array($ReqListPfsMere))
+		    {
+				$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$array_site[site]'");
+				$total_uvm_by_pfsmere = 0;
+		        while ($array2  = mysql_fetch_array($ReqListPfsFille))
+				{
+					$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
+				}
+				if ( $total_uvm_by_pfsmere != 0)
+		        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
 			}
-			if ( $total_uvm_by_pfsmere != 0)
-	        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
 			
 		}
 		$json_site[$array_site['site']] = $json2;
