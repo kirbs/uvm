@@ -236,8 +236,9 @@ function getListPfsMereUvmBySite($lastDate,$site)
 		        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
 			}
 			
+		
+			$json_site[$array_site['site']] = $json2;
 		}
-		$json_site[$array_site['site']] = $json2;
 	}
 	$json = array($lastDate, $json_site);
     echo json_encode($json);
