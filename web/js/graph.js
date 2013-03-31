@@ -512,7 +512,7 @@ $(function() {
 				
 				 chart = new Highcharts.Chart({
 		            chart: {
-		                renderTo: 'graphUvmBySite'+ i',
+		                renderTo: 'graphUvmBySite'+ i +',
 		                plotBackgroundColor: null,
 		                plotBorderWidth: null,
 		                plotShadow: false
@@ -543,7 +543,7 @@ $(function() {
 		                name: 'uVM',
 		                data: val
 		            }]
-				}); */
+				});
 			});
 		});
 		// <!-- Fin GRAPH uVM ALL SITE By Site Montsouris -->	
