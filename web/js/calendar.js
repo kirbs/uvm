@@ -8,7 +8,7 @@ $(function() {
 	        	availableDate = data;
 	        	
 				function availableDates(date) {	        	
-					availableDate = ["2013-3-25","2013-3-28","2013-4-1"];
+					//availableDate = ["2013-3-25","2013-3-28","2013-4-1"];
 					ymd = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
 					console.log(availableDates);
 					if ($.inArray(ymd, availableDate) == -1) {
