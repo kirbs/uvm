@@ -17,7 +17,7 @@ $(function() {
 						return [true,"","OK"];
 					}
 				};
-	        	$( "#choice_date_click" ).datepicker({  minDate: '-1M' , maxDate : 0 , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay: availableDates});
+	        	$( "#choice_date_click" ).datepicker({  dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay: availableDates});
 	     	});
 	        	
 	        	
