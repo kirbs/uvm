@@ -335,7 +335,7 @@ $(function() {
 				name : 'uvm',
 				data : data,
 				tooltip: {
-					valueDecimals: 0
+					valueDecimals: 2
 				}
 			}]
 		});
