@@ -74,6 +74,26 @@ function getListDate()
         echo json_encode($json);
 }
 
+function timestamp($date)
+{
+  list($year, $month, $day) = explode('-', $date);
+  $timestamp = mktime(0, 0, 0, $month, $day, $year);
+  return $timestamp;
+}
+
+function getNbUvmByDate()
+{
+	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM");
+	$json = Array();
+	while ($array = mysql_fetch_array($ReqListDate))
+	{
+		$ReqNbUvmByDate = mysql_query("SELECT uvm_name FROM uVM WHERE date_uvm = '$array[date_uvm]'");
+		$nb = mysql_num_rows($ReqNbUvmByDate);
+		$json[] = array(timestamp($array['date_uvm']), $nb);
+	}
+	echo json_encode($json);
+}
+
 
 function getListPfsMereUvmBySite($lastDate,$site)
 {
@@ -188,6 +208,10 @@ switch ($command)
 				
 	case "getListDate":
 				getListDate();
+				break;
+				
+	case "getNbUvmByDate":
+				getNbUvmByDate();
 				break;
     default : 
                         break;
