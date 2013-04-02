@@ -8,7 +8,7 @@ $(function() {
 			var availableDates = new Array();
 			$.getJSON('api.php?command=getListDate', function(data) {
 	        	availableDates = data;
-	        	console_log(availableDates);
+	        	console.log(availableDates);
 			
 				//availableDates = ["2013-3-25","2013-3-28","2013-4-1"];
 				ymd = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
