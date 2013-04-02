@@ -63,6 +63,18 @@ function getListPfsMereVM($lastDate)
         echo json_encode($json);
 }
 
+function getListDate()
+{
+    $ReqListPfsMere = mysql_query("SELECT distinct(date_uvm) FROM uVM");
+    $json = array();
+    while ($array  = mysql_fetch_array($ReqListPfsMere))
+    {
+        $json[] = $array['date_uvm'];
+    }
+        echo json_encode($json);
+}
+
+
 function getListPfsMereUvmBySite($lastDate,$site)
 {
 
@@ -172,6 +184,10 @@ switch ($command)
 
 	case "getPopulation":
 				getPopulation($lastDate);
+				break;
+				
+	case "getListDate":
+				getListDate();
 				break;
     default : 
                         break;

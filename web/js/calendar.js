@@ -5,14 +5,17 @@ $(function() {
     $(document).ready(function() {
 		
 		function availableDates(date) {
-			unavailableDates = ["3-25-2013","3-28-2013","4-1-2013"];
-			//dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
-			dmy = (date.getMonth()+1) + "-" + date.getDate() + "-" + date.getFullYear();
-			if ($.inArray(dmy, unavailableDates) == -1) {
-				return [false, "", "aucun traitement ce jour"];
-			} else {
-				return [true,"","OK"];
-			}
+			$.getJSON('api.php?command=getListDate', function(data) {
+	        	availableDates = data;
+			
+				//availableDates = ["3-25-2013","3-28-2013","4-1-2013"];
+				ymd = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+				if ($.inArray(ymd, availableDates) == -1) {
+					return [false, "", "aucun traitement ce jour"];
+				} else {
+					return [true,"","OK"];
+				}
+			});
 		}
 
         <!-- DEFINITION DU CALENDRIER -->
