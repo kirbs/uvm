@@ -319,6 +319,7 @@ $(function() {
 		
 		$.getJSON('api.php?command=getNbUvmByDate', function(data) {
 		// Create the chart
+		console.log(data);
 		$('#uvmbydate').highcharts('StockChart', {
 			
 
