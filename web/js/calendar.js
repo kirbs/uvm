@@ -25,7 +25,19 @@ $(function() {
         $( "#duration" ).timepicker({ timeFormat: "hh:mm:ss", hourGrid: 4, minuteGrid: 10  });
         $( "#choice_date" ).datepicker({ dateFormat: "yy-mm-dd" });
         //$( "#choice_date_click" ).datepicker({  dateFormat: "yy-mm-dd" ,beforeShowDay: disableSpecificDates ,altField: "#choice_date_click_field"});
-        $( "#choice_date_click" ).datepicker({  beforeShowDay: disableSpecificDates , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field"});
+        $( "#choice_date_click" ).datepicker({  beforeShowDay:function(d) {
+      		var dat = $.datepicker.formatDate("yy-mm-dd", d);
+			natDays = [["2013-03-25","2013-04-01"]];
+
+			for (var i=0, c=natDays.length; i<c; i++)
+ 				if (dat >= natDays[i][0] && dat<=natDays[i][1]) {
+  					return [false, ""];
+          		}
+				else  {
+					return [true, "2"];
+				}
+
+          	} , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field"});
         $( "#choice_date_to" ).datepicker({ dateFormat: "yy-mm-dd" });
 
 	});
