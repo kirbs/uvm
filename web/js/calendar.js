@@ -27,8 +27,7 @@ $(function() {
         //$( "#choice_date_click" ).datepicker({  dateFormat: "yy-mm-dd" ,beforeShowDay: disableSpecificDates ,altField: "#choice_date_click_field"});
         $( "#choice_date_click" ).datepicker({  minDate: '-1M' , maxDate : 0 , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay:function(d) {
       		var dat = $.datepicker.formatDate("yy-mm-dd", d);
-			natDays = [["2013-03-25","2013-03-25"],["2013-03-29","2013-03-29"]
-						];
+			natDays = ["2013-03-25","2013-03-29"];
 
 			for (var i=0, c=natDays.length; i<c; i++)
  				if (dat >= natDays[i][0] && dat<=natDays[i][1]) {
