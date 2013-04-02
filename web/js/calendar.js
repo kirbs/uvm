@@ -1,17 +1,16 @@
 $(function() {
-//});
 
-    //var chart;
     $(document).ready(function() {
 		
 
 			var availableDates = new Array();
 			$.getJSON('api.php?command=getListDate', function(data) {
 	        	availableDates = data;
-	        	console.log(availableDates);
+	        	
 				function availableDates(date) {	        	
 					//availableDates = ["2013-3-25","2013-3-28","2013-4-1"];
 					ymd = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+					console.log(availableDates);
 					if ($.inArray(ymd, availableDates) == -1) {
 						return [false, "", "aucun traitement ce jour"];
 					} else {
