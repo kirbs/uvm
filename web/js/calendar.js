@@ -9,7 +9,7 @@ $(function() {
 	        	
 				function availableDates(date) {	        	
 					//availableDate = ["2013-3-25","2013-3-28","2013-4-1"];
-					ymd = date.getFullYear() + "-" + (date.getMonth()+2) + "-" + date.getDate();
+					ymd = date.getFullYear() + "-" + (date.getMonth()) + "-" + date.getDate();
 					console.log(date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate());
 					if ($.inArray(ymd, availableDate) == -1) {
 						return [false, "", "aucun traitement ce jour"];
