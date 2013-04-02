@@ -32,10 +32,10 @@ $(function() {
 
 			for (var i=0, c=natDays.length; i<c; i++)
  				if (dat >= natDays[i][0] && dat<=natDays[i][1]) {
-  					return [false, ""];
+  					return [true, ""];
           		}
 				else  {
-					return [true, "0"];
+					return [false, ""];
 				}
 
           	}
