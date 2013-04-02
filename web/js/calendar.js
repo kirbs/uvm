@@ -5,7 +5,7 @@ $(function() {
     $(document).ready(function() {
 		
 		function availableDates(date) {
-			unavailableDates = ["25-03-2013","28-03-2013","01-04-2013"];
+			unavailableDates = ["25-3-2013","28-3-2013","1-4-2013"];
 			dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
 			if ($.inArray(dmy, unavailableDates) == -1) {
 				return [false, "", "aucun traitement ce jour"];
