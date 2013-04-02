@@ -87,9 +87,8 @@ function getNbUvmByDate()
 	$json = array();
 	while ($array = mysql_fetch_array($ReqListDate))
 	{
-		$ReqNbUvmByDate = mysql_query("SELECT uvm_name FROM uVM WHERE date_uvm = '$array[date_uvm]'");
+		$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]'");
 		$nb = mysql_num_rows($ReqNbUvmByDate);
-		echo "nb :$nb";
 		$json[] = array(timestamp($array['date_uvm']), $nb);
 	}
 	echo json_encode($json);
