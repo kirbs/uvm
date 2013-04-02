@@ -9,7 +9,7 @@ $(function() {
 	        	
 				function availableDates(date) {	        	
 					//availableDate = ["2013-3-25","2013-3-28","2013-4-1"];
-					ymd = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+					ymd = date.getFullYear() + "-" + (date.getMonth()+2) + "-" + date.getDate();
 					console.log(date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate());
 					if ($.inArray(ymd, availableDate) == -1) {
 						return [false, "", "aucun traitement ce jour"];
@@ -17,7 +17,7 @@ $(function() {
 						return [true,"","OK"];
 					}
 				};
-	        	$( "#choice_date_click" ).datepicker({  dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay: availableDates});
+	        	$( "#choice_date_click" ).datepicker({ minDate: '-1M' , maxDate : 0 , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay: availableDates});
 	     	});
 	        	
 	        	
