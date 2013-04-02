@@ -33,9 +33,9 @@ $(function() {
 			unavailableDates = ["25-3-2013","28-3-2013","1-4-2013"];
 			dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
 			if ($.inArray(dmy, unavailableDates) == -1) {
-				return [true, ""];
+				return [false, "", "aucun traitement ce jour"];
 			} else {
-				return [false,"","Unavailable"];
+				return [true,"","OK"];
 			}
 		}
 
