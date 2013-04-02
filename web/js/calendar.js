@@ -8,7 +8,7 @@ $(function() {
 			$.getJSON('api.php?command=getListDate', function(data) {
 	        	availableDates = data;
 			
-				//availableDates = ["3-25-2013","3-28-2013","4-1-2013"];
+				availableDates = ["2013-3-25","2013-3-28","2013-4-1"];
 				ymd = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
 				if ($.inArray(ymd, availableDates) == -1) {
 					return [false, "", "aucun traitement ce jour"];
