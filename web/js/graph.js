@@ -315,5 +315,31 @@ $(function() {
     	});
     	//<!-- Fin GRAPH de Poupulation d' uVM ALL SITE and Site Bagnolet, SOPHIA et MontSouris -->
 		
+		
+		
+		$.getJSON('api.php?command=getNbUvmByDate', function(data) {
+		// Create the chart
+		$('#uvmbydate').highcharts('StockChart', {
+			
+
+			rangeSelector : {
+				selected : 1
+			},
+
+			title : {
+				text : 'Evolution des Uvm par Date'
+			},
+			
+			series : [{
+				name : 'uvm',
+				data : data,
+				tooltip: {
+					valueDecimals: 0
+				}
+			}]
+		});
+	});
+		
+		
 	});
 });
