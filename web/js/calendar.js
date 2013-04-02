@@ -5,7 +5,7 @@ $(function() {
     $(document).ready(function() {
 		
 		function availableDates(date) {
-			$.getJSON('api.php?command=getListDate', function(data) {
+			$.getJSON('http://api02.vprod.virt.b4.p.fti.net/uvm/api.php?command=getListDate', function(data) {
 	        	availableDates = data;
 			
 				availableDates = ["2013-3-25","2013-3-28","2013-4-1"];
