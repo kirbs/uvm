@@ -25,7 +25,7 @@ $(function() {
         $( "#duration" ).timepicker({ timeFormat: "hh:mm:ss", hourGrid: 4, minuteGrid: 10  });
         $( "#choice_date" ).datepicker({ dateFormat: "yy-mm-dd" });
         //$( "#choice_date_click" ).datepicker({  dateFormat: "yy-mm-dd" ,beforeShowDay: disableSpecificDates ,altField: "#choice_date_click_field"});
-        $( "#choice_date_click" ).datepicker({  minDate: '1M' , maxDate : 0 , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay:function(d) {
+        $( "#choice_date_click" ).datepicker({  minDate: '-1M' , maxDate : 0 , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field", beforeShowDay:function(d) {
       		var dat = $.datepicker.formatDate("yy-mm-dd", d);
 			natDays = [["2013-03-25","2013-03-25"],["2013-03-29","2013-03-29"]
 						];
