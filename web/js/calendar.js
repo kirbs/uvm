@@ -35,7 +35,7 @@ $(function() {
   					return [false, ""];
           		}
 				else  {
-					return [true, "1"];
+					return [true, "0"];
 				}
 
           	} , dateFormat: "mm-dd-yy" ,altField: "#choice_date_click_field"});
