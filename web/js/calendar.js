@@ -4,33 +4,8 @@ $(function() {
     var chart;
     $(document).ready(function() {
 		
-		
-		var daysToDisable = ["3-27-2013", "3-28-2013"];
-		
-		function disableSpecificDates(date) {
-			var month = date.getMonth();
-			var day = date.getDate();
-			var year = date.getFullYear();
-			for (i = 0 ; i < daysToDisable.length; i++) {
-					if ($.inArray((month + 1) + '-' + day + '-' + year.daysToDisable) != -1) {
-						return [false];
-				}
-			}
-			return [true];
-		}
-
 		function availableDates(date) {
-      		//var dat = $.datepicker.formatDate("yy-mm-dd", d);
-			//natDays = ["2013-03-25","2013-03-29"];
-
-			//for (var i=0, c=natDays.length; i<c; i++)
- 			//	if (dat >= natDays[i][0] && dat<=natDays[i][1]) {
-  			//		return [true, "", "test"];
-          	//	}
-			//	else  {
-			//		return [false, ""];
-			//	}
-			unavailableDates = ["25-3-2013","28-3-2013","1-4-2013"];
+			unavailableDates = ["25-03-2013","28-03-2013","01-04-2013"];
 			dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
 			if ($.inArray(dmy, unavailableDates) == -1) {
 				return [false, "", "aucun traitement ce jour"];
