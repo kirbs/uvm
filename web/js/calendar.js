@@ -30,7 +30,7 @@ $(function() {
 			//	else  {
 			//		return [false, ""];
 			//	}
-			unavailableDates = ["25-3-2013","28-4-2013","1-4-2013"];
+			unavailableDates = ["25-3-2013","28-3-2013","1-4-2013"];
 			dmy = date.getDate() + "-" + (date.getMonth()+1) + "-" + date.getFullYear();
 			if ($.inArray(dmy, unavailableDates) == -1) {
 				return [true, ""];
