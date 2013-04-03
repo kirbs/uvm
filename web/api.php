@@ -116,6 +116,7 @@ function getNbUvmByDate()
 			$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]' AND site = '$arrayf[site]'");
 			$nb = mysql_num_rows($ReqNbUvmByDate);
 			$arrayC[] = $nb;
+			print_r($arrayC);
 		}
 		$arrayB[] = array($arrayf['site'], $arrayC);
 	}
