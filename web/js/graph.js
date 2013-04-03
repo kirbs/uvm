@@ -323,12 +323,11 @@ $(function() {
 		$.getJSON('api.php?command=getNbUvmByDate', function(data) {
 			chart = new Highcharts.Chart({
 	            chart: {
-		            	renderTo: 'uvmbydate',	
-		            	type: 'area',
-		            	//zoomType: 'xy
-		            },
+		            renderTo: 'vmbydate',	
+		            type: 'area',
+		        },
 	            title: {
-	                text: 'Evolution des uVM dans le temps'
+	                text: 'Evolution des VM dans le temps'
 	            },
 	            subtitle: {
 	                text: 'Source: uVM'
@@ -343,7 +342,7 @@ $(function() {
 	            },
 	            yAxis: {
 	                title: {
-	                    text: 'Nb'
+	                    text: 'Nb VM'
 	                },
 	                //labels: {
 	                //    formatter: function() {
@@ -353,7 +352,7 @@ $(function() {
 	            },
 	            tooltip: {
 	                shared: true,
-	                valueSuffix: ' uVMs'
+	                valueSuffix: ' VMs'
 	            },
 	            plotOptions: {
 	                area: {
