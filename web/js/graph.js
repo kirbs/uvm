@@ -36,7 +36,7 @@ $(function() {
 	            },
 	            series: [{
 	                type: 'pie',
-	                name: 'Browser share',
+	                name: 'uVM',
 	                data : data
 	            }]
 			});
@@ -121,7 +121,7 @@ $(function() {
 	            },
 	            series: [{
 	                type: 'pie',
-	                name: 'Browser share',
+	                name: 'uVM',
 	                data: data
 	            }]
 			});
@@ -163,7 +163,7 @@ $(function() {
 	            },
 	            series: [{
 	                type: 'pie',
-	                name: 'Browser share',
+	                name: 'uVM',
 	                data: data
 	            }]
 			});
@@ -205,7 +205,7 @@ $(function() {
 	            },
 	            series: [{
 	                type: 'pie',
-	                name: 'Browser share',
+	                name: 'uVM',
 	                data: data
 	            }]
 			});
