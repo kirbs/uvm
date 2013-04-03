@@ -353,7 +353,7 @@ $(function() {
 	            },
 	            tooltip: {
 	                shared: true,
-	                valueSuffix: ' millions'
+	                valueSuffix: ' uVMs'
 	            },
 	            plotOptions: {
 	                area: {
@@ -376,6 +376,9 @@ $(function() {
 	            }, {
 	                name: 'Bagnolet',
 	                data: data[1]['Immeuble Gambetta']
+	            }, {
+	                name: 'Non assigné',
+	                data: data[1]['none']
 	            }]
         	});		
 		});
