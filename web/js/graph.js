@@ -381,5 +381,69 @@ $(function() {
 	            }]
         	});		
 		});
+		
+		
+		$.getJSON('api.php?command=getNbUvmByDate', function(data) {
+			chart = new Highcharts.Chart({
+	            chart: {
+		            renderTo: 'uvmbydate',	
+		            type: 'area',
+		        },
+	            title: {
+	                text: 'Evolution des uVM dans le temps'
+	            },
+	            subtitle: {
+	                text: 'Source: uVM'
+	            },
+	            xAxis: {
+	                //categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+	                categories: data[0],
+	                tickmarkPlacement: 'on',
+	                title: {
+	                    enabled: false
+	                }
+	            },
+	            yAxis: {
+	                title: {
+	                    text: 'Nb uVM'
+	                },
+	                //labels: {
+	                //    formatter: function() {
+	                //        return this.value / 1000;
+	                //    }
+	                //}
+	            },
+	            tooltip: {
+	                shared: true,
+	                valueSuffix: ' uVMs'
+	            },
+	            plotOptions: {
+	                area: {
+	                    stacking: 'normal',
+	                    lineColor: '#666666',
+	                    lineWidth: 1,
+	                    marker: {
+	                        lineWidth: 1,
+	                        lineColor: '#666666'
+	                    }
+	                }
+	            },
+	            series: [{
+	                name: 'Sophia',
+	                //data: [502, 635, 809, 947, 1402, 3634, 5268]
+	                data: data[1]['HT2']
+	            }, {
+	                name: 'Montsouris',
+	                data: data[1]['Montsouris']
+	            }, {
+	                name: 'Bagnolet',
+	                data: data[1]['Immeuble Gambetta']
+	            }, {
+	                name: 'Non assigné',
+	                data: data[1]['none']
+	            }]
+        	});		
+		});
+		
 	});
 });
