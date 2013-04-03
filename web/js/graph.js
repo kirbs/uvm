@@ -445,5 +445,71 @@ $(function() {
         	});		
 		});
 		
+		
+		$.getJSON('api.php?command=getNbUvmBySite', function(data) {
+			chart = new Highcharts.Chart({
+	            chart: {
+		            renderTo: 'uvmbysite',
+		            polar: true,	
+		            type: 'line'
+		        },
+			    title: {
+			        text: 'Budget vs spending',
+			        x: -80
+			    },
+			    
+			    pane: {
+			    	size: '80%'
+			    },
+			    
+			    xAxis: {
+			        categories: data[0],
+			        tickmarkPlacement: 'on',
+			        lineWidth: 0
+			    },
+			        
+			    yAxis: {
+			        gridLineInterpolation: 'polygon',
+			        lineWidth: 0,
+			        min: 0
+			    },
+			    
+			    tooltip: {
+			    	shared: true,
+			        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+			    },
+			    
+			    legend: {
+			        align: 'right',
+			        verticalAlign: 'top',
+			        y: 100,
+			        layout: 'vertical'
+			    },
+			    
+			    series: [{
+			        name: 'uVM',
+			        data: data[1],
+			        pointPlacement: 'on'
+			    }]
+        	});		
+		});		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	});
 });
