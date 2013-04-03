@@ -5,10 +5,7 @@ $(function() {
 
 		//<!-- GRAPH uVM ALL SITE -->
 	
-	    //var output = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvm', function(data) {
-	        //output = data;
-			
 			chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'graphUvmByAllSite',
@@ -40,7 +37,6 @@ $(function() {
 	            series: [{
 	                type: 'pie',
 	                name: 'Browser share',
-	                //data: output
 	                data : data
 	            }]
 			});
@@ -50,10 +46,7 @@ $(function() {
 
 		//<!-- GRAPH VM ALL SITE -->
 	
-	    var datalistvm = new Array();
 	    $.getJSON('api.php?command=getListPfsMereVM', function(data) {
-	        datalistvm = data;
-			
 			chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'graphVMByAllSite',
@@ -85,7 +78,7 @@ $(function() {
 	            series: [{
 	                type: 'pie',
 	                name: 'VM',
-	                data: datalistvm
+	                data: data
 	            }]
 			});
 		});
@@ -96,11 +89,8 @@ $(function() {
 		
 		
 		//<!-- GRAPH uVM ALL SITE By Site Bagnolet -->
-	
-	    var outputb = new Array();
+
 	    $.getJSON("api.php?command=getListPfsMereUvmBySite&site=Immeuble Gambetta", function(data) {
-	        outputb = data;
-			
 			chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'graphUvmBySiteBagnolet',
@@ -132,7 +122,7 @@ $(function() {
 	            series: [{
 	                type: 'pie',
 	                name: 'Browser share',
-	                data: outputb
+	                data: data
 	            }]
 			});
 		});
@@ -142,10 +132,7 @@ $(function() {
 		
 		//<!-- GRAPH uVM ALL SITE By Site SOPHIA -->
 	
-	    var outputs = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=HT2', function(data) {
-	        outputs = data;
-			
 			chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'graphUvmBySiteSophia',
@@ -177,7 +164,7 @@ $(function() {
 	            series: [{
 	                type: 'pie',
 	                name: 'Browser share',
-	                data: outputs
+	                data: data
 	            }]
 			});
 		});
@@ -187,10 +174,7 @@ $(function() {
 		
 		//<!-- GRAPH uVM ALL SITE By Site MontSouris -->
 	
-	    var outputm = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvmBySite&site=Montsouris', function(data) {
-	        outputm = data;
-			
 			chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'graphUvmBySiteMontsouris',
@@ -222,7 +206,7 @@ $(function() {
 	            series: [{
 	                type: 'pie',
 	                name: 'Browser share',
-	                data: outputm
+	                data: data
 	            }]
 			});
 		});
@@ -233,10 +217,7 @@ $(function() {
 		
 		//<!-- GRAPH de Poupulation d' uVM ALL SITE and Site Bagnolet, SOPHIA et MontSouris -->
 		
-	    var output_population = new Array();
-	    $.getJSON('api.php?command=getPopulation', function(data) {
-	        output_population = data;	
-	        console.log(output_population);	
+	    $.getJSON('api.php?command=getPopulation', function(data) {	
 		    chart = new Highcharts.Chart({
             	chart: {
                 renderTo: 'population',
@@ -302,15 +283,15 @@ $(function() {
             	series: [{
                 	name: 'Sophia',
                 	color: 'rgba(223, 83, 83, .5)',
-                	data: output_population[0][1]
+                	data: data[0][1]
             	},{
                 	name: 'Montsouris',
                 	color: 'rgba(119, 83, 83, .5)',
-                	data: output_population[1][1]
+                	data: data[1][1]
             	},{
                 	name: 'Bagnolet',
                 	color: 'rgba(19, 83, 83, .5)',
-                	data: output_population[2][1]
+                	data: data[2][1]
             	}]
         	});
     	});
