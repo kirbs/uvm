@@ -320,7 +320,7 @@ $(function() {
 		//	});
 		//});
 		
-		$.getJSON('api.php?command=getNbUvmByDate', function(data) {
+		$.getJSON('api.php?command=getNbVmByDate', function(data) {
 			chart = new Highcharts.Chart({
 	            chart: {
 		            renderTo: 'vmbydate',	

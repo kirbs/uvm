@@ -94,7 +94,7 @@ function timestamp($date)
 	echo json_encode($json);
 }*/
 
-function getNbUvmByDate()
+function getNbVmByDate()
 {
 	$arrayA = array();
 	$arrayB = array();
@@ -124,6 +124,41 @@ function getNbUvmByDate()
 	//print_r($json[1]['HT2']);
 }
 
+function getNbUvmByDate()
+{
+	$arrayA = array();
+	$arrayB = array();
+	
+	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
+	while ($array = mysql_fetch_array($ReqListDate))
+	{	
+		$arrayA[] = $array['date_uvm'];
+	}
+	$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
+	while ($arrayf = mysql_fetch_array($REQSITE))
+	{
+		$arrayC = array();
+		$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
+		while ($array = mysql_fetch_array($ReqListDate))
+		{
+			$ReqUvmTotal = mysql_query("SELECT uvm_total FROM uVM WHERE date_uvm = '$array[date_uvm]' AND site = '$arrayf[site]'");
+			$nb = 0;
+        	while ($array2  = mysql_fetch_array($ReqUvmTotal))
+			{
+				$nb = $nb + $array2[uvm_total];
+			}	
+			//$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]' AND site = '$arrayf[site]'");
+			//$nb = mysql_num_rows($ReqNbUvmByDate);
+			$arrayC[] = $nb;
+		}
+		$arrayB[$arrayf['site']] = $arrayC;
+	}
+		
+	$json = array($arrayA,$arrayB);
+	echo json_encode($json);
+	
+	//print_r($json[1]['HT2']);
+}
 
 
 function getListPfsMereUvmBySite($lastDate,$site)
@@ -239,6 +274,10 @@ switch ($command)
 				
 	case "getListDate":
 				getListDate();
+				break;
+				
+	case "getNbVmByDate":
+				getNbVmByDate();
 				break;
 				
 	case "getNbUvmByDate":
