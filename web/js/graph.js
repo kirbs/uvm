@@ -454,7 +454,7 @@ $(function() {
 		            type: 'line'
 		        },
 			    title: {
-			        text: 'Budget vs spending',
+			        text: 'Uvm Par Sites',
 			        x: -80
 			    },
 			    
@@ -476,7 +476,7 @@ $(function() {
 			    
 			    tooltip: {
 			    	shared: true,
-			        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+			        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y}</b><br/>'
 			    },
 			    
 			    legend: {
