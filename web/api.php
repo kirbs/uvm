@@ -96,10 +96,8 @@ function timestamp($date)
 
 function getNbUvmByDate()
 {
-	//$json = array();
 	$arrayA = array();
 	$arrayB = array();
-	
 	
 	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
 	while ($array = mysql_fetch_array($ReqListDate))
@@ -120,9 +118,10 @@ function getNbUvmByDate()
 		$arrayB[$arrayf['site']] = $arrayC;
 	}
 		
-	//$json[] = array($arrayA,$arrayB);
 	$json = array($arrayA,$arrayB);
 	echo json_encode($json);
+	
+	echo "$json[0]['HT2']";
 }
 
 
