@@ -47,7 +47,7 @@ function formulaire($today)
         <div id='dtable'></div>
     </div>
 </div>
-        <input type=hidden name='date' id='choice_date_click_field'>
+        <input type=text name='date' id='choice_date_click_field'>
 		<table><tr><td>Vue des uvms par : 
 		<select name=choix>
 			<option value='vide'>---</option>
