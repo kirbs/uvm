@@ -282,15 +282,15 @@ $(function() {
             	},
             	series: [{
                 	name: 'Sophia',
-                	color: 'rgba(51, 204, 0, .5)',
+                	color: 'rgba(255, 0, 0, .5)',
                 	data: data[0][1]
             	},{
                 	name: 'Montsouris',
-                	color: 'rgba(51, 51, 255, .5)',
+                	color: 'rgba(0, 255, 0, .5)',
                 	data: data[1][1]
             	},{
                 	name: 'Bagnolet',
-                	color: 'rgba(255, 0, 0, .5)',
+                	color: 'rgba(0, 0, 255, .5)',
                 	data: data[2][1]
             	}]
         	});
