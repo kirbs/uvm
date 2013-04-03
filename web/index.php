@@ -37,26 +37,26 @@ function formulaire($today)
 <br><br>
 
 	<form method='post' action='index.php'>
-       <div id='choice_date_click' ></div>
-<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
-    <div class='yui3-u-1-3' id='mtable'></div>
-
-    <!-- This is the HTML section for the 'Details' markup ...
-         NOTE: it is hidden initially !!   -->
-    <div class='yui3-u-2-3' id='chars' style='display:none;'>
-        <div id='dtable'></div>
-    </div>
-</div>
-        <input type=hidden name='date' id='choice_date_click_field'>
-		<table><tr><td>Vue des uvms par : 
-		<select name=choix>
-			<option value='vide'>---</option>
-			<option value='pfs'>PFS</option>
-			<option value='xen'>Serveur Xen</option>
-		</select>
-		<input type=hidden name='enab' value=0>
-		<input type='submit' value='Valider'>
-		</td></tr></table></form>";
+	<table width='100%'>
+		<tr>
+			<td width='30%' align='center'>
+       			<div id='choice_date_click' ></div>
+       		</td>
+       		<td width='70%' align='left'>
+		        <input type=hidden name='date' id='choice_date_click_field'>
+				<table><tr><td>Vue des uvms par : 
+					<select name=choix>
+						<option value='vide'>---</option>
+						<option value='pfs'>PFS</option>
+						<option value='xen'>Serveur Xen</option>
+					</select>
+				<input type=hidden name='enab' value=0>
+				<input type='submit' value='Valider'>
+				</td></tr></table>
+			</td>
+		</tr>
+	</table>
+	</form>";
 }
 
 function affiche_liste_pfs($choix,$date)
