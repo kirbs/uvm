@@ -282,7 +282,7 @@ $(function() {
             	},
             	series: [{
                 	name: 'Sophia',
-                	color: 'rgba(255, 255, 0, .5)',
+                	color: 'rgba(51, 204, 0, .5)',
                 	data: data[0][1]
             	},{
                 	name: 'Montsouris',
