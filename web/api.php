@@ -121,7 +121,7 @@ function getNbUvmByDate()
 	$json = array($arrayA,$arrayB);
 	echo json_encode($json);
 	
-	print_r($json[1]['HT2']);
+	//print_r($json[1]['HT2']);
 }
 
 
