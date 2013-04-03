@@ -96,26 +96,31 @@ function timestamp($date)
 
 function getNbUvmByDate()
 {
-	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM");
 	$json = array();
 	$arrayA = array();
 	$arrayB = array();
 	$arrayC = array();
+	
+	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
 	while ($array = mysql_fetch_array($ReqListDate))
 	{	
 		$arrayA[] = $array['date_uvm'];
-		
-		$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
-		while ($arrayf = mysql_fetch_array($REQSITE))
-		{
+	}
+	
+	$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
+	while ($arrayf = mysql_fetch_array($REQSITE))
+	{
+		$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
+		while ($array = mysql_fetch_array($ReqListDate))
+		{	
 			$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]' AND site = '$arrayf[site]'");
 			$nb = mysql_num_rows($ReqNbUvmByDate);
 			$arrayC[] = $nb;
 		}
-		$arrayB[] = array($arrayf['site'], $arrayC); 
-		
+		$arrayB[] = array($arrayf['site'], $arrayC);
 	}
-	$json[] = $array($arrayB,arrayC);
+		
+	$json[] = $array($arrayA,$arrayB);
 	echo json_encode($json);
 }
 
