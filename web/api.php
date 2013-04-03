@@ -106,7 +106,7 @@ function getNbUvmByDate()
 	{	
 		$arrayA[] = $array['date_uvm'];
 	}
-	
+	print $arrayA;
 	$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
 	while ($arrayf = mysql_fetch_array($REQSITE))
 	{
