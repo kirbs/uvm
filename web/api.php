@@ -178,10 +178,14 @@ function getNbUvmBySite($lastDate)
 			}	
 			$arrayB[] = $nb;
 			$arrayA[] = $arrayf['site'];
+			
+			$ReqNbVm = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$lastDate' AND site = '$arrayf[site]'");
+			$nb = mysql_num_rows($ReqNbVm);
+			$arrayC[] = $nb;
 		}
 	}
 		
-	$json = array($arrayA,$arrayB);
+	$json = array($arrayA,$arrayB, $arrayC);
 	echo json_encode($json);
 	
 	//print_r($json[1]['HT2']);
