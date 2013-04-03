@@ -99,14 +99,12 @@ function getNbUvmByDate()
 	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM");
 	$json = array();
 	$arrayA = array();
-	while ($array = mysql_fetch_array($ReqListDate))
-	{	
-		$arrayA[] = $array['date_uvm'];
-	}
 	$arrayB = array();
 	$arrayC = array();
 	while ($array = mysql_fetch_array($ReqListDate))
-	{
+	{	
+		$arrayA[] = $array['date_uvm'];
+		
 		$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
 		while ($arrayf = mysql_fetch_array($REQSITE))
 		{
