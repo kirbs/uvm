@@ -99,7 +99,7 @@ function getNbUvmByDate()
 	//$json = array();
 	$arrayA = array();
 	$arrayB = array();
-	$arrayC = array();
+	
 	
 	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
 	while ($array = mysql_fetch_array($ReqListDate))
@@ -109,6 +109,7 @@ function getNbUvmByDate()
 	$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
 	while ($arrayf = mysql_fetch_array($REQSITE))
 	{
+		$arrayC = array();
 		$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM ORDER BY date_uvm ASC");
 		while ($array = mysql_fetch_array($ReqListDate))
 		{	
