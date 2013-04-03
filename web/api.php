@@ -117,11 +117,10 @@ function getNbUvmByDate()
 			$nb = mysql_num_rows($ReqNbUvmByDate);
 			$arrayC[] = $nb;
 		}
-		print_r($arrayC);
 		$arrayB[] = array($arrayf['site'], $arrayC);
 	}
 		
-	$json[] = $array($arrayA,$arrayB);
+	$json[] = array($arrayA,$arrayB);
 	echo json_encode($json);
 }
 
