@@ -168,6 +168,7 @@ function getNbUvmBySite($lastDate)
 	$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
 	while ($arrayf = mysql_fetch_array($REQSITE))
 	{
+		print "- $arrayf[site]<br>";
 		$ReqUvmTotal = mysql_query("SELECT uvm_total FROM uVM WHERE date_uvm = '$lastDate' AND site = '$arrayf[site]'");
 		$nb = 0;
         while ($array2  = mysql_fetch_array($ReqUvmTotal))
