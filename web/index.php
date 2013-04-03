@@ -14,7 +14,7 @@ function formulaire($today)
 	
 	
 	
-	<table width='100%' border=1>
+	<table width='100%' border=0>
 		<tr>
 			<td colspan='2' align='center'><div id='population' style='align: center'></div></td>
 		</tr>
