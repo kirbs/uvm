@@ -160,6 +160,30 @@ function getNbUvmByDate()
 	//print_r($json[1]['HT2']);
 }
 
+function getNbUvmBySite($lastDate)
+{
+	$arrayA = array();
+	$arrayB = array();
+	
+	$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
+	while ($arrayf = mysql_fetch_array($REQSITE))
+	{
+		$ReqUvmTotal = mysql_query("SELECT uvm_total FROM uVM WHERE date_uvm = '$lastDate' AND site = '$arrayf[site]'");
+		$nb = 0;
+        while ($array2  = mysql_fetch_array($ReqUvmTotal))
+		{
+			$nb = $nb + $array2[uvm_total];
+		}	
+		$arrayB[] = $nb;
+		$arrayA[] = $arrayf['site'];
+	}
+		
+	$json = array($arrayA,$arrayB);
+	echo json_encode($json);
+	
+	//print_r($json[1]['HT2']);
+}
+
 
 function getListPfsMereUvmBySite($lastDate,$site)
 {
@@ -283,6 +307,11 @@ switch ($command)
 	case "getNbUvmByDate":
 				getNbUvmByDate();
 				break;
+
+	case "getNbUvmBySite":
+				getNbUvmBySite($lastDate);
+				break;			
+
     default : 
                         break;
 }
