@@ -98,12 +98,26 @@ function getNbUvmByDate()
 {
 	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM");
 	$json = array();
+	$arrayA = array();
+	while ($array = mysql_fetch_array($ReqListDate))
+	{	
+		$arrayA[] = $array['date_uvm'];
+	}
+	$arrayB = array();
+	$arrayC = array();
 	while ($array = mysql_fetch_array($ReqListDate))
 	{
-		//$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]'");
-		//$nb = mysql_num_rows($ReqNbUvmByDate);
-		$json[] = $array['date_uvm'];
+		$REQSITE = mysql_query("SELECT distinct(site) FROM uVM");
+		while ($arrayf = mysql_fetch_array($REQSITE))
+		{
+			$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]' AND site = '$arrayf[site]'");
+			$nb = mysql_num_rows($ReqNbUvmByDate);
+			$arrayC[] = $nb;
+		}
+		$arrayB[] = array($arrayf['site'], $arrayC); 
+		
 	}
+	$json[] = $array($arrayB,arrayC);
 	echo json_encode($json);
 }
 
