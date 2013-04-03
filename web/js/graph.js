@@ -490,6 +490,10 @@ $(function() {
 			        name: 'uVM',
 			        data: data[1],
 			        pointPlacement: 'on'
+			    },{
+			        name: 'VM',
+			        data: data[2],
+			        pointPlacement: 'on'
 			    }]
         	});		
 		});		
