@@ -2,7 +2,6 @@ $(function() {
 
     $(document).ready(function() {
 		
-
 			var availableDates = new Array();
 			$.getJSON('api.php?command=getListDate', function(data) {
 	        	availableDate = data;
