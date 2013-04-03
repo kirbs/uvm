@@ -96,7 +96,7 @@ function timestamp($date)
 
 function getNbUvmByDate()
 {
-	$json = array();
+	//$json = array();
 	$arrayA = array();
 	$arrayB = array();
 	$arrayC = array();
@@ -119,7 +119,8 @@ function getNbUvmByDate()
 		$arrayB[] = array($arrayf['site'], $arrayC);
 	}
 		
-	$json[] = array($arrayA,$arrayB);
+	//$json[] = array($arrayA,$arrayB);
+	$json = array($arrayA,$arrayB);
 	echo json_encode($json);
 }
 
