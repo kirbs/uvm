@@ -81,7 +81,7 @@ function timestamp($date)
   return $timestamp;
 }
 
-function getNbUvmByDate()
+/*function getNbUvmByDate()
 {
 	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM");
 	$json = array();
@@ -92,7 +92,21 @@ function getNbUvmByDate()
 		$json[] = array(timestamp($array['date_uvm']), $nb);
 	}
 	echo json_encode($json);
+}*/
+
+function getNbUvmByDate()
+{
+	$ReqListDate = mysql_query("SELECT distinct(date_uvm) FROM uVM");
+	$json = array();
+	while ($array = mysql_fetch_array($ReqListDate))
+	{
+		//$ReqNbUvmByDate = mysql_query("SELECT vm_name FROM uVM WHERE date_uvm = '$array[date_uvm]'");
+		//$nb = mysql_num_rows($ReqNbUvmByDate);
+		$json[] = $array['date_uvm'];
+	}
+	echo json_encode($json);
 }
+
 
 
 function getListPfsMereUvmBySite($lastDate,$site)
