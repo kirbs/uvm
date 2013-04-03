@@ -5,9 +5,9 @@ $(function() {
 
 		//<!-- GRAPH uVM ALL SITE -->
 	
-	    var output = new Array();
+	    //var output = new Array();
 	    $.getJSON('api.php?command=getListPfsMereUvm', function(data) {
-	        output = data;
+	        //output = data;
 			
 			chart = new Highcharts.Chart({
 	            chart: {
@@ -40,7 +40,8 @@ $(function() {
 	            series: [{
 	                type: 'pie',
 	                name: 'Browser share',
-	                data: output
+	                //data: output
+	                data : data
 	            }]
 			});
 		});
