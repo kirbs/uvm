@@ -476,7 +476,7 @@ $(function() {
 			    
 			    tooltip: {
 			    	shared: true,
-			        pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y}</b><br/>'
+			        pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y}</b><br/>'
 			    },
 			    
 			    legend: {
