@@ -26,7 +26,7 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
 				console.log(json);
 				$.each(json, function(i,val){
 					$select.append($('<option />', {
-						value : val[i+1], text : val[i+1]
+						value : (i+1), text : val[i+1]
 					}));
 				});
     		}
