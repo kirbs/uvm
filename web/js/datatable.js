@@ -7,7 +7,6 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
     	on : {
     		success : function(tx,r) {
     			var json = Y.JSON.parse(r.responseText);
-    			console.log(json);
     			
     			var entete = new Y.DataTable({
 					data : json,
