@@ -15,6 +15,7 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
     		}
     	}
    	});
+   	
 
 	
 	var array = [{'1':'Name'},{'2':'Age'}, {'3':'Gender'}];
