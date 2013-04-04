@@ -17,7 +17,7 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
    	});
    	
 
-    Y.io('api.php?command=ggetListPfsMere',{
+    Y.io('api.php?command=getListPfsMere',{
     	on : {
     		success : function(tx,r) {
     			var json = Y.JSON.parse(r.responseText);
