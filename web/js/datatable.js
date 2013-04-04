@@ -28,11 +28,6 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
 	});
 
 
-    var sortable = new Y.Sortable({
-        container: '#demo',
-        nodes: 'em',
-        opacity: '.1'
-    });
 
 
 
