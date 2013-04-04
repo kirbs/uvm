@@ -1,4 +1,4 @@
-YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
+YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function (Y) {
 
 
 	// AFFICHE TABLEAU GLOBAL
@@ -28,13 +28,14 @@ YUI().use(  "calendar", "datatype-date", "datatable", "io", function (Y) {
 	});
 
 
-});
-
-YUI().use('sortable', function(Y) {
     var sortable = new Y.Sortable({
         container: '#demo',
         nodes: 'em',
         opacity: '.1'
     });
+
+
+
 });
+
 
