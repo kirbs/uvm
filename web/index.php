@@ -20,7 +20,7 @@ function formulaire($today)
     	</div>
     	<div class='yui3-widget-bd'>
 			<div id='graphUvmByAllSite' class='yui3-widget-bd' ></div>
-			<div id='graphVMByAllSite' style='min-width: 300px; height: 300px; margin: 0 auto'></div>
+			<div id='graphVMByAllSite'></div>
     	</div>
 	</div>
 	
