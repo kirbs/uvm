@@ -7,7 +7,7 @@ YUI().use('transition', 'panel', function (Y) {
         panel.show();
         bb.transition({
             duration: 0.5,
-            top     : '0px'
+            top     : '80px'
         });
     }
 
@@ -30,7 +30,7 @@ YUI().use('transition', 'panel', function (Y) {
         render : true,
         buttons: [
             {
-                value  : 'Close the panel',
+                value  : 'Fermer',
                 section: 'footer',
                 action : function (e) {
                     e.preventDefault();
