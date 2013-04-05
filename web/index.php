@@ -81,7 +81,6 @@ function liste_uvm_by_xen()
 
 function liste_uvm_by_pfs_mere($pfs, $date)
 {
-    echo "date : $date";
 	echo "<table width=50% border=\"0\">";
 	if ($pfs == "all")
 		$CONDITION = "WHERE 1 AND date_uvm = '$date'";
@@ -172,7 +171,6 @@ $enab = return_variable($_POST['enab']);
 $pfs = return_variable($_POST['pfs']);
 $date = return_variable($_POST['date']);
 
-echo "choix : $choix";
 switch ($choix)
 {
 	case "pfs" :
