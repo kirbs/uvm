@@ -19,7 +19,7 @@ function formulaire($today)
         	Showing an animated panel
     	</div>
     	<div class='yui3-widget-bd'>
-			<table width='100%' border=0>
+			<table width='100%' border=0 class='yui3-widget-bd'>
 				<tr>
 					<td width='50%' align='center' ><div id='graphUvmByAllSite' ></div></td>
 					<td width='50%' align='center' ><div id='graphVMByAllSite' style='min-width: 300px; height: 300px; margin: 0 auto'></div></td>
