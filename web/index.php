@@ -28,7 +28,7 @@ function formulaire($today)
 						<option value='pfs'>PFS</option>
 						<option value='xen'>Serveur Xen</option>
 					</select> -->
-					<select id='choix'>
+					<select id='datas' name=choix>
 						<option value='--'>-- Choix de la PFS --</option>
 						<option value='0'>- ALL -</option>
 					</select>
