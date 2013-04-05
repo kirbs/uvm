@@ -22,7 +22,7 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
     		success : function(tx,r) {
     			var json = Y.JSON.parse(r.responseText);
     			
-				var $select = $('#datas');
+				var $select = $('#choix');
 				console.log(json);
 				$.each(json, function(){
 					$select.append($('<option />', {
