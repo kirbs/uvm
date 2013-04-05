@@ -26,7 +26,7 @@ YUI().use('transition', 'panel', function (Y) {
         xy     : [200, -200],
         zIndex : 5,
         modal  : true,
-        visible: true,
+        visible: false,
         render : true,
         buttons: [
             {
