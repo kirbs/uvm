@@ -12,6 +12,17 @@ function formulaire($today)
 	echo "
 	<div class='yui3-skin-sam' id='simple'></div>
 
+	
+	<div id='panelContent' class='yui3-widget-loading'>
+    	<div class='yui3-widget-hd'>
+        	Showing an animated panel
+    	</div>
+    	<div class='yui3-widget-bd'>
+        	<p>Making panels animate is easy with the 'transition' module!</p>
+    	</div>
+	</div>
+	
+	
 <br><br>
 
 	<form id='form' method='post' action='index.php'>
