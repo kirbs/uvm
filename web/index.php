@@ -10,9 +10,12 @@ $today = $lastDate;
 function formulaire($today)
 {
 	echo "
-	<div class='yui3-skin-sam' id='simple'></div>
+	<table><tr>
+			<td><div class='yui3-skin-sam' id='simple'></div></td>
+			<td><button class='yui3-button' id='openButton'>Pourcentage uVM</button></td>
+			</tr>
+	</table>
 
-	<button class='yui3-button' id='openButton'>Gaph Pourcentage des uVM/VM</button>
 	
 	<div id='panelContent' class='yui3-widget-loading'>
     	<div class='yui3-widget-hd'>
