@@ -30,7 +30,7 @@ function formulaire($today)
 					</select> -->
 					<select id='datas' name=pfs>
 						<option value='--'>-- Choix de la PFS --</option>
-						<option value='0'>- ALL -</option>
+						<option value='all'>- ALL -</option>
 					</select>
 				<input type=hidden name='choix' value='pfs'>
 				<input type=hidden name='enab' value=1>
@@ -176,8 +176,8 @@ echo "choix : $choix";
 switch ($choix)
 {
 	case "pfs" :
-			affiche_liste_pfs($choix,$date);
-			if ($enab == 1)
+			//affiche_liste_pfs($choix,$date);
+			//if ($enab == 1)
 		     		#liste_uvm_by_pfs_mere($_POST['pfs']);
 		     		liste_uvm_by_pfs_mere($pfs, $date);
 			break ;
