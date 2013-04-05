@@ -24,7 +24,7 @@ YUI().use('transition', 'panel', function (Y) {
         srcNode: '#panelContent',
         width  : 900,
         xy     : [200, -200],
-        zIndex : 5,
+        zIndex : 0,
         modal  : true,
         visible: false,
         render : true,
