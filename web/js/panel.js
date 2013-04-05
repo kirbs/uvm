@@ -7,7 +7,7 @@ YUI().use('transition', 'panel', function (Y) {
         panel.show();
         bb.transition({
             duration: 0.5,
-            top     : '80px'
+            top     : '20px'
         });
     }
 
