@@ -19,7 +19,7 @@ function formulaire($today)
         	Showing an animated panel
     	</div>
     	<div class='yui3-widget-bd'>
-			<div id='graphUvmByAllSite' class='yui3-widget-bd' ></div>
+			<div id='graphUvmByAllSite' class='yui3-widget-bd' style='display:none;'></div>
 			<div id='graphVMByAllSite' class='yui3-widget-bd'></div>
     	</div>
 	</div>
