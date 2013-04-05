@@ -14,7 +14,7 @@ YUI().use('transition', 'panel', function (Y) {
     function hidePanel() {
         bb.transition({
             duration: 0.5,
-            top     : '-600px'
+            top     : '-1000px'
         }, function () {
             panel.hide();
         });
