@@ -21,8 +21,8 @@ function formulaire($today)
     	<div class='yui3-widget-bd'>
 			<table width='100%' border=0>
 				<tr>
-					<td width='50%' align='center'><div id='population' style='align: center'></div></td>
-					<td width='50%' align='center'><div id='uvmbysite' style='align: center'></div></td>
+					<td width='50%' align='center' ><div id='graphUvmByAllSite' style='min-width: 300px; height: 300px; margin: 0 auto'></div></td>
+					<td width='50%' align='center' ><div id='graphVMByAllSite' style='min-width: 300px; height: 300px; margin: 0 auto'></div></td>
 				</tr>
 			</table>
     	</div>
