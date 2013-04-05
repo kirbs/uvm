@@ -22,7 +22,7 @@ YUI().use('transition', 'panel', function (Y) {
 
     panel = new Y.Panel({
         srcNode: '#panelContent',
-        width  : 330,
+        width  : 700,
         xy     : [300, -300],
         zIndex : 5,
         modal  : true,
