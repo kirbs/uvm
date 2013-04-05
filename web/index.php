@@ -12,11 +12,11 @@ function formulaire($today)
 	echo "
 	<div class='yui3-skin-sam' id='simple'></div>
 
-	<button id='openButton'>Open Panel</button>
+	<button id='openButton'>Gaph Pourcentage des uVM/VM</button>
 	
 	<div id='panelContent' class='yui3-widget-loading'>
     	<div class='yui3-widget-hd'>
-        	Showing an animated panel
+        	Graph du Pourcentage d' uVM/VM
     	</div>
     	<div class='yui3-widget-bd'>
 			<div id='graphUvmByAllSite' class='yui3-widget-bd' ></div>
