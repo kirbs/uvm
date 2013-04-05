@@ -19,7 +19,6 @@ function formulaire($today)
         	Showing an animated panel
     	</div>
     	<div class='yui3-widget-bd'>
-        	<p>Making panels animate is easy with the 'transition' module!</p>
 			<table width='100%' border=0>
 				<tr>
 					<!--<td colspan='2' align='center'><div id='population' style='align: center'></div></td>-->
