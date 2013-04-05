@@ -12,6 +12,7 @@ function formulaire($today)
 	echo "
 	<div class='yui3-skin-sam' id='simple'></div>
 
+	<button id='openButton'>Open Panel</button>
 	
 	<div id='panelContent' class='yui3-widget-loading'>
     	<div class='yui3-widget-hd'>
