@@ -81,7 +81,7 @@ function liste_uvm_by_xen()
 
 function liste_uvm_by_pfs_mere($pfs, $date)
 {
-	echo "<table width=50% border=\"0\">";
+	echo "<table width=50% border=\"1\">";
 	if ($pfs == "all")
 		$CONDITION = "WHERE 1 AND date_uvm = '$date'";
 	else
@@ -99,7 +99,7 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 		echo "<tr>
 				<td>
 					<div class=\"root\"><a href=\"\" onclick=\"toggleNode(this.parentNode); return false;\">
-						<table border=0 width='100%'>
+						<table border=1 width='100%'>
 							<tr>
 								<td>
 									$PFSmere[pfs_mere]
@@ -118,12 +118,12 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 			{
 				$cpt2 = $cpt2 + $UvmByPFSfille["uvm_total"];
 			}
-     			echo "<div><a href=\"\" onclick=\"toggleNode(this.parentNode); return false;\"><table border=0 width='100%'><tr><td>$PFSfille[pfs_fille]</td><td align=right>$cpt2</td></tr></table></a>";
+     			echo "<div><a href=\"\" onclick=\"toggleNode(this.parentNode); return false;\"><table border=1 width='100%'><tr><td>$PFSfille[pfs_fille]</td><td align=right>$cpt2</td></tr></table></a>";
 			$resultatvm = mysql_query("SELECT * FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND pfs_fille = '$PFSfille[pfs_fille]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
 			while($result = mysql_fetch_array($resultatvm))
 			{
 				echo " <div>
-				<table border=0 width='100%'>
+				<table border=1 width='100%'>
 					<tr>
 						<td>$result[vm_name]</td>
 						<td align=right>$result[uvm_total]</td>
