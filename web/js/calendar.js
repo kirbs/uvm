@@ -31,7 +31,7 @@ $(function() {
 
 
 
-		$("#datas").live("change keyup", function () {
+		$("#choix").live("change keyup", function () {
 			$("#form").submit();
 		});
 
