@@ -31,7 +31,7 @@ YUI().use('transition', 'panel', function (Y) {
         buttons: [
             {
                 value  : 'Fermer',
-                section: 'footer',
+                section: 'header',
                 action : function (e) {
                     e.preventDefault();
                     hidePanel();
