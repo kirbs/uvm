@@ -45,6 +45,6 @@ YUI().use('transition', 'panel', function (Y) {
     openBtn.on('click', function (e) {
         showPanel();
     });
-    showPanel();
+    Panel.hide();
 
 });
