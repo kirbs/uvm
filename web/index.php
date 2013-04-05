@@ -11,13 +11,10 @@ function formulaire($today)
 {
 	echo "
 	<div class='yui3-skin-sam' id='simple'></div>
-	<select id='datas'>
-		<option value='--'>-- Choix de la PFS --</option>
-		<option value='0'>- ALL -</option>
-	</select>
+
 <br><br>
 
-	<form method='post' action='index.php'>
+	<form id='form' method='post' action='index.php'>
 	<table width='100%'>
 		<tr>
 			<td width='30%' align='center'>
@@ -26,13 +23,17 @@ function formulaire($today)
        		<td width='70%' align='left'>
 		        <input type=hidden name='date' id='choice_date_click_field'>
 				<table><tr><td>Vue des uvms par : 
-					<select name=choix>
+					<!-- <select name=choix>
 						<option value='vide'>---</option>
 						<option value='pfs'>PFS</option>
 						<option value='xen'>Serveur Xen</option>
+					</select> -->
+					<select id='datas'>
+						<option value='--'>-- Choix de la PFS --</option>
+						<option value='0'>- ALL -</option>
 					</select>
 				<input type=hidden name='enab' value=0>
-				<input type='submit' value='Valider'>
+				<!--<input type='submit' value='Valider'>-->
 				</td></tr></table>
 			</td>
 		</tr>
@@ -94,7 +95,19 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 		{
 			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
 		}
-		echo "<tr><td><div class=\"root\"><a href=\"\" onclick=\"toggleNode(this.parentNode); return false;\"><table border=0 width='100%'><tr><td>$PFSmere[pfs_mere]</td><td align=right>$cpt uvm total</td></tr></table></a>";
+		echo "<tr>
+				<td>
+					<div class=\"root\"><a href=\"\" onclick=\"toggleNode(this.parentNode); return false;\">
+						<table border=0 width='100%'>
+							<tr>
+								<td>
+									$PFSmere[pfs_mere]
+								</td>
+								<td align=right>
+									$cpt uvm total
+								</td>
+							</tr>
+						</table></a>";
 		$req_liste_pfs_fille = mysql_query("SELECT distinct(pfs_fille) FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date'");
 		while($PFSfille = mysql_fetch_array($req_liste_pfs_fille))
 		{
