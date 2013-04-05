@@ -32,6 +32,7 @@ function formulaire($today)
 						<option value='--'>-- Choix de la PFS --</option>
 						<option value='0'>- ALL -</option>
 					</select>
+				<input type=hidden name='choix' value='pfs'>
 				<input type=hidden name='enab' value=1>
 				<!--<input type=hidden name='enab' value=0>-->
 				<!--<input type='submit' value='Valider'>-->
