@@ -244,7 +244,7 @@ function getListPfsMereUvmBySiteBack($lastDate)
 }
 
 
-function getPopulation($lastDate)
+function getPopulationUvmMemCpu($lastDate)
 {
 	$json = Array();
 	$arraya = Array();
@@ -276,6 +276,59 @@ function getPopulation($lastDate)
 	
 	echo json_encode($json);
 }
+
+
+function getPopulationUvmMemDisk($lastDate)
+{
+	$json = Array();
+	$arraya = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_disk FROM uVM WHERE date_uvm = '$lastDate' AND site = 'HT2' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arraya[] = array(intval($array['uvm_disk']),intval($array['uvm_memory']));
+	}
+	$json[] = array("HT2", $arraya);
+	
+	$arrayb = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_disk FROM uVM WHERE date_uvm = '$lastDate' AND site = 'Montsouris' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arrayb[] = array(intval($array['uvm_disk']),intval($array['uvm_memory']));
+	}
+	$json[] = array("Montsouris", $arrayb);
+	
+	$arrayb = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_disk FROM uVM WHERE date_uvm = '$lastDate' AND site = 'Immeuble Gambetta' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arrayb[] = array(intval($array['uvm_disk']),intval($array['uvm_memory']));
+	}
+	$json[] = array("Montsouris", $arrayb);
+	
+	echo json_encode($json);
+}
+
+
+function getListUvmByXen($site)
+{
+	$json = array();
+	$req_liste_xen = mysql_query("SELECT distinct(srv_xen) FROM uVM WHERE site='$site' order by srv_xen ASC");
+    while($srv = mysql_fetch_array($req_liste_xen))
+	{
+		$req_liste_vm_in_xen = mysql_query("SELECT uvm_total FROM uVM WHERE srv_xen  = '$srv[srv_xen]'");
+		$cpt = 0;
+        	while($uvm_vm = mysql_fetch_array($req_liste_vm_in_xen))
+		{
+			$cpt = $cpt + $uvm_vm["uvm_total"];
+		}
+		$json[] = array($srv[srv_xen], $cpt);
+	}
+	echo json_encode($json);
+}
+
 
 
 function nombre_element($critere, $today)
@@ -336,8 +389,12 @@ switch ($command)
 				getListGlobal($lastDate);
 				break;
 
-	case "getPopulation":
-				getPopulation($lastDate);
+	case "getPopulationUvmMemCpu":
+				getPopulationUvmMemCpu($lastDate);
+				break;
+				
+	case "getPopulationUvmMemDisk":
+				getPopulationUvmMemDisk($lastDate);
 				break;
 				
 	case "getListDate":
@@ -354,7 +411,11 @@ switch ($command)
 
 	case "getNbUvmBySite":
 				getNbUvmBySite($lastDate);
-				break;			
+				break;	
+				
+	case "getListUvmByXen":
+				getListUvmByXen($site);
+				break;	
 
     default : 
                         break;

@@ -4,9 +4,11 @@ include("header.html");
 	<script src="js/graph.js"></script>
 	<table width='100%' border=0>
 		<tr>
-			<!--<td colspan='2' align='center'><div id='population' style='align: center'></div></td>-->
-			<td width='50%' align='center'><div id='population' style='align: center'></div></td>
-			<td width='50%' align='center'><div id='uvmbysite' style='align: center'></div></td>
+			<td colspan='2' align='center'><div id='uvmbysite' style='align: center'></div></td>
+		</tr>
+		<tr>
+			<td width='50%' align='center'><div id='populationUvmMemCpu' style='align: center'></div></td>
+			<td width='50%' align='center'><div id='populationUvmMemDisk' style='align: center'></div></td>
 		</tr>
 		<tr>
 			<td width='50%' align='center' ><div id='graphUvmByAllSite' style='min-width: 300px; height: 300px; margin: 0 auto'></div></td>
@@ -21,3 +23,6 @@ include("header.html");
 		</tr>
 	</table>
 	<div id='graphUvmBySiteImmeuble Gambetta' style='height: 500px; min-width: 500px'></div>
+	<div id='graphUvmXenByHT2' style='height: 500px; min-width: 500px'></div>
+	<div id='graphUvmXenByBagnolet' style='height: 500px; min-width: 500px'></div>
+	<div id='graphUvmXenByMontsouris' style='height: 500px; min-width: 500px'></div>

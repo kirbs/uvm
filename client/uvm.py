@@ -13,8 +13,11 @@ class uVM(object):
   def __init__(self):
     self.session = Session('httpu:///var/run/xend/xen-api.sock')
     self.session.xenapi.login_with_password('', '')
+    self.HOST_ID = self.session.xenapi.host.get_all()
     self.uVM = {"mem" : 536870912 , "cpu": 1 , "disk" : 18 }
     self.ListAllVM = {}
+    self.ListInfoXen = {}
+    self.ListAllInfo = {}
     self.uname = os.uname()[1]
     self.dirdata = "/opt/hosting/run/exploit/current/var/data"
     self.reposvn = "%s/uvm" % self.dirdata
@@ -112,6 +115,20 @@ class uVM(object):
   def get_domain(self):
     self.domain = []
     self.domain = {"domain" : 0}
+    
+  def getMemTotalXen(self):
+      HOST_METRICS_ID = self.session.xenapi.host.get_metrics(self.HOST_ID[0])
+      MemTotalXen = self.ConvertOctotetToMega(int(self.session.xenapi.host_metrics.get_memory_total(HOST_METRICS_ID))) 
+      return MemTotalXen
+  
+  def getCpuTotalXen(self):
+      HOST_CPU = self.session.xenapi.host.get_record(self.HOST_ID[0])
+      CpuTotalXen = HOST_CPU['cpu_configuration']['nr_cpus']
+      return CpuTotalXen
+  
+  def getDiskTotalXen(self):
+      DiskTotalXen = 0
+      return DiskTotalXen
 
   def get_info(self):
     VMID = self.search_vm()
@@ -151,7 +168,13 @@ class uVM(object):
                                          "mem_used" : metric_mem,
                                          "cpu_used" : metric_cpu,
                                          "disk_used" : metric_disk}
-
+        
+    self.ListInfoXen[self.uname] = { "mem_total" : self.getMemTotalXen(),
+                                     "cpu_total" : self.getCpuTotalXen(),
+                                     "disk_total" : self.getDiskTotalXen()}
+    
+    self.ListAllInfo = {"vm" : self.ListAllVM, "xen" : self.ListInfoXen}
+    
   def is_batch(self):
     if self.batch == True:
       return True
@@ -211,7 +234,8 @@ class uVM(object):
     # svn ci hostname.pickle
 
   def OutputFormatBatch(self):
-    pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
+    #pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
+    pickle.dump(self.ListAllInfo,open('%s' % self.localpickle, 'wb'))
     self.SvnCommitPickle()
    
 
