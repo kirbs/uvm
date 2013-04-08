@@ -13,7 +13,7 @@ class uVM(object):
   def __init__(self):
     self.session = Session('httpu:///var/run/xend/xen-api.sock')
     self.session.xenapi.login_with_password('', '')
-    self.HOST_ID = session.xenapi.host.get_all()
+    self.HOST_ID = self.session.xenapi.host.get_all()
     self.uVM = {"mem" : 536870912 , "cpu": 1 , "disk" : 18 }
     self.ListAllVM = {}
     self.ListInfoXen = {}
@@ -117,16 +117,17 @@ class uVM(object):
     self.domain = {"domain" : 0}
     
   def getMemTotalXen(self):
-      HOST_METRICS_ID = session.xenapi.host.get_metrics(self.HOST_ID[0])
-      MemTotalXen = ConvertOctotetToMega(session.xenapi.host_metrics.get_memory_total(HOST_METRICS_ID)) 
+      HOST_METRICS_ID = self.session.xenapi.host.get_metrics(self.HOST_ID[0])
+      MemTotalXen = self.ConvertOctotetToMega(int(self.session.xenapi.host_metrics.get_memory_total(HOST_METRICS_ID))) 
       return MemTotalXen
   
   def getCpuTotalXen(self):
-      HOST_CPU = session.xenapi.host.get_record(self.HOST_ID[0])
+      HOST_CPU = self.session.xenapi.host.get_record(self.HOST_ID[0])
       CpuTotalXen = HOST_CPU['cpu_configuration']['nr_cpus']
       return CpuTotalXen
   
   def getDiskTotalXen(self):
+      DiskTotalXen = 0
       return DiskTotalXen
 
   def get_info(self):
