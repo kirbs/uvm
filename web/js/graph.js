@@ -382,6 +382,7 @@ $(function() {
 
 
 	    $.getJSON('api.php?command=getListPfsMereUvmBySiteBack', function(data) {
+	    	console.log(data[2]);
 	    	$.each(data[2], function(i,val){
 	    		console.log(i);
 	    		console.log(val);
