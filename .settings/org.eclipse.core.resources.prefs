@@ -1,6 +1,5 @@
 eclipse.preferences.version=1
 encoding//client/uvm.py=utf-8
-encoding//client/uvm_master.py=utf-8
 encoding//master/bdd.py=utf-8
 encoding//master/models.py=utf-8
 encoding//master/uvm_master.py=utf-8
