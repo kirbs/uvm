@@ -220,6 +220,7 @@ function getListPfsMereUvmBySiteBack($lastDate)
 	$ReqListSite = mysql_query("SELECT distinct(site) FROM uVM");
     while ($array_site  = mysql_fetch_array($ReqListSite))
     {
+    	echo "$array_site[site]";
     	if ($array_site['site'] != "")
 		{
 	    	$json2 = array();	
