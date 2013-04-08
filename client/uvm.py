@@ -246,9 +246,17 @@ class uVM(object):
       self.ListAllVM[i]["uVM_Disk"] = int(round(math.ceil(self.ListAllVM[i]["disk_used"] / self.uVM["disk"]),0))
       self.ListAllVM[i]["uvm"] = max([self.ListAllVM[i]["uVM_Memory"],self.ListAllVM[i]["uVM_CPU"],self.ListAllVM[i]["uVM_Disk"]])
 
+  def CalculHostuVMsTotal(self):
+    for i in self.ListInfoXen:
+      self.ListInfoXen[i]["uVM_Memory_total"] = self.ListInfoXen[i]["mem_total"] / self.uVM["mem"]
+      self.ListInfoXen[i]["uVM_CPU_total"] = self.ListInfoXen[i]["cpu_total"] / self.uVM["cpu"]
+      self.ListInfoXen[i]["uVM_Disk_total"] = int(round(math.ceil(self.ListInfoXen[i]["disk_total"] / self.uVM["disk"]),0))
+      self.ListInfoXen[i]["uvm_total"] = max([self.ListInfoXen[i]["uVM_Memory_total"],self.ListInfoXen[i]["uVM_CPU_total"],self.ListInfoXen[i]["uVM_Disk_total"]])
+
   def result(self):
     self.get_info()
     self.CalculuVMs()
+    self.CalculHostuVMsTotal()
     if self.is_batch():
       self.OutputFormatBatch()
     else:

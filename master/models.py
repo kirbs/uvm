@@ -16,10 +16,10 @@ class uVM(Base):
 
     id_uvm     = Column('uvm_id', Integer, primary_key=True)
     date_uvm   = Column('date_uvm', String(10))
-    srv_xen    = Column('srv_xen', String(50))
-    vm_name    = Column('vm_name', String(50))
-    pfs_mere   = Column('pfs_mere', String(50))
-    pfs_fille  = Column('pfs_fille', String(50))
+    srv_xen    = Column('srv_xen', String(255))
+    vm_name    = Column('vm_name', String(255))
+    pfs_mere   = Column('pfs_mere', String(255))
+    pfs_fille  = Column('pfs_fille', String(255))
     site       = Column('site', String(255))
     salle      = Column('salle', String(255))
     domain     = Column('domain', Integer)
@@ -47,5 +47,28 @@ class uVM(Base):
         self.uvm_cpu    = uvm_cpu
         self.uvm_disk   = uvm_disk
         self.uvm_total  = uvm_total 
+        
+class SrvXen(Base):
+    __tablename__ = 'SrvXen'
+
+    id_srvxen        = Column('srvxen_id', Integer, primary_key=True)
+    srvxen_name      = Column('srvxen_name', String(255))
+    memory_total     = Column('memory_total', Integer)
+    cpu_total        = Column('cpu_total', Integer)
+    disk_total       = Column('disk_total', Integer)
+    uvm_memory_total = Column('uvm_memory_total', Integer)
+    uvm_cpu_total    = Column('uvm_cpu_total', Integer)
+    uvm_disk_total   = Column('uvm_disk_total', Integer)
+    uvm_total        = Column('uvm_total', Integer)
+
+    def __init__(self, srvxen_name, memory_total, cpu_total, disk_total, uvm_memory_total, uvm_cpu_total, uvm_disk_total, uvm_total):
+        self.srvxen_name      = srvxen_name
+        self.memory_total     = memory_total
+        self.cpu_total        = cpu_total
+        self.disk_total       = disk_total
+        self.uvm_memory_total = uvm_memory_total 
+        self.uvm_cpu_total    = uvm_cpu_total
+        self.uvm_disk_total   = uvm_disk_total
+        self.uvm_total        = uvm_total
 
 Base.metadata.create_all(engine)
