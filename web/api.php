@@ -278,6 +278,26 @@ function getPopulation($lastDate)
 }
 
 
+
+function getListUvmByXen($site)
+{
+	$json = array();
+	$req_liste_xen = mysql_query("SELECT distinct(srv_xen) FROM uVM WHERE site='$site' order by srv_xen ASC");
+    while($srv = mysql_fetch_array($req_liste_xen))
+	{
+		$req_liste_vm_in_xen = mysql_query("SELECT uvm_total FROM uVM WHERE srv_xen  = '$srv[srv_xen]'");
+		$cpt = 0;
+        	while($uvm_vm = mysql_fetch_array($req_liste_vm_in_xen))
+		{
+			$cpt = $cpt + $uvm_vm["uvm_total"];
+		}
+		$json[] = array($srv[srv_xen], $cpt);
+	}
+	echo json_encode($json);
+}
+
+
+
 function nombre_element($critere, $today)
 {
 	
@@ -354,7 +374,11 @@ switch ($command)
 
 	case "getNbUvmBySite":
 				getNbUvmBySite($lastDate);
-				break;			
+				break;	
+				
+	case "getListUvmByXen":
+				getListUvmByXen($site);
+				break;	
 
     default : 
                         break;
