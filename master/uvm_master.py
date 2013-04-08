@@ -48,7 +48,7 @@ def InsertIntoUvm(session, reposvn):
       pk_file.close()
 
       date_today = datetime.date.today()
-      for vmname in DictInfoVM.keys():
+      for vmname in DictInfoVM['vm'].keys():
         check_date = session.query(uVM.date_uvm).filter(uVM.date_uvm == date_today).filter(uVM.vm_name == vmname).first()
         if check_date == None:
           new_uvm = uVM(
