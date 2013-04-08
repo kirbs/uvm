@@ -15,6 +15,8 @@ class uVM(object):
     self.session.xenapi.login_with_password('', '')
     self.uVM = {"mem" : 536870912 , "cpu": 1 , "disk" : 18 }
     self.ListAllVM = {}
+    self.ListInfoXen = {}
+    self.ListAllInfo = {}
     self.uname = os.uname()[1]
     self.dirdata = "/opt/hosting/run/exploit/current/var/data"
     self.reposvn = "%s/uvm" % self.dirdata
@@ -112,6 +114,15 @@ class uVM(object):
   def get_domain(self):
     self.domain = []
     self.domain = {"domain" : 0}
+    
+  def getMemTotalXen(self):
+      return MemTotalXen
+  
+  def getCpuTotalXen(self):
+      return CpuTotalXen
+  
+  def getDiskTotalXen(self):
+      return DiskTotalXen
 
   def get_info(self):
     VMID = self.search_vm()
@@ -151,7 +162,13 @@ class uVM(object):
                                          "mem_used" : metric_mem,
                                          "cpu_used" : metric_cpu,
                                          "disk_used" : metric_disk}
-
+        
+    self.ListInfoXen[self.uname] = { "mem_total" : self.getMemTotalXen(),
+                                     "cpu_total" : self.getCpuTotalXen(),
+                                     "disk_total" : self.getDiskTotalXen()}
+    
+    self.ListAllInfo = {"vm" : self.ListAllVM, "xen" : self.ListInfoXen}
+    
   def is_batch(self):
     if self.batch == True:
       return True
@@ -211,7 +228,8 @@ class uVM(object):
     # svn ci hostname.pickle
 
   def OutputFormatBatch(self):
-    pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
+    #pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
+    pickle.dump(self.ListAllInfo,open('%s' % self.localpickle, 'wb'))
     self.SvnCommitPickle()
    
 
