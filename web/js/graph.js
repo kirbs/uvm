@@ -429,7 +429,7 @@ $(function() {
 		
 		
 
-		//<!-- GRAPH uVM ALL SITE -->
+		//<!-- GRAPH uVM Par serveur Xen Sophia -->
 	
 	    $.getJSON('api?command=getListUvmByXen&site=HT2', function(data) {
 			chart = new Highcharts.Chart({
@@ -440,7 +440,7 @@ $(function() {
 	                plotShadow: false
 	            },
 	            title: {
-	                text: 'Pourcentage d\'uVM par Serveurs Xen'
+	                text: 'Pourcentage d\'uVM par Serveurs Xen (Sophia)'
 	            },
 	            tooltip: {
 	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
@@ -467,8 +467,91 @@ $(function() {
 	            }]
 			});
 		});
-		// <!-- Fin GRAPH uVM ALL SITE -->		
+		// <!-- Fin GRAPH uVM Par serveur Xen Sophia -->		
 		
+		
+		
+		//<!-- GRAPH uVM Par serveur Xen Bagnolet -->
+	
+	    $.getJSON('api?command=getListUvmByXen&site=Immeuble Gambetta', function(data) {
+			chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'graphUvmXenByBagnolet',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: 'Pourcentage d\'uVM par Serveurs Xen (Bagnolet)'
+	            },
+	            tooltip: {
+	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	                percentageDecimals: 2
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+    	                    formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.point.y +' uVM';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: 'uVM',
+	                data : data
+	            }]
+			});
+		});
+		// <!-- Fin GRAPH uVM Par serveur Xen Bagnolet -->	
+		
+		
+		
+		//<!-- GRAPH uVM Par serveur Xen Montsouris -->
+	
+	    $.getJSON('api?command=getListUvmByXen&site=Montsouris', function(data) {
+			chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'graphUvmXenByMontsouris',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: 'Pourcentage d\'uVM par Serveurs Xen (Montsouris)'
+	            },
+	            tooltip: {
+	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	                percentageDecimals: 2
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+    	                    formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.point.y +' uVM';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: 'uVM',
+	                data : data
+	            }]
+			});
+		});
+		// <!-- Fin GRAPH uVM Par serveur Xen Montsouris -->
 		
 		
 		
