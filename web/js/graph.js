@@ -428,7 +428,46 @@ $(function() {
 		
 		
 		
-		
+
+		//<!-- GRAPH uVM ALL SITE -->
+	
+	    $.getJSON('api?command=getListUvmByXen&site=HT2', function(data) {
+			chart = new Highcharts.Chart({
+	            chart: {
+	                renderTo: 'graphUvmXenByHT2',
+	                plotBackgroundColor: null,
+	                plotBorderWidth: null,
+	                plotShadow: false
+	            },
+	            title: {
+	                text: 'Pourcentage d\'uVM par Serveurs Xen'
+	            },
+	            tooltip: {
+	                    pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+	                percentageDecimals: 2
+	            },
+	            plotOptions: {
+	                pie: {
+	                    allowPointSelect: true,
+	                    cursor: 'pointer',
+	                    dataLabels: {
+	                        enabled: true,
+	                        color: '#000000',
+	                        connectorColor: '#000000',
+    	                    formatter: function() {
+	                            return '<b>'+ this.point.name +'</b>: '+ this.point.y +' uVM';
+	                        }
+	                    }
+	                }
+	            },
+	            series: [{
+	                type: 'pie',
+	                name: 'uVM',
+	                data : data
+	            }]
+			});
+		});
+		// <!-- Fin GRAPH uVM ALL SITE -->		
 		
 		
 		

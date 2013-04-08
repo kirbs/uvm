@@ -21,3 +21,4 @@ include("header.html");
 		</tr>
 	</table>
 	<div id='graphUvmBySiteImmeuble Gambetta' style='height: 500px; min-width: 500px'></div>
+	<div id='graphUvmXenByHT2' style='height: 500px; min-width: 500px'></div>
