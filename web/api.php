@@ -244,7 +244,7 @@ function getListPfsMereUvmBySiteBack($lastDate)
 }
 
 
-function getPopulation($lastDate)
+function getPopulationUvmMemCpu($lastDate)
 {
 	$json = Array();
 	$arraya = Array();
@@ -277,6 +277,39 @@ function getPopulation($lastDate)
 	echo json_encode($json);
 }
 
+
+function getPopulationUvmMemDisk($lastDate)
+{
+	$json = Array();
+	$arraya = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_disk FROM uVM WHERE date_uvm = '$lastDate' AND site = 'HT2' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arraya[] = array(intval($array['uvm_disk']),intval($array['uvm_memory']));
+	}
+	$json[] = array("HT2", $arraya);
+	
+	$arrayb = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_disk FROM uVM WHERE date_uvm = '$lastDate' AND site = 'Montsouris' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arrayb[] = array(intval($array['uvm_disk']),intval($array['uvm_memory']));
+	}
+	$json[] = array("Montsouris", $arrayb);
+	
+	$arrayb = Array();
+	$ReqPopulation = mysql_query("SELECT uvm_memory, uvm_disk FROM uVM WHERE date_uvm = '$lastDate' AND site = 'Immeuble Gambetta' ");
+	while ($array = mysql_fetch_array($ReqPopulation))
+	{
+		//$json[] = array(intval($array['uvm_cpu']),intval($array['uvm_memory']));
+		$arrayb[] = array(intval($array['uvm_disk']),intval($array['uvm_memory']));
+	}
+	$json[] = array("Montsouris", $arrayb);
+	
+	echo json_encode($json);
+}
 
 
 function getListUvmByXen($site)
@@ -356,8 +389,12 @@ switch ($command)
 				getListGlobal($lastDate);
 				break;
 
-	case "getPopulation":
-				getPopulation($lastDate);
+	case "getPopulationUvmMemCpu":
+				getPopulationUvmMemCpu($lastDate);
+				break;
+				
+	case "getPopulationUvmMemDisk":
+				getPopulationUvmMemDisk($lastDate);
 				break;
 				
 	case "getListDate":
