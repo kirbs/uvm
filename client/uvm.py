@@ -272,9 +272,9 @@ class uVM(object):
 
   def CalculHostuVMsTotal(self):
     for i in self.ListInfoXen:
-      self.ListInfoXen[i]["uVM_Memory_free"] = self.ListInfoXen[i]["mem_free"] / self.ConvertOctotetToMega(self.uVM["mem"])
+      self.ListInfoXen[i]["uVM_Memory_free"] = int(self.ListInfoXen[i]["mem_free"]) / self.ConvertOctotetToMega(int(self.uVM["mem"]))
       self.ListInfoXen[i]["uVM_Disk_free"] = int(round(math.ceil(self.ListInfoXen[i]["disk_free"] / self.uVM["disk"]),0))
-      self.ListInfoXen[i]["uVM_Memory_total"] = self.ListInfoXen[i]["mem_total"] / self.ConvertOctotetToMega(self.uVM["mem"])
+      self.ListInfoXen[i]["uVM_Memory_total"] = int(self.ListInfoXen[i]["mem_total"]) / self.ConvertOctotetToMega(int(self.uVM["mem"]))
       self.ListInfoXen[i]["uVM_CPU_total"] = int(self.ListInfoXen[i]["cpu_total"]) / self.uVM["cpu"]
       self.ListInfoXen[i]["uVM_Disk_total"] = int(round(math.ceil(self.ListInfoXen[i]["disk_total"] / self.uVM["disk"]),0))
       self.ListInfoXen[i]["uvm_total"] = max([self.ListInfoXen[i]["uVM_Memory_total"],self.ListInfoXen[i]["uVM_CPU_total"],self.ListInfoXen[i]["uVM_Disk_total"]])
