@@ -116,9 +116,9 @@ class uVM(object):
     self.domain = []
     self.domain = {"domain" : 0}
     
-  def get_bulle(selfself, pfs):
-    bulle = pfs.split('.')[-2]
-    return bulle
+  def get_bulle(self, pfs):
+     bulle = pfs.split('.')[-2]
+     return bulle
     
   def getMemTotalXen(self):
       HOST_METRICS_ID = self.session.xenapi.host.get_metrics(self.HOST_ID[0])
