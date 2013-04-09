@@ -312,13 +312,13 @@ function getPopulationUvmMemDisk($lastDate)
 }
 
 
-function getListUvmByXen($site)
+function getListUvmByXen($site,$lastDate)
 {
 	$json = array();
-	$req_liste_xen = mysql_query("SELECT distinct(srv_xen) FROM uVM WHERE site='$site' order by srv_xen ASC");
+	$req_liste_xen = mysql_query("SELECT distinct(srv_xen) FROM uVM WHERE site='$site' AND date_uvm = '$lastDate' order by srv_xen ASC");
     while($srv = mysql_fetch_array($req_liste_xen))
 	{
-		$req_liste_vm_in_xen = mysql_query("SELECT uvm_total FROM uVM WHERE srv_xen  = '$srv[srv_xen]'");
+		$req_liste_vm_in_xen = mysql_query("SELECT uvm_total FROM uVM WHERE srv_xen  = '$srv[srv_xen]' AND date_uvm = '$lastDate'");
 		$cpt = 0;
         	while($uvm_vm = mysql_fetch_array($req_liste_vm_in_xen))
 		{
@@ -414,7 +414,7 @@ switch ($command)
 				break;	
 				
 	case "getListUvmByXen":
-				getListUvmByXen($site);
+				getListUvmByXen($site,$lastDate);
 				break;	
 
     default : 
