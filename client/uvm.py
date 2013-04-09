@@ -140,7 +140,7 @@ class uVM(object):
       return DiskTotalXen
   
   def getDiskFreeXen(self):
-      DiskTotalXen = 0
+      DiskFreeXen = 0
       return DiskFreeXen
 
   def get_info(self):
