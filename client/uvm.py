@@ -115,7 +115,7 @@ class uVM(object):
 
   def get_domain(self, hostname):
     self.domain = []
-    self.domain = {"domain" : 0}
+    self.domain = {"domain" : "0"}
     
   def get_bulle(self, pfs):
      bulle = pfs.split('.')[-2]
@@ -149,6 +149,12 @@ class uVM(object):
       for i in VAL:
         DiskFreeXen = DiskFreeXen + int(i.strip()[:-1])
       return (DiskFreeXen / self.UnGiga)
+    
+  def getSystemProductName(self):
+      VAL = os.popen('dmidecode -s system-product-name', 'rb').readlines()
+      for i in VAL:
+        SystemProductName = i.strip()
+      return SystemProductName
 
   def get_info(self):
     VMID = self.search_vm()
@@ -201,7 +207,8 @@ class uVM(object):
                                      "cpu_total"    : self.getCpuTotalXen(),
                                      "disk_total"   : self.getDiskTotalXen(),
                                      "mem_free"     : self.getMemFreeXen(),
-                                     "disk_free"    : self.getDiskFreeXen()}
+                                     "disk_free"    : self.getDiskFreeXen(),
+                                     "hardware"     : self.getSystemProductName()}
     
     self.ListAllInfo = {"vm" : self.ListAllVM, "xen" : self.ListInfoXen}
     

@@ -79,12 +79,22 @@ def InsertIntoUvm(session, reposvn):
         if check_srvxen == None:
           new_srvxen = SrvXen(
               hostname,
+              DictInfo['xen'][vmname]["pfs_nomcourt"],
+              DictInfo['xen'][vmname]["pfs"],
+              DictInfo['xen'][vmname]["site"],
+              DictInfo['xen'][vmname]["domain"],
+              DictInfo['xen'][vmname]["bulle"],
+              DictInfo['xen'][vmname]["hardware"],
               ConvertOctetToMega(DictInfo['xen'][hostname]["mem_total"]),
               DictInfo['xen'][hostname]["cpu_total"],
               DictInfo['xen'][hostname]["disk_total"],
+              DictInfo['xen'][hostname]["mem_free"],
+              DictInfo['xen'][hostname]["disk_free"],
               DictInfo['xen'][hostname]["uVM_Memory_total"],
               DictInfo['xen'][hostname]["uVM_CPU_total"],
               DictInfo['xen'][hostname]["uVM_Disk_total"],
+              DictInfo['xen'][hostname]["uVM_Memory_free"],
+              DictInfo['xen'][hostname]["uVM_Disk_free"],
               DictInfo['xen'][hostname]["uvm_total"]
           )
           session.add(new_srvxen)
