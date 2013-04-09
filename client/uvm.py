@@ -58,7 +58,7 @@ class uVM(object):
     except:
       print "ERREUR !!! : le fichier dwh.pickle est inexistant"
       sys.exit()
-    self.mydict2 = pickle.load(pkl_file)
+    self.dictDWH = pickle.load(pkl_file)
     pkl_file.close()
 
   def search_vm(self):
@@ -95,20 +95,20 @@ class uVM(object):
 
   def get_pfs(self):
     self.pfs = []
-    for i in self.mydict2:
+    for i in self.dictDWH:
       if i["host_nom"] == self.vm_label:
         self.pfs = {"pfs_nomcourt": i["ppfs_nomcourt"],
                     "pfs_nomlong": i["ocp_nom"]}
 
   def get_site(self):
     self.site = []
-    for i in self.mydict2:
+    for i in self.dictDWH:
       if i["host_nom"] == self.vm_label:
         self.site = {"site": i["bat_nom"]}
 
   def get_salle(self):
     self.salle = []
-    for i in self.mydict2:
+    for i in self.dictDWH:
       if i["host_nom"] == self.vm_label:
         self.salle = {"salle": i["sal_nom"]}
 
