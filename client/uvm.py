@@ -93,33 +93,42 @@ class uVM(object):
     disk = float(disk_tmp.readline().split("GB")[0])
     return disk
 
-  def get_pfs(self):
+  def get_pfs(self, hostname):
     self.pfs = []
     for i in self.dictDWH:
-      if i["host_nom"] == self.vm_label:
+      if i["host_nom"] == hostname:
         self.pfs = {"pfs_nomcourt": i["ppfs_nomcourt"],
                     "pfs_nomlong": i["ocp_nom"]}
 
-  def get_site(self):
+  def get_site(self, hostname):
     self.site = []
     for i in self.dictDWH:
-      if i["host_nom"] == self.vm_label:
+      if i["host_nom"] == hostname:
         self.site = {"site": i["bat_nom"]}
 
-  def get_salle(self):
+  def get_salle(self, hostname):
     self.salle = []
     for i in self.dictDWH:
-      if i["host_nom"] == self.vm_label:
+      if i["host_nom"] == hostname:
         self.salle = {"salle": i["sal_nom"]}
 
-  def get_domain(self):
+  def get_domain(self, hostname):
     self.domain = []
     self.domain = {"domain" : 0}
+    
+  def get_bulle(selfself, pfs):
+    bulle = pfs.split('.')[-2]
+    return bulle
     
   def getMemTotalXen(self):
       HOST_METRICS_ID = self.session.xenapi.host.get_metrics(self.HOST_ID[0])
       MemTotalXen = self.ConvertOctotetToMega(int(self.session.xenapi.host_metrics.get_memory_total(HOST_METRICS_ID))) 
       return MemTotalXen
+  
+  def getMemFreeXen(self):
+      HOST_METRICS_ID = self.session.xenapi.host.get_metrics(self.HOST_ID[0])
+      MemFreeXen = self.ConvertOctotetToMega(int(self.session.xenapi.host_metrics.get_memory_free(HOST_METRICS_ID))) 
+      return MemFreeXen
   
   def getCpuTotalXen(self):
       HOST_CPU = self.session.xenapi.host.get_record(self.HOST_ID[0])
@@ -129,6 +138,10 @@ class uVM(object):
   def getDiskTotalXen(self):
       DiskTotalXen = 0
       return DiskTotalXen
+  
+  def getDiskFreeXen(self):
+      DiskTotalXen = 0
+      return DiskFreeXen
 
   def get_info(self):
     VMID = self.search_vm()
@@ -144,10 +157,10 @@ class uVM(object):
           metric_mem = self.get_memory()
           metric_cpu = self.get_cpu()
           metric_disk = self.get_disk()
-          self.get_pfs()
-          self.get_site()
-          self.get_salle()
-          self.get_domain()
+          self.get_pfs(self.vm_label)
+          self.get_site(self.vm_label)
+          self.get_salle(self.vm_label)
+          self.get_domain(self.vm_label)
           if self.pfs == []:
             self.pfs = {"pfs_nomcourt": "none", "pfs_nomlong":"none"}
           if self.site == []:
@@ -159,19 +172,29 @@ class uVM(object):
           metric_cpu = "not running"
           metric_disk = "not running"
 
-        self.ListAllVM[self.vm_label] = {"uname" : self.uname,
-                                         "pfs_nomcourt": self.pfs["pfs_nomcourt"],
-                                         "pfs" : self.pfs["pfs_nomlong"],
-                                         "site" : self.site["site"],
-                                         "salle" : self.salle["salle"],
-                                         "domain" : self.domain["domain"],
-                                         "mem_used" : metric_mem,
-                                         "cpu_used" : metric_cpu,
-                                         "disk_used" : metric_disk}
-        
-    self.ListInfoXen[self.uname] = { "mem_total" : self.getMemTotalXen(),
-                                     "cpu_total" : self.getCpuTotalXen(),
-                                     "disk_total" : self.getDiskTotalXen()}
+        self.ListAllVM[self.vm_label] = {"uname"        : self.uname,
+                                         "pfs_nomcourt" : self.pfs["pfs_nomcourt"],
+                                         "pfs"          : self.pfs["pfs_nomlong"],
+                                         "site"         : self.site["site"],
+                                         "salle"        : self.salle["salle"],
+                                         "domain"       : self.domain["domain"],
+                                         "mem_used"     : metric_mem,
+                                         "cpu_used"     : metric_cpu,
+                                         "disk_used"    : metric_disk}
+    self.get_pfs(self.uname)
+    self.get_site(self.uname)
+    self.get_salle(self.uname)
+    self.get_domain(self.uname)   
+    self.ListInfoXen[self.uname] = { "pfs_nomcourt" : self.pfs["pfs_nomcourt"],
+                                     "pfs"          : self.pfs["pfs_nomlong"],
+                                     "site"         : self.site["site"],
+                                     "domain"       : self.domain["domain"],
+                                     "bulle"        : self.get_bulle(self.pfs["pfs_nomlong"]),
+                                     "mem_total"    : self.getMemTotalXen(),
+                                     "cpu_total"    : self.getCpuTotalXen(),
+                                     "disk_total"   : self.getDiskTotalXen(),
+                                     "mem_free"     : self.getMemFreeXen(),
+                                     "disk_free"    : self.getDiskFreeXen()}
     
     self.ListAllInfo = {"vm" : self.ListAllVM, "xen" : self.ListInfoXen}
     
@@ -236,6 +259,7 @@ class uVM(object):
   def OutputFormatBatch(self):
     #pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
     pickle.dump(self.ListAllInfo,open('%s' % self.localpickle, 'wb'))
+    print self.ListAllInfo
     self.SvnCommitPickle()
    
 
@@ -248,6 +272,8 @@ class uVM(object):
 
   def CalculHostuVMsTotal(self):
     for i in self.ListInfoXen:
+      self.ListInfoXen[i]["uVM_Memory_free"] = self.ListInfoXen[i]["mem_free"] / self.uVM["mem"]
+      self.ListInfoXen[i]["uVM_Disk_free"] = int(round(math.ceil(self.ListInfoXen[i]["disk_free"] / self.uVM["disk"]),0))
       self.ListInfoXen[i]["uVM_Memory_total"] = self.ListInfoXen[i]["mem_total"] / self.uVM["mem"]
       self.ListInfoXen[i]["uVM_CPU_total"] = self.ListInfoXen[i]["cpu_total"] / self.uVM["cpu"]
       self.ListInfoXen[i]["uVM_Disk_total"] = int(round(math.ceil(self.ListInfoXen[i]["disk_total"] / self.uVM["disk"]),0))
