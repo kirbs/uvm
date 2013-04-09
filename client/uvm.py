@@ -24,6 +24,7 @@ class uVM(object):
     self.localpickle = "%s/xen/%s.pickle" % (self.reposvn,self.uname)
     self.CheckInstall()
     self.UnMega = (1024*1024)
+    self.UnGiga = (self.UnMega * 1024)
     self.SvnUpdatePickleDWH()
     self.OpenPickleDWH()
 
@@ -136,12 +137,18 @@ class uVM(object):
       return CpuTotalXen
   
   def getDiskTotalXen(self):
+      VAL = os.popen('vgs --units b -o vg_size | grep -v -i size','rb').readlines()
       DiskTotalXen = 0
-      return DiskTotalXen
+      for i in VAL:
+        DiskTotalXen = DiskTotalXen + int(i.strip()[:-1])
+      return (DiskTotalXen / self.UnGiga)
   
   def getDiskFreeXen(self):
+      VAL = os.popen('vgs --units b -o vg_free | grep -v -i free','rb').readlines()
       DiskFreeXen = 0
-      return DiskFreeXen
+      for i in VAL:
+        DiskFreeXen = DiskFreeXen + int(i.strip()[:-1])
+      return (DiskFreeXen / self.UnGiga)
 
   def get_info(self):
     VMID = self.search_vm()
@@ -259,7 +266,6 @@ class uVM(object):
   def OutputFormatBatch(self):
     #pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
     pickle.dump(self.ListAllInfo,open('%s' % self.localpickle, 'wb'))
-    print self.ListAllInfo
     self.SvnCommitPickle()
    
 
@@ -272,9 +278,9 @@ class uVM(object):
 
   def CalculHostuVMsTotal(self):
     for i in self.ListInfoXen:
-      self.ListInfoXen[i]["uVM_Memory_free"] = int(self.ListInfoXen[i]["mem_free"]) / self.ConvertOctotetToMega(int(self.uVM["mem"]))
+      self.ListInfoXen[i]["uVM_Memory_free"] = int(self.ListInfoXen[i]["mem_free"] / self.ConvertOctotetToMega(int(self.uVM["mem"])))
       self.ListInfoXen[i]["uVM_Disk_free"] = int(round(math.ceil(self.ListInfoXen[i]["disk_free"] / self.uVM["disk"]),0))
-      self.ListInfoXen[i]["uVM_Memory_total"] = int(self.ListInfoXen[i]["mem_total"]) / self.ConvertOctotetToMega(int(self.uVM["mem"]))
+      self.ListInfoXen[i]["uVM_Memory_total"] = int(self.ListInfoXen[i]["mem_total"] / self.ConvertOctotetToMega(int(self.uVM["mem"])))
       self.ListInfoXen[i]["uVM_CPU_total"] = int(self.ListInfoXen[i]["cpu_total"]) / self.uVM["cpu"]
       self.ListInfoXen[i]["uVM_Disk_total"] = int(round(math.ceil(self.ListInfoXen[i]["disk_total"] / self.uVM["disk"]),0))
       self.ListInfoXen[i]["uvm_total"] = max([self.ListInfoXen[i]["uVM_Memory_total"],self.ListInfoXen[i]["uVM_CPU_total"],self.ListInfoXen[i]["uVM_Disk_total"]])
