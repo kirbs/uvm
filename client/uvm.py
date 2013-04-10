@@ -151,7 +151,7 @@ class uVM(object):
       return (DiskFreeXen / self.UnGiga)
     
   def getSystemProductName(self):
-      VAL = os.popen('dmidecode -s system-product-name', 'rb').readlines()
+      VAL = os.popen('dmidecode -s system-product-name | tail -n 1', 'rb').readlines()
       for i in VAL:
         SystemProductName = i.strip()
       return SystemProductName
@@ -274,6 +274,7 @@ class uVM(object):
     #pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
     pickle.dump(self.ListAllInfo,open('%s' % self.localpickle, 'wb'))
     self.SvnCommitPickle()
+    print self.ListAllInfo['xen']
    
 
   def CalculuVMs(self):
