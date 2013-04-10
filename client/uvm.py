@@ -274,7 +274,6 @@ class uVM(object):
     #pickle.dump(self.ListAllVM,open('%s' % self.localpickle, 'wb'))
     pickle.dump(self.ListAllInfo,open('%s' % self.localpickle, 'wb'))
     self.SvnCommitPickle()
-    print self.ListAllInfo['xen']
    
 
   def CalculuVMs(self):
