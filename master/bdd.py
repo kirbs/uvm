@@ -12,6 +12,6 @@ class connect_bdd:
 
     def connect(self):
         #engine = create_engine('sqlite:///%s' % self.base_bdd, echo=self.verbose_bdd)
-        engine = create_engine('mysql://root:sdfsdf@localhost/uvm')
+        engine = create_engine('mysql://uvm:x_MZNl6YTq@api02.vprod.virt.b4.p.fti.net/uvm')
         return engine
 
