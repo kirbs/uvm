@@ -137,21 +137,21 @@ class uVM(object):
       return CpuTotalXen
   
   def getDiskTotalXen(self):
-      VAL = os.popen('vgs --units b -o vg_size | grep -v -i size','rb').readlines()
+      VAL = os.popen('/usr/sbin/vgs --units b -o vg_size | /bin/grep -v -i size','rb').readlines()
       DiskTotalXen = 0
       for i in VAL:
         DiskTotalXen = DiskTotalXen + int(i.strip()[:-1])
       return (DiskTotalXen / self.UnGiga)
   
   def getDiskFreeXen(self):
-      VAL = os.popen('vgs --units b -o vg_free | grep -v -i free','rb').readlines()
+      VAL = os.popen('/usr/sbin/vgs --units b -o vg_free | /bin/grep -v -i free','rb').readlines()
       DiskFreeXen = 0
       for i in VAL:
         DiskFreeXen = DiskFreeXen + int(i.strip()[:-1])
       return (DiskFreeXen / self.UnGiga)
     
   def getSystemProductName(self):
-      VAL = os.popen('dmidecode -s system-product-name | tail -n 1', 'rb').readlines()
+      VAL = os.popen('/usr/sbin/dmidecode -s system-product-name | /usr/bin/tail -n 1', 'rb').readlines()
       for i in VAL:
         SystemProductName = i.strip()
       return SystemProductName
