@@ -333,15 +333,30 @@ function getListUvmByXen($site,$lastDate)
 function getCapacityuMemuCpuByBulle($lastDate)
 {
 	$json = array();
+	$Bulle = array();
 	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	while($ArrayBulle = mysql_fetch_array($reqListBulle))
 	{
 		echo "--- bulle : $ArrayBulle[bulle]<br>";
-		$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by bulle ASC");
+		$Bulle[$ArrayBulle['bulle']];
+		
+		$SrvArray = array();
+		$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
 		while($ArraySrv = mysql_fetch_array($reqListSrvByBulle))
 		{
+			$SrvArray[] = $ArraySrv['srvxen_name'];
 			echo "-- srv : $ArraySrv[srvxen_name]<br>";
 		}
+		
+		$UmemArray = array();
+		$reqListUmemFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_memory_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		while($ArrayUmemFree = mysql_fetch_array($reqListUmemFreeBySrvByBulle))
+		{
+			$UmemArray[] = $ArrayUmemFree['uvm_memory_free'];
+			echo "-- Umem : $ArrayUmemFree[uvm_memory_free]<br>";
+		}
+		
+		
 	}
 }
 
