@@ -330,7 +330,7 @@ function getListPfsMereUvmBySiteBack($lastDate)
 }
 
 
-function getCapacityuMemuCpuByBulle($lastDate)
+function getViewByBulle($lastDate)
 {
 	$Bulle =array();
 	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
@@ -458,8 +458,8 @@ switch ($command)
 				getListUvmByXen($site,$lastDate);
 				break;	
 
-	case "getCapacityuMemuCpuByBulle":
-				getCapacityuMemuCpuByBulle($lastDate);
+	case "getViewByBulle":
+				getViewByBulle($lastDate);
 				break;
     default : 
                         break;
