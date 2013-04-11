@@ -365,8 +365,8 @@ function getCapacityuMemuCpuByBulle($lastDate)
 		
 		$Bulle[$ArrayBulle['bulle']] = array($SrvArray,$UmemArray,$UdiskArray);	
 	}
-	//$json = array($Bulle);
-	$json = array($SrvArray,$UmemArray,$UdiskArray);
+	$json = array($Bulle);
+	//$json = array($SrvArray,$UmemArray,$UdiskArray);
 	echo json_encode($json);
 	
 }
