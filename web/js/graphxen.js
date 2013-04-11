@@ -16,7 +16,7 @@ $(function() {
 		                type: 'column'
 		            },
 		            title: {
-		                text: 'Umem et Udisk restant par Serveur (Bulle '+ i +' )'
+		                text: 'Umem et Udisk Disponible par Serveur (Bulle '+ i +' )'
 		            },
 		            xAxis: {
 		                categories: val[0],

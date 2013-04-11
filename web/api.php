@@ -371,6 +371,55 @@ function getViewByBulle($lastDate)
 	
 }
 
+function getViewConsommationByBulle()
+{
+	$Bulle =array();
+	$SoUmem = array();
+	$SoUdisk = array();
+	
+	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
+	while($ArrayBulle = mysql_fetch_array($reqListBulle))
+	{
+		//echo "--- bulle : $ArrayBulle[bulle]<br>";
+		
+		
+		//$SrvArray = array();
+		//$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		//while($ArraySrv = mysql_fetch_array($reqListSrvByBulle))
+		//{
+		//	$SrvArray[] = $ArraySrv['srvxen_name'];
+		//	//echo "-- srv : $ArraySrv[srvxen_name]<br>";
+		//}
+		
+		$UmemArray = array();
+		$sommeUmem = 0;
+		$reqListUmemFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_memory_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		while($ArrayUmemFree = mysql_fetch_array($reqListUmemFreeBySrvByBulle))
+		{
+			//$UmemArray[] = (int) $ArrayUmemFree['uvm_memory_free'];
+			$sommeUmem = $sommeUmem + (int) $ArrayUmemFree['uvm_memory_free'];
+			//echo "-- Umem : $ArrayUmemFree[uvm_memory_free]<br>";
+		}
+		
+		$UdiskArray = array();
+		$sommeUdisk = 0;
+		$reqListUdiskFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_disk_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		while($ArrayUdiskFree = mysql_fetch_array($reqListUdiskFreeBySrvByBulle))
+		{
+			//$UdiskArray[] = (int) $ArrayUdiskFree['uvm_disk_free'];
+			$sommeUdisk = $sommeUdisk + (int) $ArrayUmemFree['uvm_memory_free'];
+			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
+		}
+		
+		$Bulle[] = $ArrayBulle['bulle'];
+		$SoUmem[] = $sommeUmem;
+		$SoUdisk[] = $sommeUdisk;	
+	}
+	//$json = array($Bulle);
+	$json = array($Bulle,$SoUmem,$SoUdisk);
+	echo json_encode($json);	
+	
+}
 
 function nombre_element($critere, $today)
 {
@@ -460,6 +509,10 @@ switch ($command)
 
 	case "getViewByBulle":
 				getViewByBulle($lastDate);
+				break;
+				
+	case "getViewConsommationByBulle":
+				getViewConsommationByBulle();
 				break;
     default : 
                         break;
