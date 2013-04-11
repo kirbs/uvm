@@ -19,6 +19,7 @@ class uVM(object):
     self.ListInfoXen = {}
     self.ListAllInfo = {}
     self.uname = os.uname()[1]
+    self.CheckExec()
     self.dirdata = "/opt/hosting/run/exploit/current/var/data"
     self.reposvn = "%s/uvm" % self.dirdata
     self.localpickle = "%s/xen/%s.pickle" % (self.reposvn,self.uname)
@@ -27,6 +28,12 @@ class uVM(object):
     self.UnGiga = (self.UnMega * 1024)
     self.SvnUpdatePickleDWH()
     self.OpenPickleDWH()
+    
+  def CheckExec(self):
+      plateforme = self.uname.split('xen0')[1].split('.')[0][:-2]
+      if plateforme == "node" or plateforme == "bas" or plateforme == "ct":
+          print "Ce serveur n'est pas autorisé a executer l'uvm"
+          sys.exit()
 
   def CheckInstall(self):
     if not os.path.isdir(self.reposvn):
