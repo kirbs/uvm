@@ -407,7 +407,7 @@ function getViewConsommationByBulle()
 		while($ArrayUdiskFree = mysql_fetch_array($reqListUdiskFreeBySrvByBulle))
 		{
 			//$UdiskArray[] = (int) $ArrayUdiskFree['uvm_disk_free'];
-			$sommeUdisk = $sommeUdisk + (int) $ArrayUmemFree['uvm_disk_free'];
+			$sommeUdisk = $sommeUdisk + (int) $ArrayUdiskFree['uvm_disk_free'];
 			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
 		}
 		
