@@ -13,7 +13,8 @@ $(function() {
 		        chart = new Highcharts.Chart({
 		            chart: {
 		                renderTo: 'Capacity_'+ i,
-		                type: 'column'
+		                type: 'column',
+		                zoomType: 'xy'
 		            },
 		            title: {
 		                text: 'Umem et Udisk Disponible par Serveur (Bulle '+ i +' )'
