@@ -380,16 +380,6 @@ function getViewConsommationByBulle()
 	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	while($ArrayBulle = mysql_fetch_array($reqListBulle))
 	{
-		//echo "--- bulle : $ArrayBulle[bulle]<br>";
-		
-		
-		//$SrvArray = array();
-		//$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
-		//while($ArraySrv = mysql_fetch_array($reqListSrvByBulle))
-		//{
-		//	$SrvArray[] = $ArraySrv['srvxen_name'];
-		//	//echo "-- srv : $ArraySrv[srvxen_name]<br>";
-		//}
 		
 		$UmemArray = array();
 		$sommeUmem = 0;
