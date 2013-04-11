@@ -340,7 +340,7 @@ function getCapacityuMemuCpuByBulle($lastDate)
 		$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by bulle ASC");
 		while($ArraySrv = mysql_fetch_array($reqListSrvByBulle))
 		{
-			echo "-- srv : $ArraySrv[srvxen]<br>";
+			echo "-- srv : $ArraySrv[srvxen_name]<br>";
 		}
 	}
 }
