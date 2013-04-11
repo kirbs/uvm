@@ -7,7 +7,7 @@ $PASSWORD_MYSQL = "rootroot";
 $BASE_MYSQL = "uvm2"; 
 */ 
 
-$SRV_MYSQL = "localhost";
+$SRV_MYSQL = "api02.vprod.virt.b4.p.fti.net";
 $USER_MYSQL = "uvm";
 $PASSWORD_MYSQL = "x_MZNl6YTq";
 $BASE_MYSQL = "uvm";
