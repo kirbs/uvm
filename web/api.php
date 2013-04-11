@@ -330,6 +330,21 @@ function getListUvmByXen($site,$lastDate)
 }
 
 
+function getCapacityuMemuCpuByBulle($lastDate)
+{
+	$json = array();
+	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
+	while($ArrayBulle = mysql_fetch_array($reqListBulle))
+	{
+		echo "--- bulle : $ArrayBulle[bulle]<br>";
+		$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by bulle ASC");
+		while($ArraySrv = mysql_fetch_array($reqListSrvByBulle))
+		{
+			echo "-- srv : $ArraySrv[srvxen]<br>";
+		}
+	}
+}
+
 
 function nombre_element($critere, $today)
 {
@@ -417,6 +432,9 @@ switch ($command)
 				getListUvmByXen($site,$lastDate);
 				break;	
 
+	case "getCapacityuMemuCpuByBulle":
+				getCapacityuMemuCpuByBulle($lastDate);
+				break;
     default : 
                         break;
 }
