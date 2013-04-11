@@ -85,7 +85,7 @@ def InsertIntoUvm(session, reposvn):
               DictInfo['xen'][hostname]["domain"],
               DictInfo['xen'][hostname]["bulle"],
               DictInfo['xen'][hostname]["hardware"],
-              ConvertOctetToMega(DictInfo['xen'][hostname]["mem_total"]),
+              DictInfo['xen'][hostname]["mem_total"],
               DictInfo['xen'][hostname]["cpu_total"],
               DictInfo['xen'][hostname]["disk_total"],
               DictInfo['xen'][hostname]["mem_free"],
