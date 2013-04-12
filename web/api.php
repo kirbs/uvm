@@ -351,7 +351,7 @@ function getCapacityuMemuCpuByBulle($lastDate)
 		$reqListUmemFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_memory_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
 		while($ArrayUmemFree = mysql_fetch_array($reqListUmemFreeBySrvByBulle))
 		{
-			$UmemArray[] = int($ArrayUmemFree['uvm_memory_free']);
+			$UmemArray[] = $ArrayUmemFree['uvm_memory_free'];
 			//echo "-- Umem : $ArrayUmemFree[uvm_memory_free]<br>";
 		}
 		
@@ -359,7 +359,7 @@ function getCapacityuMemuCpuByBulle($lastDate)
 		$reqListUdiskFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_disk_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
 		while($ArrayUdiskFree = mysql_fetch_array($reqListUdiskFreeBySrvByBulle))
 		{
-			$UdiskArray[] = int($ArrayUdiskFree['uvm_disk_free']);
+			$UdiskArray[] = $ArrayUdiskFree['uvm_disk_free'];
 			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
 		}
 		
