@@ -212,37 +212,6 @@ function getListPfsMereUvmBySite($lastDate,$site)
         echo json_encode($json);
 }
 
-function getListPfsMereUvmBySiteBack($lastDate)
-{
-
-	$json_site = array();
-	
-	$ReqListSite = mysql_query("SELECT distinct(site) FROM uVM");
-    while ($array_site  = mysql_fetch_array($ReqListSite))
-    {
-    	if ($array_site['site'] != "")
-		{
-	    	$json2 = array();	
-		    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
-		    while ($array  = mysql_fetch_array($ReqListPfsMere))
-		    {
-				$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$array_site[site]'");
-				$total_uvm_by_pfsmere = 0;
-		        while ($array2  = mysql_fetch_array($ReqListPfsFille))
-				{
-					$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
-				}
-				if ( $total_uvm_by_pfsmere != 0)
-		        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
-			}
-			$json_site[$array_site['site']] = $json2;
-		}
-		$t = "titre";
-	}
-	$json = array(array($lastDate),array($t), $json_site);
-    echo json_encode($json);
-}
-
 
 function getPopulationUvmMemCpu($lastDate)
 {
@@ -329,10 +298,41 @@ function getListUvmByXen($site,$lastDate)
 	echo json_encode($json);
 }
 
+function getListPfsMereUvmBySiteBack($lastDate)
+{
+
+	$json_site = array();
+	
+	$ReqListSite = mysql_query("SELECT distinct(site) FROM uVM");
+    while ($array_site  = mysql_fetch_array($ReqListSite))
+    {
+    	if ($array_site['site'] != "")
+		{
+	    	$json2 = array();	
+		    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+		    while ($array  = mysql_fetch_array($ReqListPfsMere))
+		    {
+				$ReqListPfsFille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate' AND site = '$array_site[site]'");
+				$total_uvm_by_pfsmere = 0;
+		        while ($array2  = mysql_fetch_array($ReqListPfsFille))
+				{
+					$total_uvm_by_pfsmere = $total_uvm_by_pfsmere + $array2[uvm_total];
+				}
+				if ( $total_uvm_by_pfsmere != 0)
+		        	$json2[] = array($array['pfs_mere'],$total_uvm_by_pfsmere);
+			}
+			$json_site[$array_site['site']] = $json2;
+		}
+		$t = "titre";
+	}
+	$json = array(array($lastDate),array($t), $json_site);
+    echo json_encode($json);
+}
+
 
 function getCapacityuMemuCpuByBulle($lastDate)
 {
-	$Bulle =array();
+	//$Bulle =array();
 	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	while($ArrayBulle = mysql_fetch_array($reqListBulle))
 	{
@@ -363,9 +363,10 @@ function getCapacityuMemuCpuByBulle($lastDate)
 			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
 		}
 		
-		$Bulle[$ArrayBulle['bulle']] = array($SrvArray,$UmemArray,$UdiskArray);	
+		//$Bulle[$ArrayBulle['bulle']] = array($SrvArray,$UmemArray,$UdiskArray);	
 	}
-	$json = array($Bulle);
+	//$json = array($Bulle);
+	$json = array($SrvArray,$UmemArray,$UdiskArray);
 	echo json_encode($json);
 	
 }

@@ -6,7 +6,7 @@ $(function() {
 
 	    $.getJSON('api?command=getCapacityuMemuCpuByBulle', function(data) {		
 	    	
-	    	console.log(data[0]);
+	    	console.log(data);
 	        chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'Capacity',
@@ -16,7 +16,7 @@ $(function() {
 	                text: 'Stacked column chart'
 	            },
 	            xAxis: {
-	                categories: data['Alpha'][0]
+	                categories: data[0][0]
 	                //['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
 	            },
 	            yAxis: {
@@ -61,11 +61,11 @@ $(function() {
 	            },
 	            series: [{
 	                name: 'uMem',
-	                data: data['Alpha'][1]
+	                data: data[1][0]
 	                //[5, 3, 4, 7, 2]
 	            }, {
 	                name: 'uDisk',
-	                data: data['Alpha'][2]
+	                data: data[2][0]
 	                //[2, 2, 3, 2, 1]
 	            }]
 	        });
