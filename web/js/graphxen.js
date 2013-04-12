@@ -20,7 +20,11 @@ $(function() {
 	                //['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
 	                labels: {
 	                	rotation : -90,
-	                	align : 'right'
+	                	align : 'right',
+	                	style: {
+							color: '#6D869F',
+							fontWeight: 'bold'
+						}
 	                }
 	            },
 	            yAxis: {
