@@ -336,7 +336,7 @@ function getCapacityuMemuCpuByBulle($lastDate)
 	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	while($ArrayBulle = mysql_fetch_array($reqListBulle))
 	{
-		//echo "--- bulle : $ArrayBulle[bulle]<br>";
+		echo "--- bulle : $ArrayBulle[bulle]<br>";
 		
 		
 		$SrvArray = array();
