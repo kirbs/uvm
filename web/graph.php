@@ -25,8 +25,6 @@ include("header.html");
 	<div id='graphUvmBySiteImmeuble Gambetta' style='height: 500px; min-width: 500px'></div>
 	<div id='graphUvmBySiteHT2' style='height: 500px; min-width: 500px'></div>
 	<div id='graphUvmBySiteMontsouris' style='height: 500px; min-width: 500px'></div>
-	<div>
-	<div id='graphUvmXenByHT2' style='width:50%, height: 500px; min-width: 500px'></div>
-	<div id='graphUvmXenByBagnolet' style='width:50%, height: 500px; min-width: 500px'></div>
-	</div>
+	<div id='graphUvmXenByHT2' style='height: 500px; min-width: 500px'></div>
+	<div id='graphUvmXenByBagnolet' style='height: 500px; min-width: 500px'></div>
 	<div id='graphUvmXenByMontsouris' style='height: 500px; min-width: 500px'></div>
