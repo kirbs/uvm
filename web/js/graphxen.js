@@ -69,7 +69,7 @@ $(function() {
 	                   		 //return '<b>'+ this.x +'</b><br/>'+
 	                    	//    this.series.name +': '+ this.y +'<br/>'+
 	                    	//    'Total: '+ this.point.stackTotal;
-	                    		'Disk Dispo: '+ Math.round(((this.y / 18)*100 ) /100).toFixed(2) + 'Go';
+	                    		'Disk Dispo: '+ ((this.y / 18)*100 ) /100 + 'Go';
 	                   }
 	                }
 	            },
