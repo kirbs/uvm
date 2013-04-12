@@ -6,7 +6,7 @@ $(function() {
 
 	    $.getJSON('api?command=getCapacityuMemuCpuByBulle', function(data) {		
 	    	
-	    	console.log(data);
+	    	console.log(data['Alpha']);
 	        chart = new Highcharts.Chart({
 	            chart: {
 	                renderTo: 'Capacity',
