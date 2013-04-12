@@ -16,8 +16,11 @@ $(function() {
 	                text: 'Stacked column chart'
 	            },
 	            xAxis: {
-	                categories: ["xen0stratus001.cloud.s1.p.fti.net","xen0stratus002.cloud.s1.p.fti.net","xen0stratus003.cloud.s1.p.fti.net","xen0stratus004.cloud.s1.p.fti.net","xen0stratus005.cloud.s1.p.fti.net","xen0stratus006.cloud.s1.p.fti.net","xen0stratus007.cloud.s1.p.fti.net","xen0stratus008.cloud.s1.p.fti.net","xen0stratus009.cloud.s1.p.fti.net","xen0stratus010.cloud.s1.p.fti.net","xen0stratus201.cloud.b1.p.fti.net","xen0stratus202.cloud.b1.p.fti.net","xen0stratus203.cloud.b1.p.fti.net","xen0stratus204.cloud.b1.p.fti.net","xen0stratus205.cloud.b1.p.fti.net","xen0stratus206.cloud.b1.p.fti.net","xen0stratus207.cloud.b1.p.fti.net","xen0stratus208.cloud.b1.p.fti.net","xen0stratus209.cloud.b1.p.fti.net","xen0stratus210.cloud.b1.p.fti.net"]
+	                categories: ["xen0stratus001.cloud.s1.p.fti.net","xen0stratus002.cloud.s1.p.fti.net","xen0stratus003.cloud.s1.p.fti.net","xen0stratus004.cloud.s1.p.fti.net","xen0stratus005.cloud.s1.p.fti.net","xen0stratus006.cloud.s1.p.fti.net","xen0stratus007.cloud.s1.p.fti.net","xen0stratus008.cloud.s1.p.fti.net","xen0stratus009.cloud.s1.p.fti.net","xen0stratus010.cloud.s1.p.fti.net","xen0stratus201.cloud.b1.p.fti.net","xen0stratus202.cloud.b1.p.fti.net","xen0stratus203.cloud.b1.p.fti.net","xen0stratus204.cloud.b1.p.fti.net","xen0stratus205.cloud.b1.p.fti.net","xen0stratus206.cloud.b1.p.fti.net","xen0stratus207.cloud.b1.p.fti.net","xen0stratus208.cloud.b1.p.fti.net","xen0stratus209.cloud.b1.p.fti.net","xen0stratus210.cloud.b1.p.fti.net"],
 	                //['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+	                labels: {
+	                	rotation : 90
+	                }
 	            },
 	            yAxis: {
 	                min: 0,
