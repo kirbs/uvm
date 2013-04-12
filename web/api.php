@@ -332,11 +332,11 @@ function getListPfsMereUvmBySiteBack($lastDate)
 
 function getCapacityuMemuCpuByBulle($lastDate)
 {
-	//$Bulle =array();
+	$Bulle =array();
 	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	while($ArrayBulle = mysql_fetch_array($reqListBulle))
 	{
-		echo "--- bulle : $ArrayBulle[bulle]<br>";
+		//echo "--- bulle : $ArrayBulle[bulle]<br>";
 		
 		
 		$SrvArray = array();
@@ -363,10 +363,10 @@ function getCapacityuMemuCpuByBulle($lastDate)
 			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
 		}
 		
-		//$Bulle[$ArrayBulle['bulle']] = array($SrvArray,$UmemArray,$UdiskArray);	
+		$Bulle[$ArrayBulle['bulle']] = array($SrvArray,$UmemArray,$UdiskArray);	
 	}
-	//$json = array($Bulle);
-	$json = array($SrvArray,$UmemArray,$UdiskArray);
+	$json = array($Bulle);
+	//$json = array($SrvArray,$UmemArray,$UdiskArray);
 	echo json_encode($json);
 	
 }
