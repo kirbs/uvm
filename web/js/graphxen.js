@@ -53,12 +53,15 @@ $(function() {
 	            },
 	            tooltip: {
 	                formatter: function() {
-	                	return '<b>'+ this.x +'</b><br/>'+
-	                		this.series.name +': '+ this.y +'<br/>' + 
-	                    //return '<b>'+ this.x +'</b><br/>'+
-	                    //    this.series.name +': '+ this.y +'<br/>'+
-	                    //    'Total: '+ this.point.stackTotal;
-	                    	'Total: '+ this.y / 2;
+	                	if (this.series.name == 'uMem')
+	                	{
+	                		return '<b>'+ this.x +'</b><br/>'+
+	                			this.series.name +': '+ this.y +'<br/>' + 
+	                   		 //return '<b>'+ this.x +'</b><br/>'+
+	                    	//    this.series.name +': '+ this.y +'<br/>'+
+	                    	//    'Total: '+ this.point.stackTotal;
+	                    		'Total: '+ this.y / 2;
+	                   }
 	                }
 	            },
 	            plotOptions: {
