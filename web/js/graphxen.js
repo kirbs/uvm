@@ -16,7 +16,7 @@ $(function() {
 	                text: 'Umem et Udisk restant par Serveur (Bulle Alpha)'
 	            },
 	            xAxis: {
-	                categories: data['Alpha'][0][0],
+	                categories: data[0],
 	                //["xen0stratus001.cloud.s1.p.fti.net","xen0stratus002.cloud.s1.p.fti.net","xen0stratus003.cloud.s1.p.fti.net","xen0stratus004.cloud.s1.p.fti.net","xen0stratus005.cloud.s1.p.fti.net","xen0stratus006.cloud.s1.p.fti.net","xen0stratus007.cloud.s1.p.fti.net","xen0stratus008.cloud.s1.p.fti.net","xen0stratus009.cloud.s1.p.fti.net","xen0stratus010.cloud.s1.p.fti.net","xen0stratus201.cloud.b1.p.fti.net","xen0stratus202.cloud.b1.p.fti.net","xen0stratus203.cloud.b1.p.fti.net","xen0stratus204.cloud.b1.p.fti.net","xen0stratus205.cloud.b1.p.fti.net","xen0stratus206.cloud.b1.p.fti.net","xen0stratus207.cloud.b1.p.fti.net","xen0stratus208.cloud.b1.p.fti.net","xen0stratus209.cloud.b1.p.fti.net","xen0stratus210.cloud.b1.p.fti.net"],
 	                labels: {
 	                	rotation : -60,
@@ -71,11 +71,11 @@ $(function() {
 	            },
 	            series: [{
 	                name: 'uMem',
-	                data: data['Alpha'][1][0]
+	                data: data[1]
 	                //[58,58,58,58,58,58,58,104,58,104,58,58,58,58,58,58,58,104,58,108]
 	            }, {
 	                name: 'uDisk',
-	                data: data['Alpha'][2][0]
+	                data: data[2]
 	                //[64,65,65,65,74,65,65,70,65,70,65,65,65,65,65,65,65,67,65,68]
 	            }]
 	        });
