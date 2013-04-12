@@ -330,6 +330,46 @@ function getListUvmByXen($site,$lastDate)
 }
 
 
+function getCapacityuMemuCpuByBulle($lastDate)
+{
+	$Bulle =array();
+	$reqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
+	while($ArrayBulle = mysql_fetch_array($reqListBulle))
+	{
+		echo "--- bulle : $ArrayBulle[bulle]<br>";
+		
+		
+		$SrvArray = array();
+		$reqListSrvByBulle = mysql_query("SELECT srvxen_name FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		while($ArraySrv = mysql_fetch_array($reqListSrvByBulle))
+		{
+			$SrvArray[] = $ArraySrv['srvxen_name'];
+			//echo "-- srv : $ArraySrv[srvxen_name]<br>";
+		}
+		
+		$UmemArray = array();
+		$reqListUmemFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_memory_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		while($ArrayUmemFree = mysql_fetch_array($reqListUmemFreeBySrvByBulle))
+		{
+			$UmemArray[] = $ArrayUmemFree['uvm_memory_free'];
+			//echo "-- Umem : $ArrayUmemFree[uvm_memory_free]<br>";
+		}
+		
+		$UdiskArray = array();
+		$reqListUdiskFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_disk_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		while($ArrayUdiskFree = mysql_fetch_array($reqListUdiskFreeBySrvByBulle))
+		{
+			$UdiskArray[] = $ArrayUdiskFree['uvm_disk_free'];
+			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
+		}
+		
+		$Bulle[$ArrayBulle['bulle']] = array($SrvArray,$UmemArray,$UdiskArray);	
+	}
+	$json = array($Bulle);
+	echo json_encode($json);
+	
+}
+
 
 function nombre_element($critere, $today)
 {
@@ -417,6 +457,9 @@ switch ($command)
 				getListUvmByXen($site,$lastDate);
 				break;	
 
+	case "getCapacityuMemuCpuByBulle":
+				getCapacityuMemuCpuByBulle($lastDate);
+				break;
     default : 
                         break;
 }
