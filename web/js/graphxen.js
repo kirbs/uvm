@@ -53,14 +53,14 @@ $(function() {
 	            },
 	            tooltip: {
 	                formatter: function() {
-	                	if (this.x == 'uMem')
+	                	if (this.series.name == 'uMem')
 	                	{
 	                		return '<b>'+ this.x +'</b><br/>'+
-	                			this.series.name +': '+ this.y +'<br/>' + 
+	                			this.series.name +' dispo : '+ this.y +'<br/>' + 
 	                   		 //return '<b>'+ this.x +'</b><br/>'+
 	                    	//    this.series.name +': '+ this.y +'<br/>'+
 	                    	//    'Total: '+ this.point.stackTotal;
-	                    		'Total: '+ this.y / 2;
+	                    		'Mem Dispo: '+ this.y / 2 + 'Go';
 	                   }
 	                }
 	            },
