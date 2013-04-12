@@ -62,6 +62,15 @@ $(function() {
 	                    	//    'Total: '+ this.point.stackTotal;
 	                    		'Mem Dispo: '+ this.y / 2 + 'Go';
 	                   }
+	                   if (this.series.name == 'uDisk')
+	                	{
+	                		return '<b>'+ this.x +'</b><br/>'+
+	                			this.series.name +' dispo : '+ this.y +'<br/>' + 
+	                   		 //return '<b>'+ this.x +'</b><br/>'+
+	                    	//    this.series.name +': '+ this.y +'<br/>'+
+	                    	//    'Total: '+ this.point.stackTotal;
+	                    		'Disk Dispo: '+ this.y / 18 + 'Go';
+	                   }
 	                }
 	            },
 	            plotOptions: {
