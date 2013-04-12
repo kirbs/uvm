@@ -53,7 +53,7 @@ $(function() {
 	            },
 	            tooltip: {
 	                formatter: function() {
-	                	if (this.series.name == 'uMem')
+	                	if (this.x == 'uMem')
 	                	{
 	                		return '<b>'+ this.x +'</b><br/>'+
 	                			this.series.name +': '+ this.y +'<br/>' + 
