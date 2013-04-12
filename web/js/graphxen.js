@@ -23,7 +23,7 @@ $(function() {
 	                	align : 'right',
 	                	style: {
 							color: '#6D869F',
-							fontWeight: 'bold'
+							//fontWeight: 'bold'
 						}
 	                }
 	            },
