@@ -33,7 +33,7 @@ $(function() {
 	                    text: 'Total fruit consumption'
 	                },
 	                stackLabels: {
-	                    enabled: true,
+	                    enabled: false,
 	                    style: {
 	                        fontWeight: 'bold',
 	                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
