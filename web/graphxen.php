@@ -11,16 +11,14 @@ include("config.inc");
 
 	$ReqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	echo '<table>';
-	//echo '<tr>';
+	echo '<tr>';
 	$cpt = 0;
 	while($array = mysql_fetch_array($ReqListBulle))
 	{
 		$cpt = $cpt + 1;
-		if (($cpt % 2) == 0)
-			echo '<tr>';
 		echo "<td width='50%'><div id='Capacity_$array[bulle]' style='width: 50%;'></div></td>";
 		if (($cpt % 2) == 0)
-			echo '</tr>';
+			echo '</tr><tr>';
 	}
-	echo "</table>";
+	echo "<td width='50%'> </td></tr></table>";
 ?>
