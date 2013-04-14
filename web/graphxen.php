@@ -4,7 +4,10 @@ include("config.inc");
 ?>
 	<script src="js/graphxen.js"></script>
 
+	<div id='ConsommationByBulle' style='width: 50%;'></div><br><br>
+
 <?php
+
 
 	$ReqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
 	while($array = mysql_fetch_array($ReqListBulle))
