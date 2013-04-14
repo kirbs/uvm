@@ -115,7 +115,7 @@ $(function() {
 		                zoomType: 'xy'
 		            },
 		            title: {
-		                text: 'Umem et Udisk Utilisé par Bulle)'
+		                text: 'Umem et Udisk Utilisé par Bulle'
 		            },
 		            xAxis: {
 		                categories: data[0],
