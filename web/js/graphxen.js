@@ -158,7 +158,7 @@ $(function() {
 		                	if (this.series.name == 'uMem')
 		                	{
 		                		return '<b>'+ this.x +'</b><br/>'+
-		                			this.series.name +' dispo : '+ this.y +'<br/>' + 
+		                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
 		                   		 //return '<b>'+ this.x +'</b><br/>'+
 		                    	//    this.series.name +': '+ this.y +'<br/>'+
 		                    	//    'Total: '+ this.point.stackTotal;
@@ -167,7 +167,7 @@ $(function() {
 		                   if (this.series.name == 'uDisk')
 		                	{
 		                		return '<b>'+ this.x +'</b><br/>'+
-		                			this.series.name +' dispo : '+ this.y +'<br/>' + 
+		                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
 		                   		 //return '<b>'+ this.x +'</b><br/>'+
 		                    	//    this.series.name +': '+ this.y +'<br/>'+
 		                    	//    'Total: '+ this.point.stackTotal;
