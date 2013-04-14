@@ -383,21 +383,25 @@ function getViewConsommationByBulle()
 		
 		$UmemArray = array();
 		$sommeUmem = 0;
-		$reqListUmemFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_memory_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		$reqListUmemFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_memory_free, uvm_memory_total FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		$used_mem = 0;
 		while($ArrayUmemFree = mysql_fetch_array($reqListUmemFreeBySrvByBulle))
 		{
 			//$UmemArray[] = (int) $ArrayUmemFree['uvm_memory_free'];
-			$sommeUmem = $sommeUmem + (int) $ArrayUmemFree['uvm_memory_free'];
+			$used_mem = (int) $ArrayUmemFree['uvm_memory_total'] - (int) $ArrayUmemFree['uvm_memory_free'];
+			$sommeUmem = $sommeUmem + $used_mem;
 			//echo "-- Umem : $ArrayUmemFree[uvm_memory_free]<br>";
 		}
 		
 		$UdiskArray = array();
 		$sommeUdisk = 0;
-		$reqListUdiskFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_disk_free FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		$reqListUdiskFreeBySrvByBulle = mysql_query("SELECT srvxen_name, uvm_disk_free, uvm_disk_total FROM SrvXen WHERE bulle = '$ArrayBulle[bulle]' order by srvxen_name ASC");
+		$used_disk = 0;
 		while($ArrayUdiskFree = mysql_fetch_array($reqListUdiskFreeBySrvByBulle))
 		{
 			//$UdiskArray[] = (int) $ArrayUdiskFree['uvm_disk_free'];
-			$sommeUdisk = $sommeUdisk + (int) $ArrayUdiskFree['uvm_disk_free'];
+			$used_disk = (int) $ArrayUdiskFree['uvm_disk_total'] - (int) $ArrayUdiskFree['uvm_disk_free'];
+			$sommeUdisk = $sommeUdisk + $used_disk;
 			//echo "-- Udisk : $ArrayUdiskFree[uvm_disk_free]<br>";
 		}
 		

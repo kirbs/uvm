@@ -4,7 +4,7 @@ $(function() {
     $(document).ready(function() {
 
 
-	    $.getJSON('api?command=getViewByBulle', function(data) {		
+	    $.getJSON('api?command=getViewByBulle', function(data) {	
 	    	$.each(data[0], function(i,val){
 	    		console.log(i);
 	    		console.log(val);
