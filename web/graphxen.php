@@ -15,7 +15,7 @@ include("config.inc");
 	//$cpt = 0;
 	while($array = mysql_fetch_array($ReqListBulle))
 	{
-		echo "<div id='Capacity_$array[bulle]' style='width: 50%;'></div><br><br>";
+		echo "<div id='Capacity_$array[bulle]' style='width: 80%;'></div><br><br>";
 		//$cpt = $cpt + 1;
 		//if (($cpt % 2) != 0)
 		//	echo '<tr>';
