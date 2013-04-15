@@ -21,7 +21,7 @@ include("config.inc");
 		//echo "$c";
 		if (($cpt % 2) != 0)
 			echo '<tr>';
-		echo "<td><div id='Capacity_$array[bulle]' style='width: 50%;'></div></td>";
+		echo "<td width='50%' ><div id='Capacity_$array[bulle]'></div></td>";
 		if (($cpt % 2) == 0)
 			echo '</tr>';
 	}
