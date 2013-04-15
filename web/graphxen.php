@@ -21,5 +21,5 @@ include("config.inc");
 		if (($cpt % 2) == 0)
 			echo '</tr><tr>';
 	}
-	echo "<td> </td></tr></table>";
+	echo "</tr></table>";
 ?>
