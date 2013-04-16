@@ -269,29 +269,31 @@ $(function() {
 			                	lineColor: Highcharts.getOptions().colors[3],
 			                	fillColor: 'white'
 			                }
-			            }, {
-			                type: 'pie',
-			                name: 'Total consumption',
-			                data: [{
-			                    name: 'Jane',
-			                    y: 13,
-			                    color: Highcharts.getOptions().colors[0] // Jane's color
-			                }, {
-			                    name: 'John',
-			                    y: 23,
-			                    color: Highcharts.getOptions().colors[1] // John's color
-			                }, {
-			                    name: 'Joe',
-			                    y: 19,
-			                    color: Highcharts.getOptions().colors[2] // Joe's color
-			                }],
-			                center: [100, 80],
-			                size: 100,
-			                showInLegend: false,
-			                dataLabels: {
-			                    enabled: false
-			                }
-			            }]
+			            }
+			            //, {
+			            //    type: 'pie',
+			            //    name: 'Total consumption',
+			            //    data: [{
+			            //        name: 'Jane',
+			            //        y: 13,
+			            //        color: Highcharts.getOptions().colors[0] // Jane's color
+			            //    }, {
+			            //        name: 'John',
+			            //        y: 23,
+			            //        color: Highcharts.getOptions().colors[1] // John's color
+			            //    }, {
+			            //        name: 'Joe',
+			            //        y: 19,
+			            //        color: Highcharts.getOptions().colors[2] // Joe's color
+			            //    }],
+			            //    center: [100, 80],
+			            //    size: 100,
+			            //    showInLegend: false,
+			            //    dataLabels: {
+			            //        enabled: false
+			            //    }
+			            //}
+			            ]
 			        });
 				});
 		    });
