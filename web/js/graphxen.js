@@ -74,7 +74,7 @@ $(function() {
 		                   		 //return '<b>'+ this.x +'</b><br/>'+
 		                    	//    this.series.name +': '+ this.y +'<br/>'+
 		                    	//    'Total: '+ this.point.stackTotal;
-		                    		'Disk Dispo: '+ this.y * 18 + 'Go';
+		                    		'Disk Uilisés: '+ (this.y * 18) + 'Go';
 		                   }
 		                }
 		            },
