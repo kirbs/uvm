@@ -207,7 +207,7 @@ $(function() {
 							renderTo: 'viewallby_' + i,
 			            },
 			            title: {
-			                text: 'Combination chart'
+			                text: 'Vue globale par Bulle (+'i'+')'
 			            },
 			            xAxis: {
 			                categories: val[0], 
