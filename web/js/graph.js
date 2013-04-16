@@ -282,6 +282,7 @@ $(function() {
 	            chart: {
 		            renderTo: 'vmbydate',	
 		            type: 'area',
+		            zoomType: 'xy'
 		        },
 	            title: {
 	                text: 'Evolution des VM dans le temps'
