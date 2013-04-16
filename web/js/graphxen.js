@@ -238,21 +238,21 @@ $(function() {
 			            },
 			            series: [{
 			                type: 'column',
-			                name: 'umem used',
+			                name: 'umem total',
 			                //'Jane',
-			                data: val[1]
+			                data: val[3]
 			                //[3, 2, 1, 3, 4]
 			            }, {
 			                type: 'column',
-			                name: 'ucpu used',
+			                name: 'ucpu total',
 			                //'John',
-			                data: val[2]
+			                data: val[4]
 			                //[2, 3, 5, 7, 6]
 			            }, {
 			                type: 'spline',
-			                name: 'umem total',
+			                name: 'umem used',
 			                //'Average',
-			                data: val[3],
+			                data: val[1],
 			                //[3, 2.67, 3, 6.33, 3.33],
 			                marker: {
 			                	lineWidth: 2,
@@ -261,8 +261,8 @@ $(function() {
 			                }
 			            }, {
 			                type: 'spline',
-			                name: 'ucpu total',
-			                data: val[4],
+			                name: 'ucpu used',
+			                data: val[2],
 			                //[13, 32.67, 23, 16.33, 23.33],
 			                marker: {
 			                	lineWidth: 2,
