@@ -205,6 +205,7 @@ $(function() {
 			        chart = new Highcharts.Chart({
 			            chart: {
 							renderTo: 'viewallby_' + i,
+							zoomType: 'xy'
 			            },
 			            title: {
 			                text: 'Vue globale par Bulle ('+i+')'
