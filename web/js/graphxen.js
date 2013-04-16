@@ -235,16 +235,16 @@ $(function() {
 			                    return s;
 			                }
 			            },
-			            labels: {
-			                items: [{
-			                    html: 'Total fruit consumption',
-			                    style: {
-			                        left: '40px',
-			                        top: '8px',
-			                        color: 'black'
-			                    }
-			                }]
-			            },
+			            //labels: {
+			            //    items: [{
+			            //        html: ' ',
+			            //        style: {
+			            //            left: '40px',
+			            //            top: '8px',
+			            //            color: 'black'
+			            //        }
+			            //    }]
+			            //},
 			            series: [{
 			                type: 'column',
 			                name: 'umem total',
