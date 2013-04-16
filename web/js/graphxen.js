@@ -210,8 +210,16 @@ $(function() {
 			                text: 'Combination chart'
 			            },
 			            xAxis: {
-			                categories: val[0] 
+			                categories: val[0], 
 			                //['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+			                labels: {
+			                	rotation : -60,
+			                	align : 'right',
+			                	style: {
+									color: '#6D869F',
+									//fontWeight: 'bold'
+								}
+			                }			                
 			            },
 			            tooltip: {
 			                formatter: function() {
