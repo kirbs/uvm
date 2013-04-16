@@ -346,6 +346,7 @@ $(function() {
 	            chart: {
 		            renderTo: 'uvmbydate',	
 		            type: 'area',
+		            zoomType: 'xy'
 		        },
 	            title: {
 	                text: 'Evolution des uVM dans le temps'
