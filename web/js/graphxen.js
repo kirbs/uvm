@@ -249,7 +249,8 @@ $(function() {
 			                type: 'column',
 			                name: 'umem total',
 			                //'Jane',
-			                data: val[3]
+			                data: val[3],
+			                color: Highcharts.getOptions().colors[0]
 			                //[3, 2, 1, 3, 4]
 			            }, {
 			                type: 'column',
@@ -263,6 +264,7 @@ $(function() {
 			                name: 'umem used',
 			                //'Average',
 			                data: val[1],
+			                color: Highcharts.getOptions().colors[0],
 			                //[3, 2.67, 3, 6.33, 3.33],
 			                marker: {
 			                	lineWidth: 1,
@@ -273,11 +275,12 @@ $(function() {
 			                type: 'spline',
 			                name: 'ucpu used',
 			                data: val[2],
+			                color: Highcharts.getOptions().colors[1],
 			                //[13, 32.67, 23, 16.33, 23.33],
 			                marker: {
 			                	lineWidth: 1,
-			                	lineColor: Highcharts.getOptions().colors[2],
-			                	fillColor: Highcharts.getOptions().colors[2]
+			                	lineColor: Highcharts.getOptions().colors[1],
+			                	fillColor: Highcharts.getOptions().colors[1]
 			                	//'white'
 			                }
 			            }
