@@ -256,12 +256,7 @@ $(function() {
 			                name: 'ucpu total',
 			                //'John',
 			                data: val[4],
-			                marker: {
-			                	lineWidth: 1,
-			                	lineColor: Highcharts.getOptions().colors[2],
-			                	fillColor: Highcharts.getOptions().colors[2]
-			                	//'white'
-			                }
+			                color: Highcharts.getOptions().colors[0]
 			                //[2, 3, 5, 7, 6]
 			            }, {
 			                type: 'spline',
