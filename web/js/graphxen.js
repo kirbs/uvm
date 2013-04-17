@@ -276,7 +276,8 @@ $(function() {
 			                marker: {
 			                	lineWidth: 1,
 			                	lineColor: Highcharts.getOptions().colors[2],
-			                	fillColor: 'white'
+			                	fillColor: Highcharts.getOptions().colors[2
+			                	//'white'
 			                }
 			            }
 			            //, {
