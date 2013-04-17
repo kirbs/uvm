@@ -223,13 +223,27 @@ $(function() {
 			            },
 			            tooltip: {
 			                formatter: function() {
-				                var s = '<b>'+ this.x +'</b><hr>';
+				                var s = '<b>'+ this.x +'</b>';
 				                
 				                $.each(this.points, function(i, point) {
-				                    s += '<br/>'+ point.series.name +': '+
-				                        point.y +'m';
+				                	if (point.series.name == "umem used") {
+				                		var_umem_used = point.y;
+				                	}
+				                	if (point.series.name == "ucpu used") {
+				                		var_umem_total = point.y;
+				                	}
+				                	if (point.series.name == "umem total") {
+				                		var_ucpu_used = point.y;
+				                	}
+				                	if (point.series.name == "ucpu total") {
+				                		var_ucpu_total = point.y;
+				                	}
 				                });
-				                
+				                s += '<br/> umem used: '+ var_umem_used +
+				                '<br/> ucpu used: '+ var_ucpu_used +
+				                '<br/> umem total: '+ var_umem_total +
+				                '<br/> ucpu total: '+ var_ucpu_total +';
+
 				                return s;
 			                   
 			                    //var s;
