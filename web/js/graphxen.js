@@ -232,7 +232,7 @@ $(function() {
 			                    	//    'Total: '+ this.point.stackTotal;
 			                    		'Mem Dispo: '+ this.y / 2 + 'Go';
 			                   }
-			                   if (this.series.name == 'uDisk')
+			                   if (this.series.name == 'ucpu utilisées')
 			                	{
 			                		return '<b>'+ this.x +'</b><br/>'+
 			                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
