@@ -224,7 +224,7 @@ $(function() {
 			            tooltip: {
 			                formatter: function() {
 			                	return '<b>'+ this.x +'</b><br/>'+
-			                		this.series.name +' utilisés : '+ this.y +'<br/>' + 
+			                		this.series.name[0] +' utilisés : '+ this.y +'<br/>' + 
 			                		'Mem Dispo: '+ this.y / 2 + 'Go';
 			                   
 			                   
