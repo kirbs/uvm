@@ -256,17 +256,17 @@ $(function() {
 			            //},
 			            series: [{
 			                type: 'column',
-			                name: 'umem_used',
+			                name: 'umem used',
 			                data: val[1], //val[3],
 			                color: Highcharts.getOptions().colors[0]
 			            }, {
 			                type: 'column',
-			                name: 'ucpu_used',
+			                name: 'ucpu used',
 			                data: val[2], //val[4],
 			                color: Highcharts.getOptions().colors[1]
 			            }, {
 			                type: 'spline',
-			                name: 'umem_total',
+			                name: 'umem total',
 			                data: val[3], //val[1],
 			                color: Highcharts.getOptions().colors[0],
 			                marker: {
@@ -276,7 +276,7 @@ $(function() {
 			                }
 			            }, {
 			                type: 'spline',
-			                name: 'ucpu_total',
+			                name: 'ucpu total',
 			                data: val[4], //val[2],
 			                color: Highcharts.getOptions().colors[1],
 			                marker: {
