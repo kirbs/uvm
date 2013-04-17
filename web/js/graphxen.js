@@ -265,7 +265,7 @@ $(function() {
 			                //[3, 2.67, 3, 6.33, 3.33],
 			                marker: {
 			                	lineWidth: 1,
-			                	lineColor: Highcharts.getOptions().colors[3],
+			                	lineColor: Highcharts.getOptions().colors[0],
 			                	fillColor: 'white'
 			                }
 			            }, {
@@ -275,7 +275,7 @@ $(function() {
 			                //[13, 32.67, 23, 16.33, 23.33],
 			                marker: {
 			                	lineWidth: 1,
-			                	lineColor: Highcharts.getOptions().colors[3],
+			                	lineColor: Highcharts.getOptions().colors[2],
 			                	fillColor: 'white'
 			                }
 			            }
