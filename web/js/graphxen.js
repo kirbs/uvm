@@ -223,13 +223,13 @@ $(function() {
 			            },
 			            tooltip: {
 			                formatter: function() {
-				                var s = '<b>'+ this.x +'</b>';
+				                var s = '<b>'+ this.x +'</b><table>';
 				                
 				                $.each(this.points, function(i, point) {
-				                    s += '<br/>'+ point.series.name +': '+
-				                        point.y +'m';
+				                    s += '<tr><td>'+ point.series.name +'</td><td>'+
+				                        point.y +'</td></tr>';
 				                });
-				                
+				                s += '</table>';
 				                return s;
 			                   
 			                    //var s;
