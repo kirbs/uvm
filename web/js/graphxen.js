@@ -242,7 +242,7 @@ $(function() {
 				                s += '<br/> umem used: '+ var_umem_used +
 				                '<br/> ucpu used: '+ var_ucpu_used +
 				                '<br/> umem total: '+ var_umem_total +
-				                '<br/> ucpu total: '+ var_ucpu_total +';
+				                '<br/> ucpu total: '+ var_ucpu_total;
 
 				                return s;
 			                   
