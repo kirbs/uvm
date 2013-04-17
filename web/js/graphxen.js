@@ -256,7 +256,7 @@ $(function() {
 			                name: 'ucpu total',
 			                //'John',
 			                data: val[4],
-			                color: Highcharts.getOptions().colors[0]
+			                color: Highcharts.getOptions().colors[1]
 			                //[2, 3, 5, 7, 6]
 			            }, {
 			                type: 'spline',
