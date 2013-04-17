@@ -223,24 +223,11 @@ $(function() {
 			            },
 			            tooltip: {
 			                formatter: function() {
-			                	if (this.series.name == 'umem utilisées')
-			                	{
-			                		return '<b>'+ this.x +'</b><br/>'+
-			                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
-			                   		 //return '<b>'+ this.x +'</b><br/>'+
-			                    	//    this.series.name +': '+ this.y +'<br/>'+
-			                    	//    'Total: '+ this.point.stackTotal;
-			                    		'Mem Dispo: '+ this.y / 2 + 'Go';
-			                   }
-			                   if (this.series.name == 'ucpu utilisées')
-			                	{
-			                		return '<b>'+ this.x +'</b><br/>'+
-			                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
-			                   		 //return '<b>'+ this.x +'</b><br/>'+
-			                    	//    this.series.name +': '+ this.y +'<br/>'+
-			                    	//    'Total: '+ this.point.stackTotal;
-			                    		'Disk utilisés: '+ Math.round((this.y * 18)*100 ) / 100 + 'Go';
-			                   }
+			                	return '<b>'+ this.x +'</b><br/>'+
+			                		this.series.name +' utilisés : '+ this.y +'<br/>' + 
+			                		'Mem Dispo: '+ this.y / 2 + 'Go';
+			                   
+			                   
 			                    //var s;
 			                    //if (this.point.name) { // the pie chart
 			                    //   s = ''+
@@ -264,12 +251,12 @@ $(function() {
 			            //},
 			            series: [{
 			                type: 'column',
-			                name: 'umem utilisées',
+			                name: 'umem_used',
 			                data: val[1], //val[3],
 			                color: Highcharts.getOptions().colors[0]
 			            }, {
 			                type: 'column',
-			                name: 'ucpu utilisées',
+			                name: 'ucpu_used',
 			                data: val[2], //val[4],
 			                color: Highcharts.getOptions().colors[1]
 			            }, {
@@ -284,7 +271,7 @@ $(function() {
 			                }
 			            }, {
 			                type: 'spline',
-			                name: 'ucpu total',
+			                name: 'ucpu_total',
 			                data: val[4], //val[2],
 			                color: Highcharts.getOptions().colors[1],
 			                marker: {
