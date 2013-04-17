@@ -242,12 +242,12 @@ $(function() {
 				                var_umem_dispo = var_umem_total - var_umem_used;
 				                var_ucpu_dispo = var_ucpu_total - var_ucpu_used;
 				                
-				                s += '<br/><br/> uMem total: '+ var_umem_total +'('+ (var_umem_total / 2) +'Go)'+
-				                '<br/> uMem utilisées : '+ var_umem_used +'('+ (var_umem_used / 2) +'Go)'+
-				                '<br/> <b>uMem dispo : '+ var_umem_dispo +'('+ (var_umem_dispo / 2) +'Go)</b>'+
-				                '<br/><br/> uCpu total: '+ var_ucpu_total +'('+ (var_ucpu_total / 2) +'Go)'+
-				                '<br/> uCpu utilisées : '+ var_ucpu_used +'('+ (var_ucpu_used / 2) +'Go)'+
-				                '<br/> <b>uCpu dispo : '+ var_ucpu_dispo +'('+ (var_ucpu_dispo / 2) +'Go)</b>';
+				                s += '<br/><br/>uMem total: '+ var_umem_total +'('+ (var_umem_total / 2) +'Go)'+
+				                '<br/>uMem utilisées : '+ var_umem_used +'('+ (var_umem_used / 2) +'Go)'+
+				                '<br/><b>uMem dispo : '+ var_umem_dispo +'('+ (var_umem_dispo / 2) +'Go)</b>'+
+				                '<br/><br/>uCpu total: '+ var_ucpu_total +'('+ (var_ucpu_total / 2) +'Go)'+
+				                '<br/>uCpu utilisées : '+ var_ucpu_used +'('+ (var_ucpu_used / 2) +'Go)'+
+				                '<br/><b>uCpu dispo : '+ var_ucpu_dispo +'('+ (var_ucpu_dispo / 2) +'Go)</b>';
 
 				                return s;
 			                   
