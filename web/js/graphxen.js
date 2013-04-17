@@ -230,10 +230,10 @@ $(function() {
 				                		var_umem_used = point.y;
 				                	}
 				                	if (point.series.name == "ucpu used") {
-				                		var_umem_total = point.y;
+				                		var_ucpu_used = point.y;
 				                	}
 				                	if (point.series.name == "umem total") {
-				                		var_ucpu_used = point.y;
+				                		var_umem_total = point.y;
 				                	}
 				                	if (point.series.name == "ucpu total") {
 				                		var_ucpu_total = point.y;
