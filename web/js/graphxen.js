@@ -211,8 +211,7 @@ $(function() {
 			                text: 'Vue globale par Bulle ('+i+')'
 			            },
 			            xAxis: {
-			                categories: val[0], 
-			                //['Apples', 'Oranges', 'Pears', 'Bananas', 'Plums']
+			                categories: val[0],
 			                labels: {
 			                	rotation : -60,
 			                	align : 'right',
@@ -224,15 +223,33 @@ $(function() {
 			            },
 			            tooltip: {
 			                formatter: function() {
-			                    var s;
-			                    if (this.point.name) { // the pie chart
-			                        s = ''+
-			                            this.point.name +': '+ this.y +' fruits';
-			                    } else {
-			                        s = ''+
-			                            this.x  +': '+ this.y;
-			                    }
-			                    return s;
+			                	if (this.series.name == 'umem utilisées')
+			                	{
+			                		return '<b>'+ this.x +'</b><br/>'+
+			                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
+			                   		 //return '<b>'+ this.x +'</b><br/>'+
+			                    	//    this.series.name +': '+ this.y +'<br/>'+
+			                    	//    'Total: '+ this.point.stackTotal;
+			                    		'Mem Dispo: '+ this.y / 2 + 'Go';
+			                   }
+			                   if (this.series.name == 'uDisk')
+			                	{
+			                		return '<b>'+ this.x +'</b><br/>'+
+			                			this.series.name +' utilisés : '+ this.y +'<br/>' + 
+			                   		 //return '<b>'+ this.x +'</b><br/>'+
+			                    	//    this.series.name +': '+ this.y +'<br/>'+
+			                    	//    'Total: '+ this.point.stackTotal;
+			                    		'Disk utilisés: '+ Math.round((this.y * 18)*100 ) / 100 + 'Go';
+			                   }
+			                    //var s;
+			                    //if (this.point.name) { // the pie chart
+			                    //   s = ''+
+			                    //        this.point.name +': '+ this.y +' fruits';
+			                    //} else {
+			                    //    s = ''+
+			                    //        this.x  +': '+ this.y;
+			                    //}
+			                    //return s;
 			                }
 			            },
 			            //labels: {
@@ -257,7 +274,7 @@ $(function() {
 			                color: Highcharts.getOptions().colors[1]
 			            }, {
 			                type: 'spline',
-			                name: 'umem total',
+			                name: 'umem_total',
 			                data: val[3], //val[1],
 			                color: Highcharts.getOptions().colors[0],
 			                marker: {
