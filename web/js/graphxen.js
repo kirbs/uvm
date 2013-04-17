@@ -223,10 +223,14 @@ $(function() {
 			            },
 			            tooltip: {
 			                formatter: function() {
-			                	return '<b>'+ this.x +'</b><br/>'+
-			                		this.series.name.mem_used +' utilisés : '+ this.y +'<br/>' + 
-			                		'Mem Dispo: '+ this.y / 2 + 'Go';
-			                   
+				                var s = '<b>'+ this.x +'</b>';
+				                
+				                $.each(this.points, function(i, point) {
+				                    s += '<br/>'+ point.series.name +': '+
+				                        point.y +'m';
+				                });
+				                
+				                return s;
 			                   
 			                    //var s;
 			                    //if (this.point.name) { // the pie chart
@@ -237,7 +241,8 @@ $(function() {
 			                    //        this.x  +': '+ this.y;
 			                    //}
 			                    //return s;
-			                }
+			                },
+			                shared: true
 			            },
 			            //labels: {
 			            //    items: [{
