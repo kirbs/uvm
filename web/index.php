@@ -17,8 +17,8 @@ function formulaire($today)
 	<script src='js/panel.js'></script>
 	<script src='js/autocomplete.js'></script>
 	
-	<!--<script src='jstree/_lib/jquery.js'></script>
-	<script src='jstree/jquery.jstree.js'></script> -->
+	<!-- <script src='jstree/_lib/jquery.js'></script> -->
+	<script src='jstree/jquery.jstree.js'></script>
 	
 	<!--<table><tr>
 			<td><div class='yui3-skin-sam' id='simple'></div></td>
