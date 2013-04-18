@@ -35,7 +35,18 @@ function formulaire($today)
 	
 	
 <br><br>
+<script>
+$(function() {
+$( '#tabs' ).tabs();
+});
+</script>
 
+<div id='tabs'>
+	<ul>
+		<li><a href='#tabs-1'>uvm par PFS</a></li>
+		<li><a href='#tabs-2'>Rechercher une VM</a></li>
+	</ul>
+	<div id='tab-1'>
 	<form id='form' method='post' action='index.php'>
 	<table width='100%'>
 		<tr>
@@ -57,7 +68,9 @@ function formulaire($today)
 			</td>
 		</tr>
 	</table>
-	</form>";
+	</form>
+	</div>
+</div>";
 }
 
 function affiche_liste_pfs($choix,$date)
