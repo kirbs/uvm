@@ -4,7 +4,7 @@ include("config.inc");
 ?>
 	<script src="js/graphxen.js"></script>
 
-	<div id='ConsommationByBulle' style='width: 100%;'></div><br><br>
+	<div id='ConsommationByBulle' style='width: 90%;'></div><br><br>
 
 <?php
 
