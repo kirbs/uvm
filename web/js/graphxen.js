@@ -229,25 +229,25 @@ $(function() {
 				                	if (point.series.name == "umem used") {
 				                		var_umem_used = point.y;
 				                	}
-				                	if (point.series.name == "ucpu used") {
+				                	if (point.series.name == "udisk used") {
 				                		var_ucpu_used = point.y;
 				                	}
 				                	if (point.series.name == "umem total") {
 				                		var_umem_total = point.y;
 				                	}
-				                	if (point.series.name == "ucpu total") {
+				                	if (point.series.name == "udisk total") {
 				                		var_ucpu_total = point.y;
 				                	}
 				                });
 				                var_umem_dispo = var_umem_total - var_umem_used;
-				                var_ucpu_dispo = var_ucpu_total - var_ucpu_used;
+				                var_udisk_dispo = var_udisk_total - var_udisk_used;
 				                
 				                s += '<br/><br/>uMem total: '+ var_umem_total +' ('+ (var_umem_total / 2) +' Go)'+
 				                '<br/>uMem utilisées : '+ var_umem_used +' ('+ (var_umem_used / 2) +' Go)'+
 				                '<br/><b>uMem dispo : '+ var_umem_dispo +' ('+ (var_umem_dispo / 2) +' Go)</b>'+
-				                '<br/><br/>uDisk total: '+ var_ucpu_total +' ('+ Math.round((var_ucpu_total * 18)*100 ) / 100 +' Go)'+
-				                '<br/>uDisk utilisées : '+ var_ucpu_used +' ('+ Math.round((var_ucpu_used * 18)*100 ) / 100 +' Go)'+
-				                '<br/><b>uDisk dispo : '+ var_ucpu_dispo +' ('+ Math.round((var_ucpu_dispo * 18)*100 ) / 100 +' Go)</b>';
+				                '<br/><br/>uDisk total: '+ var_udisk_total +' ('+ Math.round((var_udisk_total * 18)*100 ) / 100 +' Go)'+
+				                '<br/>uDisk utilisées : '+ var_udisk_used +' ('+ Math.round((var_udisk_used * 18)*100 ) / 100 +' Go)'+
+				                '<br/><b>uDisk dispo : '+ var_udisk_dispo +' ('+ Math.round((var_udisk_dispo * 18)*100 ) / 100 +' Go)</b>';
 
 				                return s;
 			                   
@@ -280,7 +280,7 @@ $(function() {
 			                color: Highcharts.getOptions().colors[0]
 			            }, {
 			                type: 'column',
-			                name: 'ucpu used',
+			                name: 'udisk used',
 			                data: val[2], //val[4],
 			                color: Highcharts.getOptions().colors[1]
 			            }, {
@@ -295,7 +295,7 @@ $(function() {
 			                }
 			            }, {
 			                type: 'spline',
-			                name: 'ucpu total',
+			                name: 'udisk total',
 			                data: val[4], //val[2],
 			                color: Highcharts.getOptions().colors[1],
 			                marker: {
