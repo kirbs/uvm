@@ -17,6 +17,9 @@ function formulaire($today)
 	<script src='js/panel.js'></script>
 	<script src='js/autocomplete.js'></script>
 	
+	<script src='jstree/_lib/jquery.js'></script>
+	<script src='jstree/jquery.jstree.js'></script>
+	
 	<!--<table><tr>
 			<td><div class='yui3-skin-sam' id='simple'></div></td>
 			<td><button class='yui3-button' id='openButton'>Pourcentage uVM</button></td>
@@ -72,6 +75,7 @@ $( '#tabs' ).tabs();
 	</form>
 	</div>
 	<div id='tabs-2'>
+	    <div id='demo1'></div>
 		<div id='demo' class='yui3-skin-sam'>
 			<label for='tags'>VM : </label>
 			<input size='40' id='tags' />
