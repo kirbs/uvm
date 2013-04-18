@@ -6,7 +6,7 @@ YUI().use('autocomplete', 'autocomplete-filters', 'autocomplete-highlighters', f
     			var json = Y.JSON.parse(r.responseText);
     		
  
-				Y.one('#tabs').plug(Y.Plugin.AutoComplete, {
+				Y.one('#tags').plug(Y.Plugin.AutoComplete, {
 					resultFilters    : 'phraseMatch',
 				    resultHighlighter: 'phraseMatch',
 				    source           : json
