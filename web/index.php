@@ -73,9 +73,10 @@ $( '#tabs' ).tabs();
 		</tr>
 	</table>
 	</form>
+	<div id='demo1'></div>
 	</div>
 	<div id='tabs-2'>
-	    <div id='demo1'></div>
+
 		<div id='demo' class='yui3-skin-sam'>
 			<label for='tags'>VM : </label>
 			<input size='40' id='tags' />
