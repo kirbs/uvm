@@ -37,7 +37,7 @@ function formulaire($today)
 <br><br>
 <script>
 $(function() {
-$( '#tabs' ).tabs({ hide: { effect: 'explode', duration: 1000 } });
+$( '#tabs' ).tabs();
 });
 </script>
 
