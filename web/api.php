@@ -28,6 +28,18 @@ function getListPfsMere()
         echo json_encode($json);
 }
 
+function getListVM($lastDate)
+{
+
+    $ReqListVM = mysql_query("SELECT distinct(vm_name) FROM uVM");
+    $json = array();
+    while ($array  = mysql_fetch_array($ReqListVM))
+    {
+        $json[] = $array['vm_name'];
+    }
+        echo json_encode($json);
+}
+
 
 function getListPfsMereUvm($lastDate)
 {
@@ -62,6 +74,7 @@ function getListPfsMereVM($lastDate)
     }
         echo json_encode($json);
 }
+
 
 function getListDate()
 {
@@ -554,6 +567,11 @@ switch ($command)
 	case "getViewConsommationByBulle":
 				getViewConsommationByBulle();
 				break;
+				
+	case "getListVM":
+				getListVM($lastDate);
+				break;
+				
     default : 
                         break;
 }

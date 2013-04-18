@@ -15,6 +15,7 @@ function formulaire($today)
 
 	<script src='js/menu.js'></script>
 	<script src='js/panel.js'></script>
+	<script src='js/autocomplete.js'></script>
 	
 	<!--<table><tr>
 			<td><div class='yui3-skin-sam' id='simple'></div></td>
@@ -71,7 +72,10 @@ $( '#tabs' ).tabs();
 	</form>
 	</div>
 	<div id='tabs-2'>
-		test
+		<div class='ui-widget'>
+			<label for='tags'>VM : </label>
+			<input id='tags' />
+		</div>
 	</div>
 </div>";
 }
