@@ -24,7 +24,7 @@ include("config.inc");
 		//if (($cpt % 2) == 0)
 		//	echo '</tr>';
 	}
-	//echo "</table>";
+	echo "</table>";
 	
 	
 	$ReqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
@@ -42,4 +42,5 @@ include("config.inc");
 		//if (($cpt % 2) == 0)
 		//	echo '</tr>';
 	}
+	echo "</table>";
 ?>
