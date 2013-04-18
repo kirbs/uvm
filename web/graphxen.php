@@ -10,37 +10,16 @@ include("config.inc");
 
 
 	$ReqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
-	//echo '<table>';
-	//echo "<tr><td width='50%'></td><td width='50%'></td></tr>";
-	//$cpt = 0;
-	echo "<table>";
 	while($array = mysql_fetch_array($ReqListBulle))
 	{
-		echo "<tr><td align='center' width='80%'><div id='Capacity_$array[bulle]' style='min-width: 80%; margin: 0 auto'></div></td></tr>";
-		//$cpt = $cpt + 1;
-		//if (($cpt % 2) != 0)
-		//	echo '<tr>';
-		//echo "<td><div id='Capacity_$array[bulle]' style='width: 50%;'></div></td>";
-		//if (($cpt % 2) == 0)
-		//	echo '</tr>';
+		echo "<div id='Capacity_$array[bulle]' style='min-width: 80%; margin: 0 auto'></div>";
 	}
-	echo "</table>";
 	
+	echo "<br><br>";
 	
 	$ReqListBulle = mysql_query("SELECT distinct(bulle) FROM SrvXen order by bulle ASC");
-	//echo '<table>';
-	//echo "<tr><td width='50%'></td><td width='50%'></td></tr>";
-	//$cpt = 0;
-	echo "<table>";
 	while($array = mysql_fetch_array($ReqListBulle))
 	{
-		echo "<tr><td align='center' width='80%'><div id='viewallby_$array[bulle]' style='min-width: 80%; margin: 0 auto'></div></td></tr>";
-		//$cpt = $cpt + 1;
-		//if (($cpt % 2) != 0)
-		//	echo '<tr>';
-		//echo "<td><div id='Capacity_$array[bulle]' style='width: 50%;'></div></td>";
-		//if (($cpt % 2) == 0)
-		//	echo '</tr>';
+		echo "<div id='viewallby_$array[bulle]' style='min-width: 80%; margin: 0 auto'></div>";
 	}
-	echo "</table>";
 ?>
