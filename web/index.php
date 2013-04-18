@@ -70,6 +70,9 @@ $( '#tabs' ).tabs();
 	</table>
 	</form>
 	</div>
+	<div id='tabs-2'>
+	test
+	</div>
 </div>";
 }
 
