@@ -74,7 +74,7 @@ $( '#tabs' ).tabs();
 	<div id='tabs-2'>
 		<div class='ui-widget'>
 			<label for='tags'>VM : </label>
-			<input id='tags' />
+			<input size='40' id='tags' />
 		</div>
 	</div>
 </div>";
