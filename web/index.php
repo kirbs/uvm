@@ -72,7 +72,7 @@ $( '#tabs' ).tabs();
 	</form>
 	</div>
 	<div id='tabs-2'>
-		<div class='ui-widget'>
+		<div id='demo' class='yui3-skin-sam'>
 			<label for='tags'>VM : </label>
 			<input size='40' id='tags' />
 		</div>
