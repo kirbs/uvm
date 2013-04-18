@@ -46,7 +46,7 @@ $( '#tabs' ).tabs();
 		<li><a href='#tabs-1'>uvm par PFS</a></li>
 		<li><a href='#tabs-2'>Rechercher une VM</a></li>
 	</ul>
-	<div id='tab-1'>
+	<div id='tabs-1'>
 	<form id='form' method='post' action='index.php'>
 	<table width='100%'>
 		<tr>
@@ -71,7 +71,7 @@ $( '#tabs' ).tabs();
 	</form>
 	</div>
 	<div id='tabs-2'>
-	test
+		test
 	</div>
 </div>";
 }
