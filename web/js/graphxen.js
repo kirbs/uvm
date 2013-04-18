@@ -230,13 +230,13 @@ $(function() {
 				                		var_umem_used = point.y;
 				                	}
 				                	if (point.series.name == "udisk used") {
-				                		var_ucpu_used = point.y;
+				                		var_udisk_used = point.y;
 				                	}
 				                	if (point.series.name == "umem total") {
 				                		var_umem_total = point.y;
 				                	}
 				                	if (point.series.name == "udisk total") {
-				                		var_ucpu_total = point.y;
+				                		var_udisk_total = point.y;
 				                	}
 				                });
 				                var_umem_dispo = var_umem_total - var_umem_used;
