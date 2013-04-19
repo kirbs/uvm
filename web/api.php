@@ -481,7 +481,6 @@ function getDetailAllUvm($lastDate)
 		$TabPfsFille = array();
         while ($array2  = mysql_fetch_array($ReqListPfsFille))
 		{
-			print $array2['pfs_fille'];
 			$TabPfsFille[] = $array2['pfs_fille'];
 		}
 		$TabPfsMere[] = array($array['pfs_mere'],$array['pfs_fille']);
