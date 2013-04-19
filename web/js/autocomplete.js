@@ -10,7 +10,7 @@ $(function() {
      	});
      	
      	
-		
+		$("#example-basic").treetable({ expandable: true });
 		
 		/* 
 		$("#demo1").jstree({ 
