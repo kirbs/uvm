@@ -595,7 +595,7 @@ switch ($command)
 				break;
 				
 	case "getDetailAllUvm":
-				getDetailAllUvm($lastdate);
+				getDetailAllUvm($lastDate);
 				break;
 				
     default : 
