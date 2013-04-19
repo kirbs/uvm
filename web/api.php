@@ -474,7 +474,7 @@ function getDetailAllUvm($lastdate)
 {
 	$TabPfsMere = array();
 	
-    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM WHERE date_uvm = '$lastDate'");
     while ($array  = mysql_fetch_array($ReqListPfsMere))
     {
 		$ReqListPfsFille = mysql_query("SELECT pfs_fille FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate'");
