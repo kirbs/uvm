@@ -40,9 +40,9 @@ $(function() {
 			"json_data" : {
 				"ajax" : {
 					"url" : "jstree/_docs/_json_data.json", 
-					"data" : function (n) { 
-						return { id : n.attr ? n.attr("id") : 0	};
-					}
+					//"data" : function (n) { 
+					//	return { id : n.attr ? n.attr("id") : 0	};
+					//}
 				}
 			},
 			"plugins" : [ "themes", "json_data"]
