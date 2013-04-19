@@ -470,6 +470,27 @@ function getViewConsommationByBulle()
 	
 }
 
+function getDetailAllUvm($lastdate)
+{
+	$TabPfsMere = array();
+	
+    $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM");
+    while ($array  = mysql_fetch_array($ReqListPfsMere))
+    {
+		$ReqListPfsFille = mysql_query("SELECT pfs_fille FROM uVM WHERE pfs_mere = '$array[pfs_mere]' AND date_uvm = '$lastDate'");
+		$TabPfsFille = array();
+        while ($array2  = mysql_fetch_array($ReqListPfsFille))
+		{
+			$TabPfsFille[] = $array2['pfs_fille'];
+		}
+		$TabPfsMere = array($array['pfs_mere'],$array['pfs_fille']);
+    }
+	$json = array($TabPfsMere);
+	echo json_encode($json);
+	
+}
+
+
 function nombre_element($critere, $today)
 {
 	
@@ -570,6 +591,10 @@ switch ($command)
 				
 	case "getListVM":
 				getListVM($lastDate);
+				break;
+				
+	case "getDetailAllUvm":
+				getDetailAllUvm($lastdate);
 				break;
 				
     default : 
