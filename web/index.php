@@ -74,6 +74,12 @@ $( '#tabs' ).tabs();
 	</table>
 	</form>
 	<div id='demo1'></div>
+	
+	<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
+    	<div class='yui3-u-1-3' id='mtable'></div>
+			
+	</div>
+	
 	</div>
 	<div id='tabs-2'>
 
