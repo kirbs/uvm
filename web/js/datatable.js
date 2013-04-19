@@ -41,8 +41,8 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
     			
     			var dt_master = new Y.DataTable({
     				columns: [
-    					{key:'pfs_mere', label:'Nom de la PFS mere"'},
-    					{name:'pfs_fille', label:'Nom de la PFS fille"'}
+    					{key:'pfs_mere', label:'Nom de la PFS mere'},
+    					{name:'pfs_fille', label:'Nom de la PFS fille'}
     				],
 					data : json,
 					width: 200,
