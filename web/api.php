@@ -470,7 +470,7 @@ function getViewConsommationByBulle()
 	
 }
 
-function getDetailAllUvm($lastdate)
+function getDetailAllUvm($lastDate)
 {
 	$TabPfsMere = array();
 	print "SELECT distinct(pfs_mere) FROM uVM WHERE date_uvm = '$lastDate'";
