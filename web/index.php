@@ -79,7 +79,7 @@ $( '#tabs' ).tabs();
     	<div class='yui3-u-1-3' id='TableAllUvm'></div>
 			
 	</div>
-	
+	"+ treetable($today); +"
 	</div>
 	<div id='tabs-2'>
 
@@ -250,7 +250,7 @@ function return_variable($variable)
 	return $variable;
 }
 
-treetable($today);
+
 formulaire($today);
 $choix = return_variable($_POST['choix']);
 $enab = return_variable($_POST['enab']);
