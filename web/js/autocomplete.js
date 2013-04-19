@@ -12,6 +12,7 @@ $(function() {
      	
 		
 		
+		/* 
 		$("#demo1").jstree({ 
 			"json_data" : {
 				"data" : [
@@ -33,7 +34,17 @@ $(function() {
 		}).bind("select_node.jstree", function (e, data) { 
 			alert(data.rslt.obj.data("id"));
 			});
+		*/
 
+		$("#demo1").jstree({ 
+			"json_data" : {
+				"ajax" : {
+					"url" : "/jstree/_docs/_json_data.json", 
+					"data" : function (n) { return { id : n.attr ? n.attr("id") : 0	};}
+				}
+			},
+			"plugins" : [ "themes", "json_data"]
+		});
 
 	});
 });
