@@ -473,7 +473,7 @@ function getViewConsommationByBulle()
 function getDetailAllUvm($lastdate)
 {
 	$TabPfsMere = array();
-	
+	print "SELECT distinct(pfs_mere) FROM uVM WHERE date_uvm = '$lastDate'";
     $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM WHERE date_uvm = '$lastDate'");
     while ($array  = mysql_fetch_array($ReqListPfsMere))
     {
