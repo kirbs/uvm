@@ -219,8 +219,7 @@ function treetable($date)
         </tbody>
       </table>
       
-	<script src='treetable/treetable/vendor/jquery.js'></script>
-	<script src='treetable/treetable/vendor/jquery-ui.js'></script>
+
 	<script src='treetable/treetable/javascripts/src/jquery.treetable.js'></script>
 
 	<script>$('#example-basic').treetable({ expandable: true });</script>";
