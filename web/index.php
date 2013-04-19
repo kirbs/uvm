@@ -188,7 +188,10 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 
 function treetable($date)
 {
-	echo "<table id='example-basic'>
+	echo "
+	<script src='js/autocomplete.js'></script>
+	
+	<table id='example-basic'>
         <caption>Basic jQuery treetable Example</caption>
         <thead>
           <tr>    <div id='main'>
