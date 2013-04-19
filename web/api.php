@@ -483,7 +483,7 @@ function getDetailAllUvm($lastDate)
 		{
 			$TabPfsFille[] = $array2['pfs_fille'];
 		}
-		$TabPfsMere[] = array($array['pfs_mere'],$array2['pfs_fille']);
+		$TabPfsMere[] = array($array['pfs_mere'],$TabPfsFille);
     }
 	$json = array($TabPfsMere);
 	echo json_encode($json);
