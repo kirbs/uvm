@@ -254,7 +254,7 @@ $choix = return_variable($_POST['choix']);
 $enab = return_variable($_POST['enab']);
 $pfs = return_variable($_POST['pfs']);
 $date = return_variable($_POST['date']);
-
+echo "</body></html>";
 switch ($choix)
 {
 	case "pfs" :
