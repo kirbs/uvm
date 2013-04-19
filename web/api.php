@@ -472,6 +472,7 @@ function getViewConsommationByBulle()
 
 function getDetailAllUvm($lastDate)
 {
+	$json = array();
 	$TabPfsMere = array();
     $ReqListPfsMere = mysql_query("SELECT distinct(pfs_mere) FROM uVM WHERE date_uvm = '$lastDate'");
     while ($array  = mysql_fetch_array($ReqListPfsMere))
@@ -483,8 +484,9 @@ function getDetailAllUvm($lastDate)
 			$TabPfsFille[] = $array2['pfs_fille'];
 		}
 		$TabPfsMere['pfs_mere'] = array(array($TabPfsFille));
+		$json[] = $TabPfsMere;
     }
-	$json = array($TabPfsMere);
+	//$json = array($TabPfsMere);
 	echo json_encode($json);
 	
 }
