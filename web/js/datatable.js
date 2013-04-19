@@ -31,7 +31,26 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
 				});
     		}
     	}
-   	});	
+   	});
+   	
+   	
+    Y.io('api.php?command=getDetailAllUvm',{
+    	on : {
+    		success : function(tx,r) {
+    			var json = Y.JSON.parse(r.responseText);
+    			
+    			var dt_master = new Y.DataTable({
+    				columns: [
+    					{key:'pfs_mere', label:'Nom de la PFS mere"'},
+    					{name:'pfs_fille', label:'Nom de la PFS fille"'}
+    				],
+					data : json,
+					width: 200,
+					caption: "Choisir la PFS"
+    			}).render("#mtable");
+    		}
+    	}
+   	});		
 	
 	//var array = [{'1':'Name'},{'2':'Age'}, {'3':'Gender'}];
 	
