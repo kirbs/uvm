@@ -186,6 +186,38 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 	echo "</table>";
 }
 
+function treetable($date)
+{
+	echo "<table id='example-basic'>
+        <caption>Basic jQuery treetable Example</caption>
+        <thead>
+          <tr>    <div id='main'>
+            <th>Tree column</th>
+            <th>Additional data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-tt-id='1'>
+            <td>Node 1: Click on the icon in front of me to expand this branch.</td>
+            <td>I live in the second column.</td>
+          </tr>
+          <tr data-tt-id='1.1' data-tt-parent-id='1'>
+            <td>Node 1.1: Look, I am a table row <em>and</em> I am part of a tree!</td>
+            <td>Interesting.</td>
+          </tr>
+          <tr data-tt-id='1.1.1' data-tt-parent-id='1.1'>
+            <td>Node 1.1.1: I am part of the tree too!</td>
+            <td>That's it!</td>
+          </tr>
+          <tr data-tt-id='2'>
+            <td>Node 2: I am another root node, but without children</td>
+            <td>Hurray!</td>
+          </tr>
+        </tbody>
+      </table>";
+	
+}
+
 function nombre_element($critere, $today)
 {
 	
@@ -213,6 +245,7 @@ function return_variable($variable)
 	return $variable;
 }
 
+treetable($today);
 formulaire($today);
 $choix = return_variable($_POST['choix']);
 $enab = return_variable($_POST['enab']);
