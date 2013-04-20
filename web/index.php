@@ -18,22 +18,8 @@ function formulaire($today)
 	<script src='js/autocomplete.js'></script>
 	
 	
-	<br><br>
-	<script>
-		$(function() {
-			$( '#tabs' ).tabs();
-		});
-	</script>
-	
-	<div id='panelContent' class='yui3-widget-loading'>
-    	<div class='yui3-widget-hd'>
-        	Graph du Pourcentage d' uVM/VM
-    	</div>
-    	<div class='yui3-widget-bd'>
-			<div id='graphUvmByAllSite' class='yui3-widget-bd' ></div>
-			<div id='graphVMByAllSite' class='yui3-widget-bd'></div>
-    	</div>
-	</div>-->
+
+
 	
 	
 <br><br>
@@ -90,7 +76,6 @@ $( '#tabs' ).tabs();
 
 		</div>
 	</div>";
-	////TreeTable_uvm_by_pfs_mere($today);
 }
 
 function affiche_liste_pfs($choix,$date)
