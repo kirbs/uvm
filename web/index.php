@@ -73,12 +73,12 @@ $( '#tabs' ).tabs();
 		</tr>
 	</table>
 	</form>
-	<div id='demo1'></div>
+	<!-- <div id='demo1'></div>
 	
 	<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
     	<div class='yui3-u-1-3' id='TableAllUvm'></div>
 			
-	</div>";
+	</div> -->";
 	TreeTable_uvm_by_pfs_mere($today);
 	echo "</div>
 	<div id='tabs-2'>
@@ -255,44 +255,6 @@ function TreeTable_uvm_by_pfs_mere($date)
 	<script>
 		$('#example-basic').treetable({ expandable: true });
 	</script>";
-}
-
-
-function treetable($date)
-{
-	echo "
-	
-	
-	<table id='example-basic'>
-        <caption>Basic jQuery treetable Example</caption>
-        <thead>
-          <tr>    <div id='main'>
-            <th>Tree column</th>
-            <th>Additional data</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr data-tt-id='1'>
-            <td>Node 1: Click on the icon in front of me to expand this branch.</td>
-            <td>I live in the second column.</td>
-          </tr>
-          <tr data-tt-id='1.1' data-tt-parent-id='1'>
-            <td>Node 1.1: Look, I am a table row <em>and</em> I am part of a tree!</td>
-            <td>Interesting.</td>
-          </tr>
-          <tr data-tt-id='1.1.1' data-tt-parent-id='1.1'>
-            <td>Node 1.1.1: I am part of the tree too!</td>
-            <td>That's it!</td>
-          </tr>
-          <tr data-tt-id='2'>
-            <td>Node 2: I am another root node, but without children</td>
-            <td>Hurray!</td>
-          </tr>
-        </tbody>
-      </table>
-      
-	<script>$('#example-basic').treetable({ expandable: true });</script>";
-	
 }
 
 function nombre_element($critere, $today)
