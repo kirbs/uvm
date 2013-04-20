@@ -79,7 +79,7 @@ $( '#tabs' ).tabs();
     	<div class='yui3-u-1-3' id='TableAllUvm'></div>
 			
 	</div>";
-	treetable($today);
+	TreeTable_uvm_by_pfs_mere($today);
 	echo "</div>
 	<div id='tabs-2'>
 
@@ -185,6 +185,78 @@ function liste_uvm_by_pfs_mere($pfs, $date)
 	}
 	echo "</table>";
 }
+
+
+function TreeTable_uvm_by_pfs_mere($date)
+{
+	$pfs = "all";
+	if ($pfs == "all")
+		$CONDITION = "WHERE 1 AND date_uvm = '$date'";
+	else
+		$CONDITION = "WHERE pfs_mere = '$pfs' AND date_uvm = '$date'";
+	
+	echo "
+	<table id='example-basic'>
+        <thead>
+          <tr>    <div id='main'>
+            <th>VM</th>
+            <th>uVMs</th>
+          </tr>
+        </thead>
+        <tbody>";
+	
+	$req_liste_pfs_mere = mysql_query("SELECT distinct(pfs_mere) FROM uVM $CONDITION");
+	$cpt_pfs_mere = 1;
+	while($PFSmere = mysql_fetch_array($req_liste_pfs_mere))
+	{
+		$req_UvmByPFSmere = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
+		$cpt = 0;
+		while ($UvmByPFSmere = mysql_fetch_array($req_UvmByPFSmere))
+		{
+			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
+		}
+		echo "<tr data-tt-id='$cpt_pfs_mere'>";
+		echo "<td>$PFSmere[pfs_mere]</td><td>$cpt</td>";
+		echo "</tr>";
+		
+		
+		$req_liste_pfs_fille = mysql_query("SELECT distinct(pfs_fille) FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date'");
+		$cpt_pfs_fille = 1;
+		while($PFSfille = mysql_fetch_array($req_liste_pfs_fille))
+		{
+			$req_UvmByPFSfille = mysql_query("SELECT uvm_total FROM uVM WHERE pfs_fille = '$PFSfille[pfs_fille]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
+			$cpt2 = 0;
+			while ($UvmByPFSfille = mysql_fetch_array($req_UvmByPFSfille))
+			{
+				$cpt2 = $cpt2 + $UvmByPFSfille["uvm_total"];
+			}
+			    echo "<tr data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
+				echo "<td>$PFSfille[pfs_fille]</td><td>$cpt2</td>";
+				echo "</tr>";
+     			
+     			
+			$resultatvm = mysql_query("SELECT * FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND pfs_fille = '$PFSfille[pfs_fille]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
+			$cpt_vm = 1;
+			while($result = mysql_fetch_array($resultatvm))
+			{
+				echo "<tr data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere.$cpt_pfs_fille'>";
+				echo "<td>$result[vm_name]</td><td>$result[uvm_total]</td>";
+				echo "</tr>";
+
+				$cpt_vm = $cpt_vm + 1;
+			}
+			$cpt_pfs_fille = $cpt_pfs_fille + 1;
+		}
+		$cpt_pfs_mere = $cpt_pfs_mere + 1;
+	}
+	echo "</tbody>
+    	  </table>
+	
+	<script>
+		$('#example-basic').treetable({ expandable: true });
+	</script>";
+}
+
 
 function treetable($date)
 {
