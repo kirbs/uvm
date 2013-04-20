@@ -79,7 +79,7 @@ $( '#tabs' ).tabs();
 			
 	//</div>";
 	
-	TreeTable_uvm_by_pfs_mere($today);
+	//TreeTable_uvm_by_pfs_mere($today);
 	
 	echo "</div>
 	<div id='tabs-2'>
