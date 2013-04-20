@@ -19,9 +19,9 @@ function formulaire($today)
 	
 	<br><br>
 	<script>
-	$(function() {
-	$( '#tabs' ).tabs();
-	});
+		$(function() {
+			$( '#tabs' ).tabs();
+		});
 	</script>
 
 	<div id='tabs'>
