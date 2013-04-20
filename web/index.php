@@ -72,14 +72,17 @@ $( '#tabs' ).tabs();
 			</td>
 		</tr>
 	</table>
-	</form>
-	<!-- <div id='demo1'></div>
+	</form>";
 	
-	<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
-    	<div class='yui3-u-1-3' id='TableAllUvm'></div>
+	// <!-- <div id='demo1'></div>
+	
+	//<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
+    //	<div class='yui3-u-1-3' id='TableAllUvm'></div>
 			
-	</div> -->";
+	//</div>";
+	
 	TreeTable_uvm_by_pfs_mere($today);
+	
 	echo "</div>
 	<div id='tabs-2'>
 
