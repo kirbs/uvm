@@ -152,7 +152,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 		
 	<table id='example-basic'>
         <thead>
-          <tr>    <div id='main''>
+          <tr>    <div id='main'>
             <th>VM</th>
             <th>uVMs</th>
           </tr>
