@@ -81,7 +81,7 @@ $( '#tabs' ).tabs();
 	</div>
 	";
 	
-	TreeTable_uvm_by_pfs_mere($today);
+	
 	
 	echo "
 	</div>
@@ -93,6 +93,7 @@ $( '#tabs' ).tabs();
 		</div>
 	</div>
 </div>";
+TreeTable_uvm_by_pfs_mere($today);
 }
 
 function affiche_liste_pfs($choix,$date)
