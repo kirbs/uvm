@@ -160,8 +160,11 @@ function TreeTable_uvm_by_pfs_mere($date)
         <tbody>";
 	
 	echo "
-	<tr data-tt-id='$cpt_pfs_mere'>
+	<tr data-tt-id='1'>
 		<td>--- $PFSmere[pfs_mere]</td><td>$cpt</td>
+	</tr>
+	<tr data-tt-id='1.1' data-tt-parent-id='1'>
+		<td>------$PFSfille[pfs_fille]</td><td>$cpt2</td>
 	</tr>
 	</tbody>
     	  </table>";
