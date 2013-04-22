@@ -186,7 +186,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 				$cpt2 = $cpt2 + $UvmByPFSfille["uvm_total"];
 			}
 			    echo "<tr data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
-				echo "<td>------$PFSFille[pfs_fille]</td><td>$cpt2</td>";
+				echo "<td>------$PFSfille[pfs_fille]</td><td>$cpt2</td>";
 				echo "</tr>";
      			//echo "<br>  -- ($cpt_pfs_mere.$cpt_pfs_fille) parent ($cpt_pfs_mere) $PFSfille[pfs_fille] - $cpt2";
      			
