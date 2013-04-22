@@ -47,7 +47,7 @@ YUI().use( "sortable", "calendar", "datatype-date", "datatable", "io", function 
 					data : json,
 					width: 200,
 					caption: "Choisir la PFS"
-    			}).render("#mtable");
+    			}).render("#TableAllUvm");
     		}
     	}
    	});		

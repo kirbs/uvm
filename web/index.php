@@ -76,7 +76,7 @@ $( '#tabs' ).tabs();
 	<div id='demo1'></div>
 	
 	<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
-    	<div class='yui3-u-1-3' id='mtable'></div>
+    	<div class='yui3-u-1-3' id='TableAllUvm'></div>
 			
 	</div>
 	
