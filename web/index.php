@@ -164,7 +164,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
 		}
 		echo "<tr data-tt-id='$cpt_pfs_mere'>";
-		echo "<td>$PFSmere[pfs_mere]</td><td>$cpt uvm total</td>";
+		echo "<td>$PFSmere[pfs_mere]</td><td>$cpt</td>";
 		echo "</tr>";
 		//echo "<br>- ($cpt_pfs_mere) $PFSmere[pfs_mere] - $cpt uvm total";
 		
