@@ -158,6 +158,15 @@ function TreeTable_uvm_by_pfs_mere($date)
           </tr>
         </thead>
         <tbody>";
+	
+	echo "
+	<tr data-tt-id='$cpt_pfs_mere'>
+		<td>--- $PFSmere[pfs_mere]</td><td>$cpt</td>
+	</tr>
+	</tbody>
+    	  </table>";
+	
+		
 
 	$req_liste_pfs_mere = mysql_query("SELECT distinct(pfs_mere) FROM uVM $CONDITION");
 	$cpt_pfs_mere = 1;
