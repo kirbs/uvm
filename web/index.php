@@ -93,7 +93,7 @@ $( '#tabs' ).tabs();
 		</div>
 	</div>
 </div>";
-TreeTable_uvm_by_pfs_mere($today);
+
 }
 
 function affiche_liste_pfs($choix,$date)
@@ -314,7 +314,7 @@ function return_variable($variable)
 		$ret = "";
 	return $variable;
 }
-
+TreeTable_uvm_by_pfs_mere($today);
 formulaire($today);
 $choix = return_variable($_POST['choix']);
 $enab = return_variable($_POST['enab']);
