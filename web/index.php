@@ -50,8 +50,10 @@ $( '#tabs' ).tabs();
 		<li><a href='#tabs-1'>uvm par PFS</a></li>
 		<li><a href='#tabs-2'>Rechercher une VM</a></li>
 	</ul>
-	<div id='tabs-1'>
-		<form id='form' method='post' action='index.php'>
+	<div id='tabs-1'>";
+		TreeTable_uvm_by_pfs_mere($today);
+		
+		echo "<form id='form' method='post' action='index.php'>
 		<table width='100%'>
 			<tr>
 				<td width='30%' align='center'>
@@ -140,10 +142,6 @@ function TreeTable_uvm_by_pfs_mere($date)
 		$CONDITION = "WHERE pfs_mere = '$pfs' AND date_uvm = '$date'";
 	
 	echo "
-		<script>
-			$(\"#example-basic\").treetable({ expandable: true });
-		</script>
-		
 	<table id='example-basic'>
         <thead>
           <tr>    <div id='main'>
@@ -153,18 +151,6 @@ function TreeTable_uvm_by_pfs_mere($date)
         </thead>
         <tbody>";
 	
-	echo "
-	<tr data-tt-id='1'>
-		<td>--- $PFSmere[pfs_mere]</td><td>$cpt</td>
-	</tr>
-	<tr data-tt-id='1.1' data-tt-parent-id='1'>
-		<td>------$PFSfille[pfs_fille]</td><td>$cpt2</td>
-	</tr>
-	</tbody>
-    	  </table>";
-	
-		
-
 	$req_liste_pfs_mere = mysql_query("SELECT distinct(pfs_mere) FROM uVM $CONDITION");
 	$cpt_pfs_mere = 1;
 	while($PFSmere = mysql_fetch_array($req_liste_pfs_mere))
@@ -212,7 +198,11 @@ function TreeTable_uvm_by_pfs_mere($date)
 		$cpt_pfs_mere = $cpt_pfs_mere + 1;
 	}
 	echo "</tbody>
-    	  </table>";
+    	  </table>
+	
+	<script>
+		$('#example-basic').treetable({ expandable: true });
+	</script>";
 }
 
 
@@ -308,7 +298,7 @@ function return_variable($variable)
 		$ret = "";
 	return $variable;
 }
-//TreeTable_uvm_by_pfs_mere($today);
+
 formulaire($today);
 $choix = return_variable($_POST['choix']);
 $enab = return_variable($_POST['enab']);
