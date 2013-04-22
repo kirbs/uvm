@@ -147,7 +147,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 	
 	echo "
 		<script>
-			$('#example-basic').treetable({ expandable: true });
+			$(\"#example-basic\").treetable({ expandable: true });
 		</script>
 		
 	<table id='example-basic'>
