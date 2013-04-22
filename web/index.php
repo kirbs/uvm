@@ -79,11 +79,6 @@ $( '#tabs' ).tabs();
     	<div class='yui3-u-1-3' id='TableAllUvm'></div>
 			
 	</div>
-	";
-	
-	
-	
-	echo "
 	</div>
 	<div id='tabs-2'>
 
