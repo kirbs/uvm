@@ -163,10 +163,10 @@ function TreeTable_uvm_by_pfs_mere($date)
 		{
 			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
 		}
-		echo "<tr data-tt-id='$cpt_pfs_mere'>";
-		echo "<td>$PFSmere[pfs_mere]</td><td>$cpt</td>";
-		echo "</tr>";
-		//echo "<br>- ($cpt_pfs_mere) $PFSmere[pfs_mere] - $cpt uvm total";
+		//echo "<tr data-tt-id='$cpt_pfs_mere'>";
+		//echo "<td>$PFSmere[pfs_mere]</td><td>$cpt</td>";
+		//echo "</tr>";
+		echo "<br>- ($cpt_pfs_mere) $PFSmere[pfs_mere] - $cpt uvm total";
 		
 		
 		$req_liste_pfs_fille = mysql_query("SELECT distinct(pfs_fille) FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND date_uvm = '$date'");
@@ -179,20 +179,20 @@ function TreeTable_uvm_by_pfs_mere($date)
 			{
 				$cpt2 = $cpt2 + $UvmByPFSfille["uvm_total"];
 			}
-			    echo "<tr data-tt-id='$cpt_pfs_mere'.'$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
-				echo "<td>$PFSmere[pfs_fille]</td><td>$cpt2</td>";
-				echo "</tr>";
-     			//echo "<br>  -- ($cpt_pfs_mere.$cpt_pfs_fille) parent ($cpt_pfs_mere) $PFSfille[pfs_fille] - $cpt2";
+			    //echo "<tr data-tt-id='$cpt_pfs_mere'.'$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
+				//echo "<td>$PFSmere[pfs_fille]</td><td>$cpt2</td>";
+				//echo "</tr>";
+     			echo "<br>  -- ($cpt_pfs_mere'.'$cpt_pfs_fille) parent ($cpt_pfs_mere) $PFSfille[pfs_fille] - $cpt2";
      			
      			
 			$resultatvm = mysql_query("SELECT * FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND pfs_fille = '$PFSfille[pfs_fille]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
 			$cpt_vm = 1;
 			while($result = mysql_fetch_array($resultatvm))
 			{
-				echo "<tr data-tt-id='$cpt_pfs_mere'.'$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere'.'$cpt_pfs_fille'>";
-				echo "<td>$result[vm_name]</td><td>$result[uvm_total]</td>";
-				echo "</tr>";
-				//echo "<br>      --- $result[vm_name] -- $result[uvm_total]";
+				//echo "<tr data-tt-id='$cpt_pfs_mere'.'$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere'.'$cpt_pfs_fille'>";
+				//echo "<td>$result[vm_name]</td><td>$result[uvm_total]</td>";
+				//echo "</tr>";
+				echo "<br>      --- ($cpt_pfs_mere'.'$cpt_pfs_fille'.'$cpt_vm) $result[vm_name] -- parent ($cpt_pfs_mere'.'$cpt_pfs_fille) $result[uvm_total]";
 				$cpt_vm = $cpt_vm + 1;
 			}
 			$cpt_pfs_fille = $cpt_pfs_fille + 1;
