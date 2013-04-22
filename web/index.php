@@ -193,11 +193,11 @@ function TreeTable_uvm_by_pfs_mere($date)
 				echo "<td>$result[vm_name]</td><td>$result[uvm_total]</td>";
 				echo "</tr>";
 				//echo "<br>      --- $result[vm_name] -- $result[uvm_total]";
-				$cpt_vm = $cpt_vm++;
+				$cpt_vm = $cpt_vm + 1;
 			}
-			$cpt_pfs_fille = $cpt_pfs_fille++;
+			$cpt_pfs_fille = $cpt_pfs_fille + 1;
 		}
-		$cpt_pfs_mere = $cpt_pfs_mere++;
+		$cpt_pfs_mere = $cpt_pfs_mere + 1;
 	}
 	echo "</tbody>
     	  </table>";
