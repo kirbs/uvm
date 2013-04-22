@@ -144,7 +144,12 @@ function TreeTable_uvm_by_pfs_mere($date)
 	else
 		$CONDITION = "WHERE pfs_mere = '$pfs' AND date_uvm = '$date'";
 	
-	echo "<table id='example-basic'>
+	echo "
+		<script>
+			$('#example-basic').treetable({ expandable: true });
+		</script>
+		
+	<table id='example-basic'>
         <thead>
           <tr>    <div id='main''>
             <th>VM</th>
