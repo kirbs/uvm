@@ -182,7 +182,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 			    //echo "<tr data-tt-id='$cpt_pfs_mere'.'$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
 				//echo "<td>$PFSmere[pfs_fille]</td><td>$cpt2</td>";
 				//echo "</tr>";
-     			echo "<br>  -- ($cpt_pfs_mere'.'$cpt_pfs_fille) parent ($cpt_pfs_mere) $PFSfille[pfs_fille] - $cpt2";
+     			echo "<br>  -- ($cpt_pfs_mere.$cpt_pfs_fille) parent ($cpt_pfs_mere) $PFSfille[pfs_fille] - $cpt2";
      			
      			
 			$resultatvm = mysql_query("SELECT * FROM uVM WHERE pfs_mere = '$PFSmere[pfs_mere]' AND pfs_fille = '$PFSfille[pfs_fille]' AND date_uvm = '$date' ORDER BY uvm_total DESC");
@@ -192,7 +192,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 				//echo "<tr data-tt-id='$cpt_pfs_mere'.'$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere'.'$cpt_pfs_fille'>";
 				//echo "<td>$result[vm_name]</td><td>$result[uvm_total]</td>";
 				//echo "</tr>";
-				echo "<br>      --- ($cpt_pfs_mere'.'$cpt_pfs_fille'.'$cpt_vm) $result[vm_name] -- parent ($cpt_pfs_mere'.'$cpt_pfs_fille) $result[uvm_total]";
+				echo "<br>      --- ($cpt_pfs_mere.$cpt_pfs_fille.$cpt_vm) $result[vm_name] -- parent ($cpt_pfs_mere.$cpt_pfs_fille) $result[uvm_total]";
 				$cpt_vm = $cpt_vm + 1;
 			}
 			$cpt_pfs_fille = $cpt_pfs_fille + 1;
