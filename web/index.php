@@ -119,6 +119,9 @@ function TreeTable_uvm_by_pfs_mere($date)
         <thead>
           <tr>    <div id='main'>
             <th>VM</th>
+            <th>Memory</th>
+            <th>CPU</th>
+            <th>Disk</th>
             <th>uVMs</th>
           </tr>
         </thead>
@@ -135,7 +138,9 @@ function TreeTable_uvm_by_pfs_mere($date)
 			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
 		}
 		echo "<tr data-tt-id='$cpt_pfs_mere'>";
-		echo "<td>$PFSmere[pfs_mere]</td><td>$cpt</td>";
+		echo "	<td>$PFSmere[pfs_mere]</td>
+				<td colspan ='3'>
+				</td><td>$cpt</td>";
 		echo "</tr>";
 		
 		
@@ -150,7 +155,9 @@ function TreeTable_uvm_by_pfs_mere($date)
 				$cpt2 = $cpt2 + $UvmByPFSfille["uvm_total"];
 			}
 			    echo "<tr data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
-				echo "<td>$PFSfille[pfs_fille]</td><td>$cpt2</td>";
+				echo "	<td>$PFSfille[pfs_fille]</td>
+						<td colspan ='3'></td>
+						<td>$cpt2</td>";
 				echo "</tr>";
      			
      			
@@ -159,7 +166,11 @@ function TreeTable_uvm_by_pfs_mere($date)
 			while($result = mysql_fetch_array($resultatvm))
 			{
 				echo "<tr data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere.$cpt_pfs_fille'>";
-				echo "<td>$result[vm_name]</td><td>$result[uvm_total]</td>";
+				echo "	<td>$result[vm_name]</td>
+						<td> ram 2</td>
+						<td> cpu 2</td>
+						<td> disk 2</td>
+						<td>$result[uvm_total]</td>";
 				echo "</tr>";
 
 				$cpt_vm = $cpt_vm + 1;
