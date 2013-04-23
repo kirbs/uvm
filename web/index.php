@@ -167,9 +167,9 @@ function TreeTable_uvm_by_pfs_mere($date)
 			{
 				echo "<tr data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere.$cpt_pfs_fille'>";
 				echo "	<td>$result[vm_name]</td>
-						<td> ram 2</td>
-						<td> cpu 2</td>
-						<td> disk 2</td>
+						<td>$result[memory]</td>
+						<td>$result[cpu]</td>
+						<td>$result[disk]</td>
 						<td>$result[uvm_total]</td>";
 				echo "</tr>";
 
