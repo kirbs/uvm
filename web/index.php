@@ -137,7 +137,8 @@ function TreeTable_uvm_by_pfs_mere($date)
 		{
 			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
 		}
-		echo "<tr bgcolor='#CCCCCC'; onmouseover=this.bgColor='#99CCFF'; onmouseout=this.bgColor='#CCCCCC'; data-tt-id='$cpt_pfs_mere'>";
+		//echo "<tr bgcolor='#CCCCCC'; onmouseover=this.bgColor='#99CCFF'; onmouseout=this.bgColor='#CCCCCC'; data-tt-id='$cpt_pfs_mere'>";
+		echo "<tr onmouseover=this.bgColor='#99CCFF'; data-tt-id='$cpt_pfs_mere'>";
 		echo "	<td>$PFSmere[pfs_mere]</td>
 				<td colspan ='3'>
 				</td><td>$cpt</td>";
