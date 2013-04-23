@@ -52,11 +52,7 @@ function formulaire($today)
 						</td>
 					</tr>
 				</table>
-			</form>
-			
-			<!-- <div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
-    			<div class='yui3-u-1-3' id='mtable'></div>
-			</div> -->";
+			</form>";
 		
 			TreeTable_uvm_by_pfs_mere($today);
 
