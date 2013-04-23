@@ -15,6 +15,7 @@ $BASE_MYSQL = "uvm";
 
 
 
+
 $db = mysql_pconnect($SRV_MYSQL,$USER_MYSQL,$PASSWORD_MYSQL); //'localhost', 'root', 'rootroot');
 mysql_select_db($BASE_MYSQL,$db); //'uvm',$db);
 
