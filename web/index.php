@@ -17,79 +17,58 @@ function formulaire($today)
 	<script src='js/panel.js'></script>
 	<script src='js/autocomplete.js'></script>
 	
-	<!-- <script src='jstree/_lib/jquery.js'></script> -->
-	<script src='jstree/jquery.jstree.js'></script>
 	
-	<!--<table><tr>
-			<td><div class='yui3-skin-sam' id='simple'></div></td>
-			<td><button class='yui3-button' id='openButton'>Pourcentage uVM</button></td>
-			</tr>
-	</table>
+	<br><br>
+	<script>
+		$(function() {
+			$( '#tabs' ).tabs();
+		});
+	</script>
 
-	
-	<div id='panelContent' class='yui3-widget-loading'>
-    	<div class='yui3-widget-hd'>
-        	Graph du Pourcentage d' uVM/VM
-    	</div>
-    	<div class='yui3-widget-bd'>
-			<div id='graphUvmByAllSite' class='yui3-widget-bd' ></div>
-			<div id='graphVMByAllSite' class='yui3-widget-bd'></div>
-    	</div>
-	</div>-->
-	
-	
-<br><br>
-<script>
-$(function() {
-$( '#tabs' ).tabs();
-});
-</script>
-
-<div id='tabs'>
-	<ul>
-		<li><a href='#tabs-1'>uvm par PFS</a></li>
-		<li><a href='#tabs-2'>Rechercher une VM</a></li>
-	</ul>
-	<div id='tabs-1'>
-		
-		<form id='form' method='post' action='index.php'>
-		<table width='100%'>
-			<tr>
-				<td width='30%' align='center'>
-	       			<div id='choice_date_click' ></div>
-	       		</td>
-	       		<td width='70%' align='left'>
-			        <input type=hidden name='date' id='choice_date_click_field'>
-					<table><tr><td>Vue des uvms par : 
-						<select id='datas' name=pfs>
-							<option value='--'>-- Choix de la PFS --</option>
-							<option value='all'>- ALL -</option>
-						</select>
-					<input type=hidden name='choix' value='pfs'>
-					<input type=hidden name='enab' value=1>
-					<!--<input type=hidden name='enab' value=0>-->
-					<!--<input type='submit' value='Valider'>-->
-					</td></tr></table>
-				</td>
-			</tr>
-		</table>
-		</form>";
-		//TreeTable_uvm_by_pfs_mere($today);
-		echo "
-		<div id='demo1'></div>
-		
-		<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
-	    	<div class='yui3-u-1-3' id='TableAllUvm'></div>
+	<div id='tabs'>
+		<ul>
+			<li><a href='#tabs-1'>uvm par PFS</a></li>
+			<li><a href='#tabs-2'>Rechercher une VM</a></li>
+		</ul>
+		<div id='tabs-1'>
+			
+			<form id='form' method='post' action='index.php'>
+			<table width='100%'>
+				<tr>
+					<td width='30%' align='center'>
+		       			<div id='choice_date_click' ></div>
+		       		</td>
+		       		<td width='70%' align='left'>
+				        <input type=hidden name='date' id='choice_date_click_field'>
+						<table><tr><td>Vue des uvms par : 
+							<select id='datas' name=pfs>
+								<option value='--'>-- Choix de la PFS --</option>
+								<option value='all'>- ALL -</option>
+							</select>
+						<input type=hidden name='choix' value='pfs'>
+						<input type=hidden name='enab' value=1>
+						<!--<input type=hidden name='enab' value=0>-->
+						<!--<input type='submit' value='Valider'>-->
+						</td></tr></table>
+					</td>
+				</tr>
+			</table>
+			</form>";
+			//TreeTable_uvm_by_pfs_mere($today);
+			echo "
+			
+			<div id='template' class='yui3-skin-sam dt-example yui3-g'> <!-- You need this skin class -->
+		    	<div class='yui3-u-1-3' id='TableAllUvm'></div>
+			</div>
 		</div>
-	</div>
-	<div id='tabs-2'>
-
-		<div id='demo' class='yui3-skin-sam'>
-			<label for='tags'>VM : </label>
-			<input size='40' id='tags' />
+		<div id='tabs-2'>
+	
+			<div id='demo' class='yui3-skin-sam'>
+				<label for='tags'>VM : </label>
+				<input size='40' id='tags' />
+			</div>
 		</div>
-	</div>
-</div>";
+	</div>";
 
 }
 
