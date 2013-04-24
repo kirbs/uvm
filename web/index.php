@@ -137,7 +137,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 		{
 			$cpt = $cpt + $UvmByPFSmere["uvm_total"];
 		}
-		echo "<tr bgcolor='#82D7FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#82D7FF'; data-tt-id='$cpt_pfs_mere'>";
+		echo "<tr bgcolor='#6BA1FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#6BA1FF'; data-tt-id='$cpt_pfs_mere'>";
 		echo "	<td>$PFSmere[pfs_mere]</td>
 				<td colspan ='3'>
 				</td><td>$cpt</td>";
@@ -154,7 +154,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 			{
 				$cpt2 = $cpt2 + $UvmByPFSfille["uvm_total"];
 			}
-			    echo "<tr bgcolor='#776BFF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#776BFF'; data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
+			    echo "<tr bgcolor='#82D7FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#82D7FF'; data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
 				echo "	<td><strong>$PFSfille[pfs_fille]</strong></td>
 						<td colspan ='3'></td>
 						<td><strong>$cpt2</strong></td>";
@@ -165,7 +165,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 			$cpt_vm = 1;
 			while($result = mysql_fetch_array($resultatvm))
 			{
-				echo "<tr bgcolor='#776BFF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#776BFF'; data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere.$cpt_pfs_fille'>";
+				echo "<tr bgcolor='#82D7FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#82D7FF'; data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille.$cpt_vm' data-tt-parent-id='$cpt_pfs_mere.$cpt_pfs_fille'>";
 				echo "	<td>$result[vm_name]</td>
 						<td>$result[memory]</td>
 						<td>$result[cpu]</td>
