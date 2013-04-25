@@ -140,7 +140,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 		echo "<tr bgcolor='#6BA1FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#6BA1FF'; data-tt-id='$cpt_pfs_mere'>";
 		echo "	<td>$PFSmere[pfs_mere]</td>
 				<td colspan ='3'>
-				</td><td style='color:green;'><strong>$cpt</strong></td>";
+				</td><td style='color:black;'><strong>$cpt</strong></td>";
 		echo "</tr>";
 		
 		
@@ -157,7 +157,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 			    echo "<tr bgcolor='#82D7FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#82D7FF'; data-tt-id='$cpt_pfs_mere.$cpt_pfs_fille' data-tt-parent-id='$cpt_pfs_mere'>";
 				echo "	<td><strong>$PFSfille[pfs_fille]</strong></td>
 						<td colspan ='3'></td>
-						<td><strong>$cpt2</strong></td>";
+						<td style='color:red;'><strong>$cpt2</strong></td>";
 				echo "</tr>";
      			
      			
