@@ -140,7 +140,7 @@ function TreeTable_uvm_by_pfs_mere($date)
 		echo "<tr bgcolor='#6BA1FF'; onmouseover=this.bgColor='#FFAC38'; onmouseout=this.bgColor='#6BA1FF'; data-tt-id='$cpt_pfs_mere'>";
 		echo "	<td>$PFSmere[pfs_mere]</td>
 				<td colspan ='3'>
-				</td><td color='#FFFF00'>$cpt</td>";
+				</td><td color:red;><strong>$cpt</strong></td>";
 		echo "</tr>";
 		
 		
