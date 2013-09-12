@@ -9,6 +9,7 @@ import pickle
 
 
 
+
 class uVM(object):
   def __init__(self):
     self.session = Session('httpu:///var/run/xend/xen-api.sock')
